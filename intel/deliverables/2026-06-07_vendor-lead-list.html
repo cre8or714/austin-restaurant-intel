@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Austin Restaurant Intel — New Opening Lead List · June 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; background: #f8f9fa; color: #1a202c; font-size: 14px; line-height: 1.5; }
+
+  .cover { background: #0f1117; color: #fff; padding: 56px 64px 48px; border-bottom: 4px solid #e53e3e; }
+  .brand { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #e53e3e; margin-bottom: 20px; }
+  .cover h1 { font-size: 32px; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 10px; }
+  .cover .subtitle { font-size: 15px; color: #a0aec0; margin-bottom: 36px; }
+  .cover-meta { display: flex; gap: 48px; flex-wrap: wrap; }
+  .cover-meta-item label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #718096; margin-bottom: 4px; }
+  .cover-meta-item span { font-size: 22px; font-weight: 700; color: #fff; }
+  .cover-meta-item .sub { font-size: 12px; color: #718096; font-weight: 400; display: block; margin-top: 2px; }
+
+  .method-bar { background: #1a202c; color: #a0aec0; font-size: 12px; padding: 12px 64px; display: flex; gap: 32px; flex-wrap: wrap; }
+  .method-bar span { white-space: nowrap; }
+  .method-bar span::before { content: "✓ "; color: #68d391; }
+
+  .main { max-width: 1120px; margin: 0 auto; padding: 40px 40px 80px; }
+
+  .conf-legend { display: flex; gap: 20px; align-items: center; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 18px; margin-bottom: 28px; flex-wrap: wrap; }
+  .conf-legend-label { font-size: 11px; color: #718096; font-weight: 400; margin-right: 4px; }
+  .conf-legend span { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+  .cdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .cdot.high { background: #38a169; }
+  .cdot.mh { background: #3182ce; }
+  .cdot.med { background: #d69e2e; }
+  .cdot.nf { background: #a0aec0; }
+
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
+  .section-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+  .tag-hot { background: #fff5f5; color: #c53030; border: 1.5px solid #fc8181; }
+  .tag-warm { background: #fffbeb; color: #b7791f; border: 1.5px solid #f6ad55; }
+  .tag-early { background: #ebf8ff; color: #2b6cb0; border: 1.5px solid #90cdf4; }
+  .tag-hold { background: #f7fafc; color: #718096; border: 1.5px solid #cbd5e0; }
+  .section-title { font-size: 19px; font-weight: 700; color: #1a202c; }
+  .section-desc { font-size: 13px; color: #718096; margin-left: auto; font-style: italic; }
+
+  table.leads { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  table.leads thead tr { background: #f7fafc; border-bottom: 2px solid #e2e8f0; }
+  table.leads th { text-align: left; padding: 10px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #718096; white-space: nowrap; }
+  table.leads td { padding: 13px 14px; vertical-align: top; border-bottom: 1px solid #f0f4f8; }
+  table.leads tr.lead-row:hover td { background: #fafcff; }
+
+  .lead-num { font-size: 11px; font-weight: 700; color: #a0aec0; white-space: nowrap; }
+  .lead-name { font-weight: 700; color: #1a202c; font-size: 14px; }
+  .lead-address { font-size: 12px; color: #718096; margin-top: 2px; }
+  .neighborhood { font-weight: 600; color: #4a5568; }
+  .entity-text { font-size: 12px; color: #2d3748; }
+
+  .concept-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; white-space: nowrap; margin-bottom: 3px; }
+  .b-full { background: #ebf8ff; color: #2b6cb0; }
+  .b-bar { background: #faf5ff; color: #6b46c1; }
+  .b-chain { background: #fff5f5; color: #c53030; }
+  .b-hotel { background: #e2e8f0; color: #4a5568; }
+  .b-spec { background: #fffbeb; color: #b7791f; }
+
+  .sigs { display: flex; gap: 4px; flex-wrap: wrap; }
+  .sig { font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
+  .sig-on { background: #f0fff4; color: #276749; border: 1px solid #9ae6b4; }
+  .sig-off { background: #f7fafc; color: #cbd5e0; border: 1px solid #e2e8f0; }
+
+  .w-hot { font-size: 12px; font-weight: 600; color: #c53030; }
+  .w-warm { font-size: 12px; font-weight: 600; color: #b7791f; }
+  .w-early { font-size: 12px; font-weight: 600; color: #2b6cb0; }
+
+  .dnote { font-size: 12px; color: #4a5568; line-height: 1.4; }
+  .indie { color: #276749; font-weight: 600; }
+  .chain { color: #c53030; font-weight: 600; }
+
+  /* CONTACTS ROW */
+  tr.cr td { background: #f7fafc; padding: 8px 14px 14px 54px; border-bottom: 2px solid #e2e8f0; }
+  .cg { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cc { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; min-width: 190px; max-width: 275px; border-left: 3px solid #e2e8f0; }
+  .cc.high { border-left-color: #38a169; }
+  .cc.mh { border-left-color: #3182ce; }
+  .cc.med { border-left-color: #d69e2e; }
+  .cc.nf { border-left-color: #a0aec0; background: #f7fafc; }
+  .cn { font-weight: 700; font-size: 13px; color: #1a202c; }
+  .ct { font-size: 11px; color: #718096; margin-top: 1px; margin-bottom: 6px; line-height: 1.4; }
+  .ci { font-size: 11px; color: #4a5568; margin-top: 3px; }
+  .ci a { color: #3182ce; text-decoration: none; }
+  .ci a:hover { text-decoration: underline; }
+  .cb { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 7px; display: inline-block; }
+  .cb.high { color: #38a169; }
+  .cb.mh { color: #3182ce; }
+  .cb.med { color: #d69e2e; }
+  .cb.nf { color: #a0aec0; }
+  .nfnote { font-size: 11px; color: #718096; font-style: italic; line-height: 1.5; }
+
+  .summary-strip { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .sc { flex: 1; min-width: 140px; background: #fff; border-radius: 8px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); border-top: 3px solid #e2e8f0; }
+  .sc.hot { border-top-color: #e53e3e; }
+  .sc.warm { border-top-color: #ed8936; }
+  .sc.early { border-top-color: #4299e1; }
+  .sc.hold { border-top-color: #a0aec0; }
+  .sc .sn { font-size: 28px; font-weight: 800; line-height: 1; color: #1a202c; }
+  .sc .sl { font-size: 12px; color: #718096; margin-top: 4px; }
+
+  .flag-row td { opacity: 0.65; }
+
+  .research-bar { background: #fffbeb; border-top: 2px solid #f6ad55; padding: 20px 64px; font-size: 12px; color: #744210; }
+
+  .doc-footer { background: #1a202c; color: #718096; font-size: 11px; padding: 24px 64px; line-height: 2; }
+  .doc-footer strong { color: #a0aec0; }
+
+  @media print {
+    body { background: white; }
+    .cover { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .method-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">Austin Restaurant Intel</div>
+  <h1>New Opening Lead List — Austin Metro Area</h1>
+  <div class="subtitle">Food &amp; Beverage Distributor Edition &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; Single-Category License</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><label>Report Date</label><span>June 7, 2026</span><span class="sub">45-day lookback window</span></div>
+    <div class="cover-meta-item"><label>Total Leads</label><span>35</span><span class="sub">new restaurant openings</span></div>
+    <div class="cover-meta-item"><label>HOT (reach now)</label><span>15</span><span class="sub">TABC issued — opening imminent</span></div>
+    <div class="cover-meta-item"><label>Named Contacts Found</label><span>28</span><span class="sub">decision makers across HOT + WARM</span></div>
+  </div>
+</div>
+
+<div class="method-bar">
+  <span>TABC new license filings</span>
+  <span>Austin Open Data commercial permits</span>
+  <span>TX Comptroller sales tax &amp; franchise records</span>
+  <span>Web / press / LinkedIn enrichment</span>
+  <span>All contacts require verification before outreach</span>
+</div>
+
+<div class="main">
+
+  <div class="summary-strip" style="margin-top:8px;">
+    <div class="sc hot"><div class="sn">15</div><div class="sl"><strong>HOT</strong> — TABC issued, opening within 60 days</div></div>
+    <div class="sc warm"><div class="sn">7</div><div class="sl"><strong>WARM</strong> — Permit active, operator confirmed, 60–120 days</div></div>
+    <div class="sc early"><div class="sn">7</div><div class="sl"><strong>EARLY</strong> — Permit stage, 90–180 days, no operator yet</div></div>
+    <div class="sc hold"><div class="sn">6</div><div class="sl"><strong>HOLD</strong> — Verify before outreach (chain / flag / OOA)</div></div>
+  </div>
+
+  <div class="conf-legend">
+    <span class="conf-legend-label">Contact confidence:</span>
+    <span><span class="cdot high"></span> CONFIRMED — named in press or verified LinkedIn</span>
+    <span><span class="cdot mh"></span> MED-HIGH — ZoomInfo / LinkedIn pattern match</span>
+    <span><span class="cdot med"></span> MED — property / entity record cross-reference</span>
+    <span><span class="cdot nf"></span> RESEARCH NEEDED — TX SOS entity pull required</span>
+  </div>
+
+  <!-- ══════════════════════ HOT LEADS ══════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hot">HOT — Reach Out Now</span>
+      <div class="section-title">TABC License Issued — Opening Imminent</div>
+      <div class="section-desc">License in hand. Build-out finishing or done.</div>
+    </div>
+    <table class="leads">
+      <thead><tr>
+        <th>#</th><th>Business / Address</th><th>Concept</th><th>Operator Entity</th><th>Signals</th><th>TABC Issued</th><th>Distributor Notes</th>
+      </tr></thead>
+      <tbody>
+
+        <!-- H-01 THE WELL -->
+        <tr class="lead-row">
+          <td class="lead-num">H-01</td>
+          <td><div class="lead-name">The Well</div><div class="lead-address">409 W Monroe St<br><span class="neighborhood">Bouldin Creek · 78704</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant</span></td>
+          <td><div class="entity-text">Well Bouldin LLC<br><span style="color:#718096;font-size:11px;">Parent: Nova Hospitality (Austin) — 7 concepts</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">Apr 29, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, established group.</span> NAICS 722511. Triple-confirmed. Experienced Austin hospitality operator.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Jack Zimmermann</div><div class="ct">CEO &amp; Founder, Nova Hospitality</div><div class="ci">✉ jack@novahospitalitygroup.com</div><div class="ci">☎ (910) 822-8631</div><div class="ci"><a href="https://linkedin.com/in/jack-zimmermann-9a216b140" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — press + ZoomInfo</div></div>
+          <div class="cc high"><div class="cn">Nicole Pfromm</div><div class="ct">Managing Partner, The Well (property-level contact)</div><div class="ci">✉ info@eatwellatx.com</div><div class="cb high">● CONFIRMED — quoted CultureMap Austin</div></div>
+          <div class="cc high"><div class="cn">Jon Oh</div><div class="ct">VP Restaurants &amp; Development, Nova Hospitality</div><div class="ci">Oversees all concept development &amp; culinary</div><div class="cb high">● CONFIRMED — Voyage Austin / multiple press</div></div>
+        </div></td></tr>
+
+        <!-- H-02 THE LUCKY DUCK -->
+        <tr class="lead-row">
+          <td class="lead-num">H-02</td>
+          <td><div class="lead-name">The Lucky Duck</div><div class="lead-address">2105 Lynnbrook Dr<br><span class="neighborhood">South Austin · 78748</span></div></td>
+          <td><span class="concept-badge b-bar">Bar / Tavern</span></td>
+          <td><div class="entity-text">Three Brothers Bars LLC<br><span style="color:#718096;font-size:11px;">302 Esperanza Dr, Buda TX — multi-market bar group</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">Apr 24, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, multi-location.</span> Bar-forward, food program likely. Austin, SA, Fort Worth footprint.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Thomas Vincent Le</div><div class="ct">Owner / Managing Member</div><div class="ci">☎ (512) 537-1519</div><div class="ci">✉ theluckyduckatx@gmail.com</div><div class="cb high">● CONFIRMED — BBB filing + Community Impact</div></div>
+          <div class="cc high"><div class="cn">Michael Bajec</div><div class="ct">Co-Owner — media-facing for Austin opening</div><div class="ci">☎ (512) 537-1519</div><div class="ci">✉ theluckyduckatx@gmail.com</div><div class="cb high">● CONFIRMED — quoted Community Impact May 2026</div></div>
+          <div class="cc high"><div class="cn">Bao Le</div><div class="ct">Co-Owner</div><div class="cb high">● CONFIRMED — CultureMap founding coverage</div></div>
+        </div></td></tr>
+
+        <!-- H-03 KS CAFE -->
+        <tr class="lead-row">
+          <td class="lead-num">H-03</td>
+          <td><div class="lead-name">KS Cafe LLC</div><div class="lead-address">1700 S Congress Ave<br><span class="neighborhood">SoCo · 78704</span></div></td>
+          <td><span class="concept-badge b-bar">Bar / Café</span></td>
+          <td><div class="entity-text">KS Cafe LLC<br><span style="color:#718096;font-size:11px;">Sales tax filed Aug 2025 — 8 months of careful planning</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">Apr 28, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, SoCo.</span> Deliberate planner. Opening now.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">KS Cafe LLC</div><div class="nfnote">No press/web presence found pre-opening.<br><strong>Next step:</strong> TX SOS SOSDirect for "KS Cafe LLC" (~$1) → registered agent + member names. Or: TABC AIMS search for 1700 S Congress Ave licensee.</div><div class="cb nf">● RESEARCH NEEDED</div></div>
+        </div></td></tr>
+
+        <!-- H-04 JAROCHOS -->
+        <tr class="lead-row">
+          <td class="lead-num">H-04</td>
+          <td><div class="lead-name">Jarochos Mexican Food y Cantina</div><div class="lead-address">9200 N Lamar Blvd<br><span class="neighborhood">North Austin · 78753</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant</span></td>
+          <td><div class="entity-text">DaMark INC<br><span style="color:#718096;font-size:11px;">Third concept at this address — active food infrastructure</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">May 6, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent.</span> NAICS 722511 Mexican. Call the restaurant — owner will answer.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — DaMark INC (name not confirmed)</div><div class="ct">Jarochos Mexican Food y Cantina</div><div class="ci">☎ (512) 339-3022 — restaurant main line</div><div class="ci">✉ mariscoslosjarochos@gmail.com</div><div class="nfnote" style="margin-top:6px;"><strong>Fastest path:</strong> Call (512) 339-3022 and ask for the owner directly. Or TX SOS search for "DaMark INC."</div><div class="cb nf">● RESEARCH NEEDED — phone confirmed, owner name not found</div></div>
+        </div></td></tr>
+
+        <!-- H-05 EVENING DRAFT -->
+        <tr class="lead-row">
+          <td class="lead-num">H-05</td>
+          <td><div class="lead-name">Evening Draft LLC</div><div class="lead-address">1614 Lavaca St<br><span class="neighborhood">Downtown · 78701</span></div></td>
+          <td><span class="concept-badge b-bar">Bar / Draft Beer Concept</span></td>
+          <td><div class="entity-text">Evening Draft LLC<br><span style="color:#718096;font-size:11px;">611 W 5th St Austin — est. Jan 2026</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">May 14, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, downtown.</span> New LLC Jan 2026. Triple-confirmed. Former Palazzo Lavaca space.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">Evening Draft LLC · registered: 611 W 5th St, Austin TX 78701</div><div class="nfnote">Stealth opening — no press coverage, no social presence found.<br><strong>Next step:</strong> TX SOS SOSDirect for "Evening Draft LLC" (est. Jan 2026). 611 W 5th St may be a registered agent firm — formation docs will name organizer/member.</div><div class="cb nf">● RESEARCH NEEDED — TX SOS pull required</div></div>
+        </div></td></tr>
+
+        <!-- H-06 HOTEL TRINITY -->
+        <tr class="lead-row">
+          <td class="lead-num">H-06</td>
+          <td><div class="lead-name">Hotel Trinity</div><div class="lead-address">311 E 5th St<br><span class="neighborhood">Downtown · 78701</span></div></td>
+          <td><span class="concept-badge b-hotel">Hotel F&amp;B — Autograph Collection</span></td>
+          <td><div class="entity-text">Trinity AH Beverage LLC<br><span style="color:#718096;font-size:11px;">White Lodging (Merrillville, IN) — Marriott Autograph Collection</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">May 22, 2026</span></td>
+          <td class="dnote">Anchor concept: high-end seafood &amp; oyster bar. F&amp;B Director not yet announced. Approach Ansari (GM) first.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Ebrahim Ansari</div><div class="ct">Opening General Manager, Hotel Trinity Austin</div><div class="ci">☎ (512) 814-5990 — hotel direct</div><div class="ci">✉ sales@hoteltrinityatx.com</div><div class="ci"><a href="https://linkedin.com/in/ebrahim-ansari-a04803115/" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — GlobeNewswire press release Feb 2026</div></div>
+          <div class="cc high"><div class="cn">Christina Hanvey</div><div class="ct">Director of Sales &amp; Marketing (also: Westin, Aloft, Element Austin)</div><div class="cb high">● CONFIRMED — same GlobeNewswire announcement</div></div>
+        </div></td></tr>
+
+        <!-- H-07 STOUT HOUSE -->
+        <tr class="lead-row">
+          <td class="lead-num">H-07</td>
+          <td><div class="lead-name">Stout House</div><div class="lead-address">6406 N IH 35 Unit 1700 (The Linc)<br><span class="neighborhood">North Austin · 78752</span></div></td>
+          <td><span class="concept-badge b-bar">Bar / Gastropub</span></td>
+          <td><div class="entity-text">Stout Linc LLC / SATX Bars<br><span style="color:#718096;font-size:11px;">San Antonio multi-bar operator — 5 concepts total</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Permit ✓</span></div></td>
+          <td><span class="w-hot">May 12, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, expanding from SA.</span> Gastropub = full food program. 717 SF patio. Multi-concept operator.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Doug Ackerly</div><div class="ct">Owner, SATX Bars (Stout House + Hangar Bar, Three Legged Monkey, The Ringer, Stetson)</div><div class="ci"><a href="https://linkedin.com/in/doug-ackerly-3196b89a/" target="_blank">LinkedIn ↗</a> — best cold outreach path</div><div class="cb high">● CONFIRMED — Community Impact, CultureMap SA, SA Current</div></div>
+          <div class="cc high"><div class="cn">William Huey</div><div class="ct">Co-Owner, SATX Bars</div><div class="cb high">● CONFIRMED — founding press coverage</div></div>
+          <div class="cc high"><div class="cn">Mat Rapp</div><div class="ct">Co-Owner, SATX Bars</div><div class="cb high">● CONFIRMED — founding press coverage</div></div>
+        </div></td></tr>
+
+        <!-- H-08 MACKENZIE CLUB -->
+        <tr class="lead-row">
+          <td class="lead-num">H-08</td>
+          <td><div class="lead-name">The Mackenzie Club</div><div class="lead-address">260 Addie Roy Rd<br><span class="neighborhood">Westlake · 78746</span></div></td>
+          <td><span class="concept-badge b-spec">Private Members Club — Golf + Dining</span></td>
+          <td><div class="entity-text">1723 Ventures LLC<br><span style="color:#718096;font-size:11px;">13125 Meridian Park Blvd Austin — tech founders</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-off">Sales Tax —</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">May 26, 2026</span></td>
+          <td class="dnote">33,000 SF indoor golf + chef-driven dining + craft bar. Westlake = premium account. Actively hiring GM to oversee F&amp;B.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Dave Rogenmoser</div><div class="ct">Founder / Principal, The Mackenzie Club / 1723 Ventures</div><div class="ci">✉ press@mackenzieclub.com</div><div class="ci"><a href="https://linkedin.com/in/daverogenmoser" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — Tribeza, Community Impact, Golf Wire, Hoodline</div></div>
+          <div class="cc mh"><div class="cn">Chris Hull</div><div class="ct">Co-Principal / Investor (co-founder Jasper AI)</div><div class="ci"><a href="https://linkedin.com/in/chrishull7/" target="_blank">LinkedIn ↗</a></div><div class="cb mh">● MED-HIGH — named in same press as Rogenmoser</div></div>
+          <div class="cc mh"><div class="cn">Catherine Garza</div><div class="ct">PR Contact — Giant Noise (agency for Mackenzie Club)</div><div class="ci">☎ (512) 382-9017 — best cold-call entry</div><div class="cb mh">● MED-HIGH — Giant Noise confirmed as PR firm</div></div>
+        </div></td></tr>
+
+        <!-- H-09 TAQUERIA DE DIEZ -->
+        <tr class="lead-row">
+          <td class="lead-num">H-09</td>
+          <td><div class="lead-name">Taqueria De Diez</div><div class="lead-address">3736 Bee Caves Rd Suite 2<br><span class="neighborhood">Westlake Hills · 78746</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant</span></td>
+          <td><div class="entity-text">Taqueria 104 LLC / Taqueria 103 LLC<br><span style="color:#718096;font-size:11px;">4-location and growing. 6th St planned 2027.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">May 29, 2026</span></td>
+          <td class="dnote">Esquer brothers group expanding rapidly. Approach Carlo Torres (ops) for purchasing. Full-service Mexican, NAICS 722511.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Raul Esquer</div><div class="ct">Co-Founder / Owner (twin)</div><div class="ci">☎ (512) 633-4829 — restaurant line</div><div class="ci">Search LinkedIn: Raul Esquer Austin</div><div class="cb high">● CONFIRMED — Texas Monthly, CultureMap, KXAN, Community Impact</div></div>
+          <div class="cc high"><div class="cn">Luis Esquer</div><div class="ct">Co-Founder / Owner (twin)</div><div class="cb high">● CONFIRMED — same coverage as Raul</div></div>
+          <div class="cc med"><div class="cn">Carlo Torres</div><div class="ct">Director of Operations — day-to-day purchasing contact</div><div class="cb med">● MED — identified via group coverage; title confirmed</div></div>
+        </div></td></tr>
+
+        <!-- H-10 THE LOBBY -->
+        <tr class="lead-row">
+          <td class="lead-num">H-10</td>
+          <td><div class="lead-name">The Lobby Social Bar</div><div class="lead-address">710A W 6th St<br><span class="neighborhood">West 6th · 78701</span></div></td>
+          <td><span class="concept-badge b-bar">Bar / Lounge</span></td>
+          <td><div class="entity-text">Austin Vampires LLC<br><span style="color:#718096;font-size:11px;">San Antonio TX — est. Jan 2026. Replaced The Ranch.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">May 29, 2026</span></td>
+          <td class="dnote">Open May 2026 (@thelobby.atx). SA operator new to Austin = no existing distributor relationships.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">Austin Vampires LLC · San Antonio TX · est. Jan 2026</div><div class="nfnote">Owner not found in any press/web search. Venue is open and active on Instagram.<br><strong>Options:</strong> (1) TX SOS SOSDirect for "Austin Vampires LLC" → member names. (2) DM @thelobby.atx on Instagram and ask for ownership contact.</div><div class="cb nf">● RESEARCH NEEDED — TX SOS or Instagram DM</div></div>
+        </div></td></tr>
+
+        <!-- H-11 LOCAL FOODS -->
+        <tr class="lead-row">
+          <td class="lead-num">H-11</td>
+          <td><div class="lead-name">Local Foods</div><div class="lead-address">3800 N Lamar Blvd Suite 170<br><span class="neighborhood">Brentwood · North Loop · 78756</span></div></td>
+          <td><span class="concept-badge b-chain">Chain — Fast Casual</span></td>
+          <td><div class="entity-text">LFA #2, LLC (Local Foods Group, Houston)<br><span style="color:#718096;font-size:11px;">2nd Austin location. Brand emphasizes local sourcing.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">May 27, 2026</span></td>
+          <td class="dnote"><span class="chain">Chain (Houston).</span> NAICS 722513. "Local sourcing" is core brand message — strong angle for Austin distributors. Martin Berson is your Austin contact.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Martin Berson</div><div class="ct">Austin Partner / Operations Lead, Local Foods</div><div class="ci">☎ (512) 614-1212</div><div class="ci">✉ hello@localfoodstexas.com</div><div class="ci"><a href="https://linkedin.com/in/martin-berson-6481449/" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — Austin Food Mag, Community Impact, press roundups</div></div>
+          <div class="cc high"><div class="cn">Benjy Levit</div><div class="ct">Founder / CEO, Local Foods Group (Houston HQ)</div><div class="cb high">● CONFIRMED — company founder, press</div></div>
+          <div class="cc high"><div class="cn">Dylan Murray</div><div class="ct">Co-Founder / Culinary Director</div><div class="cb high">● CONFIRMED — culinary + product decisions</div></div>
+        </div></td></tr>
+
+        <!-- H-12 COUNTER CULTURE -->
+        <tr class="lead-row">
+          <td class="lead-num">H-12</td>
+          <td><div class="lead-name">Counter Culture Restaurant</div><div class="lead-address">5812 Berkman Dr<br><span class="neighborhood">Windsor Park · 78723</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant (Vegan)</span></td>
+          <td><div class="entity-text">Counter Culture Restaurant LLC<br><span style="color:#718096;font-size:11px;">Est. 2009 — 17-year Austin entity. Owned building.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-off">Sales Tax —</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">Jun 5, 2026</span></td>
+          <td class="dnote"><span class="indie">Established independent.</span> Iconic Austin vegan diner reopening after 3-year gap. Loyal community. Target mid-summer 2026. Lead with local/sustainable angle.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Sue Davis</div><div class="ct">Owner / Founder, Counter Culture Restaurant (since 2009)</div><div class="ci">📷 @countercultureatx — Instagram DM works</div><div class="ci">🌐 countercultureaustin.com — contact form</div><div class="cb high">● CONFIRMED — Austin Chronicle, KVUE, VegNews, ATXtoday — widely quoted founder</div></div>
+        </div></td></tr>
+
+        <!-- H-13 POSTINO WESTLAKE -->
+        <tr class="lead-row">
+          <td class="lead-num">H-13</td>
+          <td><div class="lead-name">Postino Westlake</div><div class="lead-address">701 S Capital of Texas Hwy Suite J<br><span class="neighborhood">Village at Westlake · 78746</span></div></td>
+          <td><span class="concept-badge b-chain">Chain — Wine Bar</span></td>
+          <td><div class="entity-text">1301 South Lamar LLC (Upward Projects)<br><span style="color:#718096;font-size:11px;">Phoenix-based chain, ~20 locations nationally</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">Jun 5, 2026</span></td>
+          <td class="dnote"><span class="chain">Multi-unit chain (Phoenix).</span> NAICS 722511. Kayla Wilson is the Austin territory contact. Role recently turned over — verify before calling.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc mh"><div class="cn">Kayla Wilson</div><div class="ct">Area Director — Dallas &amp; Austin, Upward Projects / Postino</div><div class="ci">✉ k[...]@upwardprojects.com (ZoomInfo — verify full address)</div><div class="ci"><a href="https://linkedin.com/in/kayla-a-wilson/" target="_blank">LinkedIn ↗</a></div><div class="cb mh">● MED-HIGH — LinkedIn title confirmed; role recently turned over from prior director — verify tenure before calling</div></div>
+          <div class="cc high"><div class="cn">Lauren Bailey</div><div class="ct">CEO, Upward Projects (corporate fallback)</div><div class="ci"><a href="https://linkedin.com/in/laurenbailey1" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — company founder/CEO</div></div>
+        </div></td></tr>
+
+        <!-- H-14 1 HOTEL AUSTIN -->
+        <tr class="lead-row">
+          <td class="lead-num">H-14</td>
+          <td><div class="lead-name">1 Hotel Austin</div><div class="lead-address">96 Red River St<br><span class="neighborhood">Red River / East Cesar Chavez · 78701</span></div></td>
+          <td><span class="concept-badge b-hotel">Hotel F&amp;B — National Luxury Brand</span></td>
+          <td><div class="entity-text">Starwood 1 Hotel Austin Management LLC<br><span style="color:#718096;font-size:11px;">SH Hotels &amp; Resorts (Dallas TX entity, est. Apr 2026). Opens Aug 2026.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-off">Sales Tax —</span><span class="sig sig-on">Franchise ✓</span></div></td>
+          <td><span class="w-hot">Jun 5, 2026</span></td>
+          <td class="dnote">3 F&amp;B outlets: Alteño Austin (James Beard chef), Watr rooftop, Neighbors café. August 2026. High-volume account. Approach Onal Kucuk for intro to F&amp;B team.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Onal Kucuk</div><div class="ct">Area General Manager, 1 Hotel Austin + 1 Hotel Nashville</div><div class="ci"><a href="https://linkedin.com/in/onal-kucuk-a02177a" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — multiple press releases, Hotel Management coverage</div></div>
+          <div class="cc high"><div class="cn">Nicholas Demasi</div><div class="ct">SVP Restaurants, Day/Nightlife &amp; F&amp;B — SH Hotels &amp; Resorts (corporate F&amp;B decisions)</div><div class="cb high">● CONFIRMED — The Org / SH Hotels org chart</div></div>
+          <div class="cc high"><div class="cn">Johnny Curiel</div><div class="ct">Executive Chef, Alteño Austin (James Beard Award nominee)</div><div class="cb high">● CONFIRMED — CultureMap Austin opening coverage</div></div>
+        </div></td></tr>
+
+        <!-- H-15 THE SIDELINE -->
+        <tr class="lead-row">
+          <td class="lead-num">H-15</td>
+          <td><div class="lead-name">The Sideline Sports Bar &amp; Grill</div><div class="lead-address">3500 E Parmer Ln Unit 3210<br><span class="neighborhood">East Village · Tech Ridge · 78754</span></div></td>
+          <td><span class="concept-badge b-full">Sports Bar / Full-Service</span></td>
+          <td><div class="entity-text">The Side Line Sports Bar and Grill LLC<br><span style="color:#718096;font-size:11px;">Sales tax filed Apr 2026 at Unit 3210</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">Franchise —</span></div></td>
+          <td><span class="w-hot">Jun 3, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent.</span> NAICS 722511. East Village tech corridor. Full food program. Same development: First Watch, Shake Shack, Killer Burger.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">The Side Line Sports Bar and Grill LLC</div><div class="nfnote">No press/web presence found pre-opening.<br><strong>Next step:</strong> TX SOS for "The Side Line Sports Bar and Grill LLC." Or contact East Village leasing office at 3500 E Parmer — they can route to the incoming tenant.</div><div class="cb nf">● RESEARCH NEEDED — TX SOS pull required</div></div>
+        </div></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══════════════════════ WARM LEADS ══════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-warm">WARM — 60–120 Days</span>
+      <div class="section-title">Permit Active, Operator Confirmed</div>
+      <div class="section-desc">Build in progress. Operator confirmed. Reach now for first-call advantage.</div>
+    </div>
+    <table class="leads">
+      <thead><tr>
+        <th>#</th><th>Business / Address</th><th>Concept</th><th>Operator Entity</th><th>Signals</th><th>Permit Issued</th><th>Distributor Notes</th>
+      </tr></thead>
+      <tbody>
+
+        <!-- W-01 MENDOCINO FARMS -->
+        <tr class="lead-row">
+          <td class="lead-num">W-01</td>
+          <td><div class="lead-name">Mendocino Farms</div><div class="lead-address">1100 S Lamar Blvd Unit 1125<br><span class="neighborhood">Lamar Union · 78704</span></div></td>
+          <td><span class="concept-badge b-chain">Chain — Fast Casual</span></td>
+          <td><div class="entity-text">Mendocino Farms Texas LLC<br><span style="color:#718096;font-size:11px;">CA-based chain. 3rd Austin location. Local sourcing brand.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">TABC pending</span></div></td>
+          <td><span class="w-warm">May 1, 2026</span></td>
+          <td class="dnote"><span class="chain">Chain (California).</span> 3,680 SF. "Local sourcing" core brand message = strong distributor angle.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc med"><div class="cn">Whitney Schwartz</div><div class="ct">Director of New Store Openings, Mendocino Farms</div><div class="nfnote" style="margin-top:4px;">Handles supply setup for all new locations — best pre-open contact.</div><div class="cb med">● MED — named in Whatnow Austin grand opening coverage</div></div>
+          <div class="cc high"><div class="cn">Kevin Miles</div><div class="ct">CEO, Mendocino Farms (corporate escalation path)</div><div class="ci"><a href="https://linkedin.com/in/kevin-miles-3568393" target="_blank">LinkedIn ↗</a></div><div class="cb high">● CONFIRMED — company CEO, press</div></div>
+        </div></td></tr>
+
+        <!-- W-02 SAKURA SUSHI -->
+        <tr class="lead-row">
+          <td class="lead-num">W-02</td>
+          <td><div class="lead-name">Sakura Sushi &amp; Mongolian</div><div class="lead-address">9900 S IH 35 Bldg M Unit 100<br><span class="neighborhood">Southpark Meadows · 78748</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant</span></td>
+          <td><div class="entity-text">CL Yummy Inc<br><span style="color:#718096;font-size:11px;">207 Shirley Dr, Buda TX — est. Jul 2024</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">TABC ✓</span><span class="sig sig-off">Sales Tax —</span></div></td>
+          <td><span class="w-warm">May 5, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent — already open.</span> <strong>Sales tax records show first sales Sept 10, 2025.</strong> High-volume protein program. Sushi + Mongolian BBQ = specialty protein + produce needs.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc high"><div class="cn">Leo Liu</div><div class="ct">Owner, CL Yummy Inc / Sakura Sushi &amp; Mongolian</div><div class="ci">☎ (512) 520-8988 — restaurant direct (ask for Leo)</div><div class="ci">🌐 sakuramongolian.com</div><div class="cb high">● CONFIRMED — Community Impact Jun 2025, direct press quote</div></div>
+        </div></td></tr>
+
+        <!-- W-03 GOOD LUCK GRILL -->
+        <tr class="lead-row">
+          <td class="lead-num">W-03</td>
+          <td><div class="lead-name">Good Luck Grill &amp; Tavern</div><div class="lead-address">525 W Howard Ln Unit 100<br><span class="neighborhood">North Austin · 78753</span></div></td>
+          <td><span class="concept-badge b-full">Full-Service Restaurant</span></td>
+          <td><div class="entity-text">MURRFADD LLC<br><span style="color:#718096;font-size:11px;">Est. Feb 2026 · Registered: 1453 Faber Dr, Pflugerville TX</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">TABC pending</span></div></td>
+          <td><span class="w-warm">May 1, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, new operator.</span> <strong>5,000 SF build-out.</strong> NAICS 722511. New entity = zero existing vendor relationships. Prime first-call target.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">MURRFADD LLC · Registered: 1453 Faber Dr, Pflugerville TX 78660 (likely owner's home)</div><div class="nfnote">Entity name = likely family name portmanteau. New entity, no web presence.<br><strong>Options:</strong> (1) TX SOS for "MURRFADD LLC" — names the organizer. (2) Call/visit the job site at 525 W Howard Ln — GC on site can route to owner.</div><div class="cb nf">● RESEARCH NEEDED — TX SOS or job-site contact</div></div>
+        </div></td></tr>
+
+        <!-- W-04 AUSTIN SNOOKER -->
+        <tr class="lead-row">
+          <td class="lead-num">W-04</td>
+          <td><div class="lead-name">Austin Snooker and Billiard Tavern</div><div class="lead-address">2121 E Oltorf St Unit 17-B<br><span class="neighborhood">East Oltorf · 78741</span></div></td>
+          <td><span class="concept-badge b-spec">Billiard Hall / Bar + Food</span></td>
+          <td><div class="entity-text">Austin Snooker and Billiard Tavern LLC<br><span style="color:#718096;font-size:11px;">Owner addr on file: 1917 Willow Creek Dr Apt 107, Austin 78741</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">TABC ✓</span><span class="sig sig-on">Sales Tax ✓</span></div></td>
+          <td><span class="w-warm">May 28, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent, likely owner-operated.</span> Triple-confirmed. <strong>May already be open — first sales Jun 2025 in records.</strong> All three government systems confirmed.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Named</div><div class="ct">Austin Snooker and Billiard Tavern LLC</div><div class="ci">✉ austinsnookerclub@gmail.com — club/league email (may reach owner directly)</div><div class="nfnote" style="margin-top:6px;">Owner's registered address: 1917 Willow Creek Dr Apt 107, Austin TX 78741. Owner-operated concept — email the club or visit in person.<br><strong>Or:</strong> TX SOS for "Austin Snooker and Billiard Tavern LLC."</div><div class="cb nf">● RESEARCH NEEDED — email or in-person visit</div></div>
+        </div></td></tr>
+
+        <!-- W-05 ATX BEGINNINGS -->
+        <tr class="lead-row">
+          <td class="lead-num">W-05</td>
+          <td><div class="lead-name">ATX Beginnings LLC</div><div class="lead-address">3500 E Parmer Ln Unit 12140<br><span class="neighborhood">East Village · Tech Ridge · 78754</span></div></td>
+          <td><span class="concept-badge b-full">Restaurant (TBD)</span></td>
+          <td><div class="entity-text">ATX Beginnings LLC<br><span style="color:#718096;font-size:11px;">Sales tax filed May 2026. Entity est. Sept 2021. Owner: 5309 Hallowell Ct, Austin 78724.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">TABC pending</span></div></td>
+          <td><span class="w-warm">May 28, 2026</span></td>
+          <td class="dnote"><span class="indie">New local entity.</span> Same East Village development as The Sideline. NAICS 722513. Entity est. 2021 = experienced operator launching new concept.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">ATX Beginnings LLC · Registered: 5309 Hallowell Ct, Austin TX 78724</div><div class="nfnote">Entity est. 2021, sales tax only filed May 2026 = deliberate, experienced operator.<br><strong>Next step:</strong> TX SOS for "ATX Beginnings LLC" — 2021 formation docs will name organizer + registered agent. Owner's address is in residential east Austin.</div><div class="cb nf">● RESEARCH NEEDED — TX SOS pull required</div></div>
+        </div></td></tr>
+
+        <!-- W-06 ATX COFFEE AND LOUNGE -->
+        <tr class="lead-row">
+          <td class="lead-num">W-06</td>
+          <td><div class="lead-name">ATX Coffee and Lounge</div><div class="lead-address">3720 Far West Blvd Unit 109<br><span class="neighborhood">Far West · Anderson Mill · 78731</span></div></td>
+          <td><span class="concept-badge b-spec">Coffee / Lounge</span></td>
+          <td><div class="entity-text">ATX Coffee and Lounge LLC<br><span style="color:#718096;font-size:11px;">Est. Feb 2026. Owner: 4202 Gnarl Dr, Austin TX 78731.</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">TABC N/A</span></div></td>
+          <td><span class="w-warm">May 19, 2026</span></td>
+          <td class="dnote"><span class="indie">Independent.</span> <strong>First sales May 29, 2026 — just opened.</strong> NAICS 722515. Recurring consumables. Likely owner-operated.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc med"><div class="cn">Matthew Watson</div><div class="ct">Owner, ATX Coffee and Lounge LLC</div><div class="nfnote">Cross-referenced: entity registered at 4202 Gnarl Dr, Austin TX 78731. BlockShopper property records show Matthew G. and Dawn M. Watson as owners at that address.<br><strong>Best contact:</strong> Visit 3720 Far West Blvd #109 and ask for Matthew Watson.</div><div class="cb med">● MED — property record cross-reference; not confirmed by press</div></div>
+        </div></td></tr>
+
+        <!-- W-07 TOKAMI -->
+        <tr class="lead-row">
+          <td class="lead-num">W-07</td>
+          <td><div class="lead-name">Tokami Austin — 2nd Location</div><div class="lead-address">4477 S Lamar Blvd NB Unit 730<br><span class="neighborhood">Westgate · 78745</span></div></td>
+          <td><span class="concept-badge b-full">Sushi Restaurant</span></td>
+          <td><div class="entity-text">Tokami Austin LLC<br><span style="color:#718096;font-size:11px;">Est. Jun 2025. Owner address: Cypress TX 77429 (Houston suburb).</span></div></td>
+          <td><div class="sigs"><span class="sig sig-on">Permit ✓</span><span class="sig sig-on">Sales Tax ✓</span><span class="sig sig-off">TABC pending</span></div></td>
+          <td><span class="w-warm">May 28, 2026</span></td>
+          <td class="dnote">2nd location. <strong>First sales Feb 2026 — may already be open.</strong> Houston-area owner expanding. Use existing relationship from first location if established.</td>
+        </tr>
+        <tr class="cr"><td colspan="7"><div class="cg">
+          <div class="cc nf"><div class="cn">Owner — Not Yet Identified</div><div class="ct">Tokami Austin LLC · Owner address: Cypress TX 77429 (Houston suburb)</div><div class="ci">📷 @restaurant_tokami — Instagram DM</div><div class="nfnote" style="margin-top:6px;">No press coverage found. Houston-suburb owner opening second-market location.<br><strong>Options:</strong> (1) DM @restaurant_tokami on Instagram. (2) Call Westgate location directly. (3) TX SOS for "Tokami Austin LLC" (est. Jun 2025).</div><div class="cb nf">● RESEARCH NEEDED — Instagram DM or TX SOS</div></div>
+        </div></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EARLY PIPELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-early">EARLY — 90–180 Days</span>
+      <div class="section-title">Permit Stage — Operator Not Yet Named</div>
+      <div class="section-desc">Build confirmed. No operator on file. Use permit # to identify GC — get intro to incoming tenant early.</div>
+    </div>
+    <table class="leads">
+      <thead><tr><th>#</th><th>Address</th><th>Permit Description</th><th>Permit #</th><th>Issued</th><th>Neighborhood</th><th>Contact Path</th></tr></thead>
+      <tbody>
+        <tr class="lead-row"><td class="lead-num">E-01</td><td><div class="lead-name" style="font-size:13px;">5010 W US 290 HWY WB</div><div class="lead-address">Oak Hill · 78735</div></td><td class="dnote">Full rebuild — former Applebee's pad site. New concept TBD.</td><td style="font-size:11px;color:#718096;">2026-064343 PP</td><td><span class="w-early">May 27</span></td><td>Oak Hill</td><td class="dnote">Pull permit → GC contact → ask for tenant. Major investment = serious operator.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-02</td><td><div class="lead-name" style="font-size:13px;">504 Walsh St</div><div class="lead-address">Tarrytown · 78703</div></td><td class="dnote">Restaurant shell finish-out — tenant not yet occupying.</td><td style="font-size:11px;color:#718096;">2026-066843 BP</td><td><span class="w-early">May 28</span></td><td>Tarrytown</td><td class="dnote">High-value neighborhood. GC contact via permit record.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-03</td><td><div class="lead-name" style="font-size:13px;">2142 E 7th St</div><div class="lead-address">East Austin · 78702</div></td><td class="dnote">Change of use → restaurant + retail + services.</td><td style="font-size:11px;color:#718096;">2026-060504 MP</td><td><span class="w-early">Jun 3</span></td><td>East Austin</td><td class="dnote">Active East 7th corridor. Likely independent.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-04</td><td><div class="lead-name" style="font-size:13px;">4700 Loyola Ln Unit 101</div><div class="lead-address">Mueller · 78723</div></td><td class="dnote">Change of use — office to food establishment.</td><td style="font-size:11px;color:#718096;">2026-061536 PP</td><td><span class="w-early">Jun 3</span></td><td>Mueller</td><td class="dnote">Mueller fastest-growing planned neighborhood. Full kitchen build.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-05</td><td><div class="lead-name" style="font-size:13px;">12705 Center Lake Dr Unit 110</div><div class="lead-address">Tech Ridge · 78753</div></td><td class="dnote">Tenant infill shell — kitchen + mechanical. Center: CAVA, Tacodeli, JuiceLand.</td><td style="font-size:11px;color:#718096;">2026-010987 PP</td><td><span class="w-early">May 28</span></td><td>Tech Ridge</td><td class="dnote">Developer signing fast-casual tenants. Monitor TABC/sales tax for operator ID.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-06</td><td><div class="lead-name" style="font-size:13px;">2545 Brockton Dr</div><div class="lead-address">North Burnet · 78758</div></td><td class="dnote">New ground-up construction. AE Green Building.</td><td style="font-size:11px;color:#718096;">2025-122129 EP</td><td><span class="w-early">Jun 1</span></td><td>North Burnet</td><td class="dnote">Longest timeline. Green Building = sustainability-focused operator likely.</td></tr>
+        <tr class="lead-row"><td class="lead-num">E-07</td><td><div class="lead-name" style="font-size:13px;">5900 Westminster Dr Unit 3101</div><div class="lead-address">Windsor Park · 78723</div></td><td class="dnote">1st gen shell — full kitchen from scratch.</td><td style="font-size:11px;color:#718096;">2026-036002 EP</td><td><span class="w-early">Apr 24</span></td><td>Windsor Park</td><td class="dnote">East Austin growth corridor. Pull permit for GC contact.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HOLD -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hold">HOLD</span>
+      <div class="section-title">Verify Before Outreach</div>
+      <div class="section-desc">Chain supply contracts, license restructures, out-of-territory, or ambiguous data.</div>
+    </div>
+    <table class="leads">
+      <thead><tr><th>#</th><th>Business / Address</th><th>Concept</th><th>Issue</th><th>Recommended Action</th></tr></thead>
+      <tbody>
+        <tr class="flag-row"><td class="lead-num">X-01</td><td><div class="lead-name">9901 Brodie Ln Unit 180</div><div class="lead-address">Brodie / Slaughter · 78748</div></td><td><span class="concept-badge b-chain">Possible Franchise</span></td><td class="dnote">Sales tax at Unit 180 shows <strong>Jersey Mike's Subs</strong> (First Texas Subs Group LLC).</td><td class="dnote">Verify unit. If Jersey Mike's: skip — locked national supply chain.</td></tr>
+        <tr class="flag-row"><td class="lead-num">X-02</td><td><div class="lead-name">The Brewtorium</div><div class="lead-address">6015 Dillard Cir · 78752</div></td><td><span class="concept-badge b-spec">Brewery</span></td><td class="dnote">Old BG license surrendered; new BW license May 2026. Possible compliance restructure.</td><td class="dnote">Call to confirm relaunch vs. paperwork change. If relaunch, move to WARM.</td></tr>
+        <tr class="flag-row"><td class="lead-num">X-03</td><td><div class="lead-name">Embassy Suites Arboretum</div><div class="lead-address">9505 Stonelake Blvd · 78759</div></td><td><span class="concept-badge b-hotel">Hotel F&amp;B</span></td><td class="dnote">Corwell Enterprises hotel franchise. National contracts likely.</td><td class="dnote">Pursue only with local/specialty angle corporate contracts don't cover.</td></tr>
+        <tr class="flag-row"><td class="lead-num">X-04</td><td><div class="lead-name">The Wake Stop</div><div class="lead-address">6410 Hudson Bend Rd · 78734</div></td><td><span class="concept-badge b-spec">Lakeside Activity / Bar</span></td><td class="dnote">BQ + CD licenses. Lake Travis. No food sales tax.</td><td class="dnote">Low food value. Beverage/snack only.</td></tr>
+        <tr class="flag-row"><td class="lead-num">X-05</td><td><div class="lead-name">Loraloma Club</div><div class="lead-address">25555 Haynie Flat Rd · 78669</div></td><td><span class="concept-badge b-spec">Private Resort / Hill Country</span></td><td class="dnote">Rural Spicewood — outside Austin delivery routes.</td><td class="dnote">Pursue only if territory includes Spicewood / Hill Country.</td></tr>
+        <tr class="flag-row"><td class="lead-num">X-06</td><td><div class="lead-name">Old Gregg Brewing</div><div class="lead-address">1900 E Howard Ln · 78660</div></td><td><span class="concept-badge b-spec">Brewery</span></td><td class="dnote">Pflugerville ZIP 78660. Expansion, not new concept.</td><td class="dnote">Pursue only if territory includes Pflugerville.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- RESEARCH BAR -->
+<div class="research-bar">
+  <strong>7 contacts require TX SOS entity lookup before outreach:</strong>
+  KS Cafe LLC &nbsp;·&nbsp; Evening Draft LLC &nbsp;·&nbsp; Austin Vampires LLC (The Lobby) &nbsp;·&nbsp; The Side Line Sports Bar and Grill LLC &nbsp;·&nbsp; MURRFADD LLC (Good Luck Grill) &nbsp;·&nbsp; Austin Snooker and Billiard Tavern LLC &nbsp;·&nbsp; Tokami Austin LLC
+  &nbsp;&nbsp;<strong>Tool:</strong> sos.state.tx.us/corp/sosda/index.shtml — ~$1/search. Returns: registered agent, organizer, member/officer names, registered address.
+</div>
+
+<div class="doc-footer">
+  <div><strong>Austin Restaurant Intel</strong> &nbsp;·&nbsp; New Opening Lead List &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; Food &amp; Beverage Distributor Edition</div>
+  <div>Data: TABC new license filings &nbsp;·&nbsp; Austin Open Data commercial permits &nbsp;·&nbsp; TX Comptroller Sales Tax &amp; Franchise Tax &nbsp;·&nbsp; Web / press / LinkedIn enrichment</div>
+  <div>Confidence: CONFIRMED = press-named or verified LinkedIn &nbsp;·&nbsp; MED-HIGH = ZoomInfo/LinkedIn pattern &nbsp;·&nbsp; MED = property/entity cross-reference &nbsp;·&nbsp; RESEARCH NEEDED = TX SOS required</div>
+  <div style="margin-top:8px;"><strong>Confidential.</strong> All contacts require verification before outreach. No contact information has been fabricated or AI-inferred — all sourced from public records, press, or verified profiles. Single-category exclusive license.</div>
+</div>
+
+</body>
+</html>

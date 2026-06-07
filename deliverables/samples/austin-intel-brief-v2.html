@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Austin Restaurant Intel — June 2026</title>
+<style>
+/* ── Reset & base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #0f2044;
+  --navy-mid:    #1e3a6e;
+  --blue:        #4a7fc1;
+  --blue-light:  #d6e6f7;
+  --gold:        #b8882a;
+  --gold-light:  #fdf3dc;
+  --green:       #1a5c38;
+  --green-light: #d4edda;
+  --amber:       #856404;
+  --amber-light: #fff3cd;
+  --red:         #721c24;
+  --red-light:   #f8d7da;
+  --gray:        #6b7280;
+  --gray-light:  #f4f6f9;
+  --rule:        #e2e8f0;
+  --text:        #1a1a2e;
+  --text-2:      #4a5568;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10pt;
+  color: var(--text);
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── Print ─────────────────────────────────────────────────── */
+@page { size: letter; margin: 0; }
+@media print {
+  .page-break { page-break-before: always; }
+  .no-break   { page-break-inside: avoid; }
+}
+.page-break { page-break-before: always; }
+
+/* ── Cover ─────────────────────────────────────────────────── */
+.cover {
+  min-height: 100vh;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 80px;
+}
+.cover-eyebrow {
+  font-size: 8.5pt; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 28px; font-weight: 600;
+}
+.cover-title {
+  font-size: 46pt; font-weight: 800; line-height: 1.05;
+  color: #fff; margin-bottom: 28px;
+}
+.cover-title span { color: var(--gold); }
+.cover-sub {
+  font-size: 13pt; color: #a8bdd4; line-height: 1.6;
+  max-width: 580px; margin-bottom: 52px;
+}
+.cover-rule { border: none; border-top: 1px solid #2a4060; margin-bottom: 24px; }
+.cover-meta { font-size: 9pt; color: #5a7090; line-height: 1.8; }
+.cover-meta strong { color: #8bacc8; }
+.cover-sample-note {
+  margin-top: 20px;
+  font-size: 9.5pt;
+  color: #8bacc8;
+  font-style: italic;
+  border-top: 1px solid #2a4060;
+  padding-top: 16px;
+}
+
+/* ── Summary table page ────────────────────────────────────── */
+.summary-page { padding: 52px 56px; }
+.page-title {
+  font-size: 20pt; font-weight: 700; color: var(--navy);
+  margin-bottom: 6px;
+}
+.page-subtitle { font-size: 10pt; color: var(--text-2); margin-bottom: 28px; }
+
+.summary-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+.summary-table thead tr { background: var(--navy); }
+.summary-table th {
+  color: #fff; padding: 9px 10px; text-align: left;
+  font-weight: 600; font-size: 8pt; letter-spacing: 0.3px;
+}
+.summary-table td {
+  padding: 7px 10px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; line-height: 1.4;
+}
+.summary-table tr:nth-child(even) td { background: var(--gray-light); }
+
+.tier-group-label td {
+  background: #1e2d4a !important;
+  color: #8bacc8;
+  font-size: 7.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px 10px;
+  border: none;
+}
+
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 10px;
+  font-size: 7.5pt; font-weight: 600; white-space: nowrap;
+}
+.badge-hero   { background: var(--gold-light); color: var(--gold); }
+.badge-active { background: var(--green-light); color: var(--green); }
+.badge-watch  { background: #e9ecef; color: #495057; }
+.badge-open   { background: var(--green-light); color: var(--green); }
+.badge-tabc   { background: var(--amber-light); color: var(--amber); }
+.badge-pre    { background: var(--red-light); color: var(--red); }
+.badge-rebuild{ background: #e3d5f7; color: #4a1d96; }
+
+/* ── Section dividers ──────────────────────────────────────── */
+.section-divider {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 72px 80px;
+}
+.sd-hero   { background: var(--navy); }
+.sd-active { background: #0d3321; }
+.sd-watch  { background: #2a2a35; }
+
+.sd-rule   { border: none; height: 2px; margin-bottom: 32px; }
+.sd-hero .sd-rule   { background: var(--gold); }
+.sd-active .sd-rule { background: #3ab477; }
+.sd-watch  .sd-rule { background: #888; }
+
+.sd-tier {
+  font-size: 8.5pt; letter-spacing: 4px; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 16px;
+}
+.sd-hero .sd-tier   { color: var(--gold); }
+.sd-active .sd-tier { color: #3ab477; }
+.sd-watch  .sd-tier { color: #aaa; }
+
+.sd-name {
+  font-size: 52pt; font-weight: 900; line-height: 1;
+  color: #fff; margin-bottom: 24px;
+}
+.sd-desc {
+  font-size: 13pt; line-height: 1.6; max-width: 540px;
+}
+.sd-hero .sd-desc   { color: #8bacc8; }
+.sd-active .sd-desc { color: #7ac8a0; }
+.sd-watch  .sd-desc { color: #999; }
+
+.sd-count {
+  margin-top: 40px; font-size: 9pt; letter-spacing: 1px;
+  padding-top: 20px; border-top: 1px solid;
+}
+.sd-hero .sd-count   { color: #4a6a90; border-color: #2a4060; }
+.sd-active .sd-count { color: #3a7a5a; border-color: #1a4a30; }
+.sd-watch  .sd-count { color: #666; border-color: #444; }
+
+/* ── Lead pages — Hero & Active ────────────────────────────── */
+.lead-page { padding: 44px 52px; min-height: 100vh; }
+
+.lead-header { margin-bottom: 24px; padding-bottom: 16px; }
+.lead-tier-tag {
+  font-size: 7.5pt; letter-spacing: 3px; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 6px;
+}
+.tier-tag-hero   { color: var(--gold); }
+.tier-tag-active { color: #3ab477; }
+
+.lead-title {
+  font-size: 21pt; font-weight: 800; color: var(--navy);
+  line-height: 1.1; margin-bottom: 6px;
+}
+.lead-concept { font-size: 10.5pt; color: var(--text-2); margin-bottom: 12px; }
+.lead-badges  { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.hero-rule   { border: none; border-bottom: 3px solid var(--gold); margin-bottom: 0; }
+.active-rule { border: none; border-bottom: 3px solid var(--navy); margin-bottom: 0; }
+
+/* ── Two column ────────────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 24px; }
+
+.col h3 {
+  font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; margin: 22px 0 9px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--rule);
+}
+.col h3:first-child { margin-top: 0; }
+.hero-page  .col h3 { color: var(--gold); }
+.active-page .col h3 { color: var(--blue); }
+
+/* ── Overview table ────────────────────────────────────────── */
+.ov { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+.ov td { padding: 5px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.ov td:first-child { color: var(--gray); width: 40%; padding-right: 10px; font-size: 9pt; }
+
+.rev-note { font-size: 8pt; color: var(--gray); margin-top: 9px; line-height: 1.5; font-style: italic; }
+
+/* ── Location list ─────────────────────────────────────────── */
+.loc-list { padding-left: 18px; font-size: 9.5pt; margin-top: 2px; }
+.loc-list li { padding: 4px 0; border-bottom: 1px solid var(--rule); color: var(--text); }
+
+/* ── Opportunity ───────────────────────────────────────────── */
+.opportunity-text { font-size: 9.5pt; color: var(--text); line-height: 1.55; margin-bottom: 8px; }
+.vendor-line { font-size: 9.5pt; color: var(--text-2); margin-bottom: 2px; }
+.vendor-line strong { color: var(--text); }
+
+.first-move {
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-left: 3px solid var(--gold);
+  background: var(--gold-light);
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+.first-move-label {
+  display: block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.first-move-text { color: #5a3e00; }
+
+.intel-note {
+  margin-top: 8px;
+  font-size: 8.5pt;
+  color: var(--gray);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Permit record ─────────────────────────────────────────── */
+.permit-block {
+  margin-top: 4px;
+  padding: 10px 12px;
+  background: var(--gray-light);
+  border-radius: 3px;
+  font-size: 9pt;
+}
+.permit-block table { width: 100%; border-collapse: collapse; }
+.permit-block td { padding: 3px 0; vertical-align: top; }
+.permit-block td:first-child { color: var(--gray); width: 38%; font-size: 8.5pt; }
+
+/* ── Contact cards ─────────────────────────────────────────── */
+.contact-card {
+  padding: 12px 14px;
+  border-radius: 4px;
+  margin-bottom: 11px;
+  border: 1px solid #dde4ef;
+}
+.hero-page   .contact-card { border-left: 3px solid var(--gold); background: #fffdf5; }
+.active-page .contact-card { border-left: 3px solid var(--navy); background: #f7f9fc; }
+
+.cc-name  { font-size: 11pt; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.cc-title { font-size: 8.5pt; color: var(--blue); margin-bottom: 9px; }
+.cc-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+.cc-table td { padding: 3px 0; vertical-align: top; }
+.cc-label { color: var(--gray); width: 30%; padding-right: 6px; font-size: 8.5pt; }
+
+.no-dm {
+  padding: 14px; background: var(--gray-light); border-radius: 4px;
+  font-style: italic; color: var(--gray); font-size: 9.5pt;
+  margin-bottom: 11px;
+}
+
+.bio { font-size: 9.5pt; color: var(--text-2); line-height: 1.55; margin-top: 4px; }
+
+/* ── Watch List cards ──────────────────────────────────────── */
+.watch-grid {
+  padding: 44px 52px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.watch-card {
+  border: 1px solid #d0d5dd;
+  border-left: 4px solid #8899aa;
+  border-radius: 4px;
+  padding: 20px 24px;
+  background: #f9fafb;
+}
+.wc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.wc-title  { font-size: 13pt; font-weight: 700; color: #3a4a5a; }
+.wc-concept{ font-size: 9.5pt; color: var(--gray); margin-top: 3px; }
+.wc-body   { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.wc-section { margin-bottom: 12px; }
+.wc-label  {
+  font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #8899aa; margin-bottom: 5px;
+}
+.wc-text   { font-size: 9.5pt; color: #3a4a5a; line-height: 1.5; }
+
+.watch-first-move {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-left: 3px solid #8899aa;
+  background: #f0f2f5;
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+.watch-first-move .first-move-label { color: #6677aa; }
+.watch-first-move .first-move-text  { color: #3a4a5a; }
+
+.watch-permit {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #dde4ef;
+  border-radius: 3px;
+  font-size: 8.5pt;
+  color: var(--gray);
+  line-height: 1.5;
+}
+.watch-permit strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-eyebrow">Confidential Intelligence Brief · June 2026</div>
+  <div class="cover-title">Austin<br><span>Restaurant</span><br>Intel</div>
+  <div class="cover-sub">Early-signal lead profiles for new restaurant openings in Austin, TX — sourced from city permits, TABC filings, and Texas Comptroller data before any public announcement.</div>
+  <hr class="cover-rule">
+  <div class="cover-meta">
+    <strong>Report date:</strong> June 5, 2026 &nbsp;&nbsp;
+    <strong>Leads:</strong> 13 &nbsp;&nbsp;
+    <strong>Market:</strong> Austin, TX (Travis County) &nbsp;&nbsp;
+    <strong>Classification:</strong> Confidential — Not for redistribution
+  </div>
+  <div class="cover-sample-note">
+    Sample brief — this is what your category-exclusive monthly subscription delivers. One metro. Non-competing vendor categories only.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SUMMARY TABLE
+═══════════════════════════════════════════════════════════ -->
+<div class="summary-page page-break">
+  <div class="page-title">All Leads — At a Glance</div>
+  <div class="page-subtitle">Sorted by buyer value. Hero tier: portfolio operators where one call opens multiple venue relationships. Watch List: operator not yet identified — enrichment in progress.</div>
+
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Business</th>
+        <th>Signal</th>
+        <th>Locations</th>
+        <th>Est. Revenue</th>
+        <th>Decision Maker</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tier-group-label"><td colspan="8">— Hero Tier —</td></tr>
+      <tr>
+        <td><span class="badge badge-hero">Hero</span></td>
+        <td><strong>Bob Woody Portfolio</strong> (Rainey Tavern)</td>
+        <td><span class="badge badge-tabc">TABC Filed</span></td>
+        <td>~20–30 venues</td>
+        <td>$15M–$30M/yr</td>
+        <td>Bob Woody</td>
+        <td>(512) 658-2491</td>
+        <td>bobewoody@gmail.com</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-hero">Hero</span></td>
+        <td><strong>Amir Hajimaleki Portfolio</strong> (Silk Road Hospitality)</td>
+        <td><span class="badge badge-open">Open</span></td>
+        <td>7 venues, 5 brands</td>
+        <td>$12M–$20M/yr</td>
+        <td>Amir Hajimaleki</td>
+        <td>(512) 797-9430 *unverified*</td>
+        <td>info@districtaustin.com</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-hero">Hero</span></td>
+        <td><strong>Red Car (Austin)</strong> — Domain Northside, 30,160 SF</td>
+        <td><span class="badge badge-pre">Pre-Announcement</span></td>
+        <td>Unknown</td>
+        <td>$8M–$20M+/yr</td>
+        <td>Not identified</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+
+      <tr class="tier-group-label"><td colspan="8">— Active Opens —</td></tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Phoebe's Diner</strong> (Winebelly Group)</td>
+        <td><span class="badge badge-open">Open</span></td>
+        <td>4 (all Austin)</td>
+        <td>$8M–$14M/yr</td>
+        <td>Camden Stuerzenberger</td>
+        <td>(512) 487-1569</td>
+        <td>camden@austinwinebelly.com *</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Terrible Love</strong></td>
+        <td><span class="badge badge-tabc">TABC Filed</span></td>
+        <td>1 (expanding)</td>
+        <td>$300K–$800K/yr</td>
+        <td>Brian Knowles</td>
+        <td>—</td>
+        <td>info@terriblelovecoffee.com</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Applebee's</strong> / SSCP Management (Dharod family)</td>
+        <td><span class="badge badge-rebuild">Full Rebuild</span></td>
+        <td>72 Applebee's</td>
+        <td>$185M–$230M/yr</td>
+        <td>Chris Dharod</td>
+        <td>(972) 644-9494</td>
+        <td>cdharod@sscpmanagement.com</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Moxies</strong> (Van Nostren Enterprises LP)</td>
+        <td><span class="badge badge-tabc">TABC Filed</span></td>
+        <td>60+ (Canada)</td>
+        <td>$3M–$6M/yr</td>
+        <td>Corporate — Winnipeg</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Raising Cane's Chicken Fingers</strong></td>
+        <td><span class="badge badge-open">Confirmed Open</span></td>
+        <td>700+ national</td>
+        <td>$3M–$4M/yr (location)</td>
+        <td>Dale Goss, SVP RE</td>
+        <td>—</td>
+        <td>dgoss@raisingcanes.com *</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Lima Criolla</strong> (I.K. Osorio Investments LLC)</td>
+        <td><span class="badge badge-pre">Pre-Announcement</span></td>
+        <td>2 (Austin + Round Rock)</td>
+        <td>$1.2M–$2.0M/yr</td>
+        <td>Susana Vivanco</td>
+        <td>(512) 323-5404</td>
+        <td>info@limacriolla.com</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-active">Active</span></td>
+        <td><strong>Death &amp; Taxes ATX LP</strong> (unnamed Austin concept)</td>
+        <td><span class="badge badge-pre">Pre-Announcement</span></td>
+        <td>2 (El Paso + Austin)</td>
+        <td>$800K–$1.5M/yr</td>
+        <td>Kassi Foster-Nava</td>
+        <td>(915) 529-5683</td>
+        <td>—</td>
+      </tr>
+
+      <tr class="tier-group-label"><td colspan="8">— Watch List —</td></tr>
+      <tr>
+        <td><span class="badge badge-watch">Watch</span></td>
+        <td><strong>Tokami Austin</strong> (sushi, S Lamar)</td>
+        <td><span class="badge badge-tabc">TABC Filed</span></td>
+        <td>1 (first US location)</td>
+        <td>$800K–$1.5M/yr</td>
+        <td>Not identified</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-watch">Watch</span></td>
+        <td><strong>Unknown</strong> — 3720 Far West Blvd Unit 109</td>
+        <td><span class="badge badge-pre">Pre-Announcement</span></td>
+        <td>Unknown</td>
+        <td>$400K–$900K/yr</td>
+        <td>Not identified</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-watch">Watch</span></td>
+        <td><strong>Unknown</strong> — Lakeline H Mart Suite 112</td>
+        <td><span class="badge badge-pre">Pre-Announcement</span></td>
+        <td>Unknown</td>
+        <td>$500K–$1.2M/yr</td>
+        <td>Not identified</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:8pt;color:#999;margin-top:12px;">* Email inferred from confirmed domain. Treat as unverified until confirmed. Full verification notes on individual lead pages.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION DIVIDER — HERO
+═══════════════════════════════════════════════════════════ -->
+<div class="section-divider sd-hero page-break">
+  <hr class="sd-rule">
+  <div class="sd-tier">Tier One</div>
+  <div class="sd-name">Hero<br>Tier</div>
+  <div class="sd-desc">Portfolio operators. One call opens multiple venue relationships simultaneously. Highest single-outreach leverage in this brief.</div>
+  <div class="sd-count">3 leads &nbsp;·&nbsp; Combined est. revenue: $35M–$70M/yr &nbsp;·&nbsp; Combined est. venues: 30+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO 1 — BOB WOODY / RAINEY TAVERN
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page hero-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-hero">Hero Tier</div>
+    <div class="lead-title">Bob Woody Portfolio</div>
+    <div class="lead-concept">Bar and drinking place · Rainey Street new build · Part of a ~20–30 venue Austin portfolio</div>
+    <div class="lead-badges">
+      <span class="badge badge-tabc">TABC Filed · MB Liquor License Active</span>
+      <span class="badge badge-hero">~20–30 Austin Venues</span>
+    </div>
+    <hr class="hero-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>Early 1990s — 30+ years operating Austin bars. 71 Rainey St purchased 2019.</td></tr>
+        <tr><td>Locations</td><td>~20–30 active venues across Austin (Rainey Tavern is latest addition)</td></tr>
+        <tr><td>Employees (est.)</td><td>200–350 across full portfolio (confirmed at 350 in 2012; adjusted for current portfolio size)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$15M–$30M/yr across full portfolio</td></tr>
+        <tr><td>Est. open</td><td>Late 2026</td></tr>
+        <tr><td>Website</td><td>bobwoody.com</td></tr>
+        <tr><td>Instagram</td><td>@woodyswest6th (Woody's Bar) · additional venue accounts across portfolio</td></tr>
+      </table>
+      <p class="rev-note">Confirmed baseline: Bob Woody stated $25M/yr revenue across 26 venues in 2012 (Community Impact). Adjusted range accounts for COVID-era contraction and current estimated 20–28 active venues at $700K–$2.8M/venue average.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>71 Rainey St — Under construction, new build (this permit)</li>
+        <li>Blind Pig Pub — 317 E 6th St</li>
+        <li>Woody's Bar — 715 W 6th St</li>
+        <li>Shakespeare's Pub — 314 E 6th St</li>
+        <li>Opal Divine's — 700 W 6th St</li>
+        <li>J. Black's — 512 Trinity St</li>
+        <li>Brew Exchange — 706 W 6th St</li>
+        <li>Buford's Beer Garden — 2001 Barton Springs Rd</li>
+        <li>+ additional venues (~20–30 total across Austin)</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">One phone call to Bob Woody is a conversation about 20+ venues simultaneously — not just Rainey Tavern. He self-publishes his personal cell and email because he expects to be called. New build on Rainey needs everything from scratch: food distribution, insurance, POS, linen. Portfolio scale means any vendor category represents a meaningful annual contract.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance (portfolio-level policy), food/bev distribution (multi-venue volume), POS/payments, linen/uniforms, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Call Bob Woody directly — self-published cell, expects to be called. One conversation covers 20+ venues.</span>
+      </div>
+      <p class="intel-note">Phone (512) 658-2491 confirmed as wireless/cell by multiple public records databases. Email and phone both self-published on bobwoody.com. Highest single-call leverage on this list.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>71 Rainey St, Austin TX 78701</td></tr>
+        <tr><td>Filed</td><td>2026-03-17</td></tr>
+        <tr><td>Description</td><td>Development of a restaurant and two unisex restrooms — new ground-up construction on Rainey Street entertainment corridor.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Bob Woody</div>
+        <div class="cc-title">Owner — ~20–30 Austin bars and venues. Board Chair, Texas Bar and Nightclub Alliance.</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 658-2491 — personal cell, self-published on bobwoody.com</td></tr>
+          <tr><td class="cc-label">Email</td><td>bobewoody@gmail.com — self-published on bobwoody.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/bob-woody-9852b870</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Clay Woody</div>
+        <div class="cc-title">Son — involved in operations; spoke at Austin Historic Landmark Commission re: Rainey St property (May 2021)</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>—</td></tr>
+          <tr><td class="cc-label">Email</td><td>—</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>—</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Known as the 'Mayor of Sixth Street.' Has owned and operated Austin bars since the early 1990s. One of Austin's most prolific independent bar operators. Portfolio peaked at 26 venues with $25M revenue in 2012. Former president of three downtown Austin associations. Purchased 71 Rainey St for $2.65M in 2019 and held it through full redevelopment of the corridor. Son Clay Woody is also involved in operations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO 2 — AMIR HAJIMALEKI / SILK ROAD HOSPITALITY
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page hero-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-hero">Hero Tier</div>
+    <div class="lead-title">Amir Hajimaleki Portfolio</div>
+    <div class="lead-concept">Multi-concept restaurant group — 7 venues across 5 brands · Silk Road Hospitality Group LLC · All Austin TX</div>
+    <div class="lead-badges">
+      <span class="badge badge-open">Open · All 7 Venues Operating</span>
+      <span class="badge badge-hero">7 Venues · 5 Brands</span>
+    </div>
+    <hr class="hero-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>2013 — District Kitchen + Cocktails was the founding concept (13 years in business)</td></tr>
+        <tr><td>Locations</td><td>7 operating venues across 5 brands</td></tr>
+        <tr><td>Employees (est.)</td><td>100–175 total across 7 venues</td></tr>
+        <tr><td>Revenue (est.)</td><td>$12M–$20M/yr across full portfolio</td></tr>
+        <tr><td>Est. open</td><td>Open — all 7 venues currently operating</td></tr>
+        <tr><td>Website</td><td>royaaustin.com · districtaustin.com · oasthouseaustin.com · keepersaustin.com · daisylounge.com</td></tr>
+        <tr><td>Instagram</td><td>@royaaustin · @district_kitchen · @oasthouseatx · @keepersaustin · @daisyloungeatx</td></tr>
+      </table>
+      <p class="rev-note">7 Austin venues: 4 full-service restaurants × $2.2M avg/yr + 3 bar/limited concepts × $1.0M avg/yr = ~$11.8M. Range adjusted upward for Roya (fine dining, higher check average) and portfolio maturity.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>Roya (Persian fine dining) — 7858 Shoal Creek Blvd, opened Feb 2026</li>
+        <li>District Kitchen + Cocktails (North) — 7858 Shoal Creek Blvd Bldg B</li>
+        <li>District Kitchen + Cocktails (South) — 5900 W Slaughter Ln</li>
+        <li>Oasthouse Kitchen + Bar (North) — 8300 N FM 620</li>
+        <li>Oasthouse Kitchen + Bar (South) — 5701 W Slaughter Ln</li>
+        <li>Keepers Coastal Kitchen — 5701 W Slaughter Ln</li>
+        <li>Daisy Lounge (speakeasy) — 5701 W Slaughter Ln, opened Spring 2024</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">7 venues = the highest confirmed vendor volume among independent operators in this dataset. One relationship covers food distribution, insurance, linen, and POS across all locations. Amir is active on Instagram (@chefamirhajimaleki) and has all venues tagged in his bio — direct DM outreach is viable and likely to land.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance (multi-venue portfolio policy), food/bev distribution, POS/payments, linen/uniforms, equipment</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">DM @chefamirhajimaleki on Instagram — personal account, 1,865 followers, all 6 venues tagged in bio. One message reaches a 7-venue operator.</span>
+      </div>
+      <p class="intel-note">Personal phone (512) 797-9430 sourced from public records aggregator (OfficialUSA) — treat as a lead to verify, not a confirmed number. Best confirmed approach: DM @chefamirhajimaleki on Instagram or email info@districtaustin.com. Roya front desk: (512) 284-8469.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>7858 Shoal Creek Blvd Suite C, Austin TX 78757</td></tr>
+        <tr><td>Filed</td><td>2025-10-01</td></tr>
+        <tr><td>Description</td><td>New upscale Persian restaurant — Roya. Opened February 11, 2026 in former Shortie's Pizza space. Included because the operator is the highest-volume multi-concept target in this dataset.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Amir Hajimaleki</div>
+        <div class="cc-title">Founder and Owner — Silk Road Hospitality Group LLC. Netflix Sugar Rush winner.</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 797-9430  *public records — treat as unverified until confirmed*</td></tr>
+          <tr><td class="cc-label">Email</td><td>info@districtaustin.com  (District Kitchen — primary business email)</td></tr>
+          <tr><td class="cc-label">Email (alt)</td><td>contactus@daisylounge.com · info@keepersaustin.com · oh2@oasthouseaustin.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/amir-hajimaleki-57538421</td></tr>
+          <tr><td class="cc-label">Instagram</td><td>@chefamirhajimaleki — personal account, 1,865 followers, all 6 venues tagged in bio</td></tr>
+          <tr><td class="cc-label">Facebook</td><td>facebook.com/amir.hajimaleki</td></tr>
+          <tr><td class="cc-label">Twitter/X</td><td>@amirhajimaleki</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Ali Hajimaleki</div>
+        <div class="cc-title">Co-Founder — District Kitchen + Cocktails</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 284-7837 (District Kitchen North)</td></tr>
+          <tr><td class="cc-label">Email</td><td>info@districtaustin.com</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Austin-based multi-concept restaurateur. Co-founded District Kitchen + Cocktails with his brother Ali Hajimaleki in 2013. Has since grown to 7 venues across 5 distinct brands, all in Austin. Won Netflix Sugar Rush cooking competition. Roya (opened Feb 2026) is his first fine-dining concept. Actively building — one new concept every 1–2 years.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO 3 — RED CAR (DOMAIN NORTHSIDE)
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page hero-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-hero">Hero Tier</div>
+    <div class="lead-title">Red Car (Austin) — Domain Northside</div>
+    <div class="lead-concept">Unknown operator · 30,160 SF · Largest new restaurant footprint at Domain Northside by 2x · No public announcement</div>
+    <div class="lead-badges">
+      <span class="badge badge-pre">Pre-Announcement · No TABC · No Press · No Social</span>
+      <span class="badge badge-hero">30,160 SF</span>
+    </div>
+    <hr class="hero-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>Unknown — operator not yet identified</td></tr>
+        <tr><td>Locations</td><td>Unknown — first Austin location confirmed; national brand status unknown</td></tr>
+        <tr><td>Employees (est.)</td><td>150–300+ at full operation (based on comparable large-format Austin restaurants)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$8M–$20M+/yr at scale</td></tr>
+        <tr><td>Sq footage</td><td>30,160 SF — 2x the size of any existing restaurant at Domain Northside</td></tr>
+        <tr><td>Est. open</td><td>Late 2026 – Early 2027 (6–12 month buildout from May 2026 permits)</td></tr>
+        <tr><td>Website</td><td>— Not yet announced</td></tr>
+        <tr><td>Instagram</td><td>— Not yet announced</td></tr>
+      </table>
+      <p class="rev-note">30,160 SF full-service restaurant. Comparable: Culinary Dropout (Trinity-built, Domain Northside) ~$10M+/yr. Industry benchmark: large-format Austin restaurant $300–$600/SF/yr revenue = $9M–$18M at full size. Food hall could exceed $20M.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>11821 Rock Rose Ave, Unit 135, Domain Northside, Austin TX 78758</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">This is the highest-value pre-announcement lead in Austin right now. 30,160 SF means the operator will need vendor contracts for food distribution, insurance, POS, linen, signage, and equipment — all simultaneously and before they have any established supplier relationships. No vendor knows this is coming. Zero competition for the first call.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Food/bev distribution (high volume from day one), commercial insurance (high-value policy), POS/payments, linen/uniforms, signage, kitchen equipment</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Call Trinity Constructors at (512) 576-0636 and ask for the project manager on 'Red Car Austin' — GCs share client names freely when asked conversationally.</span>
+      </div>
+      <p class="intel-note">Three paths to the decision maker: (1) Call Trinity Constructors at (512) 576-0636 and ask for the project manager on 'Red Car Austin' — GCs share client names freely when asked conversationally. (2) Call Northwood Retail leasing contact Brian Hawthorne at (512) 758-7937 — he manages restaurant leasing for Domain Northside. (3) Monitor TABC public filings at apps.tabc.texas.gov/publicinquiry for 11821 Rock Rose Ave — the alcohol license application will name the operator and managing member.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>11821 Rock Rose Ave, Unit 135, Domain Northside, Austin TX 78758</td></tr>
+        <tr><td>Filed</td><td>2026-05-11</td></tr>
+        <tr><td>Description</td><td>Change of Use from Retail to Restaurant — 30,160 SF. Largest new restaurant footprint at Domain Northside by a factor of 2x. GC is Trinity Constructors (same firm that built Haywire, Culinary Dropout, Sixty Vines, and Ema at Domain Northside).</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="no-dm">Operator not yet publicly identified. Zero press coverage, zero TABC filing, zero social media presence as of June 2026. Use back-channel contacts at right to reach the client.</div>
+      <div class="contact-card">
+        <div class="cc-name">Justin Blackburn</div>
+        <div class="cc-title">CEO, Trinity Constructors — General Contractor on this project. Knows the client.</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 576-0636</td></tr>
+          <tr><td class="cc-label">Email</td><td>trinityconstructors.com/contact</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/company/trinity-constructors-inc-</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Brian Hawthorne</div>
+        <div class="cc-title">Leasing Contact — Northwood Retail (Domain Northside property manager)</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 758-7937</td></tr>
+          <tr><td class="cc-label">Website</td><td>northwoodretail.com</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Operator has not been publicly identified. Zero press coverage, zero TABC filing, zero social media presence as of June 2026. The project name "Red Car (Austin)" is confirmed in Trinity Constructors' active portfolio listing. Trinity has built every major restaurant at Domain Northside including Haywire, Culinary Dropout, Sixty Vines, and Ema — their client list runs FB Society and Fox Restaurant Concepts. At 30,160 SF this is a well-funded operator making a major market entry.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION DIVIDER — ACTIVE OPENS
+═══════════════════════════════════════════════════════════ -->
+<div class="section-divider sd-active page-break">
+  <hr class="sd-rule">
+  <div class="sd-tier">Tier Two</div>
+  <div class="sd-name">Active<br>Opens</div>
+  <div class="sd-desc">Operators confirmed or in TABC process. Decision makers identified. Ready for direct outreach.</div>
+  <div class="sd-count">7 leads &nbsp;·&nbsp; Combined est. revenue: $210M–$265M/yr &nbsp;·&nbsp; Includes franchise, indie, and first-US-market operators</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 1 — PHOEBE'S DINER
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Phoebe's Diner</div>
+    <div class="lead-concept">Full-service diner — breakfast and brunch, smoked meats, full bar · Winebelly Group · 4 locations across Austin TX</div>
+    <div class="lead-badges">
+      <span class="badge badge-open">Open · TABC MB License Active</span>
+      <span class="badge badge-active">4 Austin Locations</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>2017 — original location on W Oltorf St (9 years in business)</td></tr>
+        <tr><td>Locations</td><td>4 locations, all Austin TX</td></tr>
+        <tr><td>Employees (est.)</td><td>80–140 total across 4 locations (est. 20–35 per location)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$8M–$14M/yr</td></tr>
+        <tr><td>Est. open</td><td>Open — April 7, 2026</td></tr>
+        <tr><td>Website</td><td>phoebesdiner.com</td></tr>
+        <tr><td>Instagram</td><td>@phoebesdiner (5,801 followers)</td></tr>
+      </table>
+      <p class="rev-note">4 Austin full-service brunch diners, single daypart (7 AM–3 PM). Industry benchmark: successful Austin brunch concept $1.5M–$3.5M/location/yr. 4 locations × $2.5M average = ~$10M. Range: $8M–$14M.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>533 W Oltorf St, Austin TX 78704 — Flagship, opened 2017</li>
+        <li>408 W 11th St #100, Austin TX 78701 — Downtown, opened 2021</li>
+        <li>12001 Burnet Rd, Austin TX 78758 — Gracy Farms, opened January 2024</li>
+        <li>9901 Brodie Ln #120, Austin TX 78748 — Shady Hollow, opened April 7, 2026</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Fastest-growing independent diner group in Austin — 3 new locations in 3 years and still expanding. 4 locations means significant vendor volume. Two clear decision makers: Camden handles culinary and procurement; Eric handles business contracts.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Food/bev distribution (4-location volume), commercial insurance, POS/payments, linen/uniforms, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Call (512) 243-6688 (Brodie location) or email camden@austinwinebelly.com — direct line to culinary procurement.</span>
+      </div>
+      <p class="intel-note">Email addresses are inferred from the confirmed @austinwinebelly.com domain (ZoomInfo confirms domain; addresses are first-name pattern). Phoebe's Diner Brodie direct line: (512) 243-6688. Contact form at phoebesdiner.com/contact also reaches the group.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>9901 Brodie Ln, Unit 180, Austin TX 78748</td></tr>
+        <tr><td>Filed</td><td>2026-05-14</td></tr>
+        <tr><td>Description</td><td>Change of use to create a restaurant in existing unit — new grease trap installation and interior buildout. Opened as Phoebe's Diner 4th location April 7, 2026.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Camden Stuerzenberger</div>
+        <div class="cc-title">Chef / Partner — culinary direction and procurement</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 487-1569 (Winebelly Group HQ)</td></tr>
+          <tr><td class="cc-label">Email</td><td>camden@austinwinebelly.com  *inferred from confirmed domain*</td></tr>
+          <tr><td class="cc-label">Email (alt)</td><td>cstuerzenberger@austinwinebelly.com  *try if above bounces*</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/camden-stuerzenberger-aa19777a</td></tr>
+          <tr><td class="cc-label">Facebook</td><td>facebook.com/camden.stuerzenberger</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Eric Tran</div>
+        <div class="cc-title">Co-Founder / Partner — business and operations</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 487-1569 (Winebelly Group HQ)</td></tr>
+          <tr><td class="cc-label">Email</td><td>eric@austinwinebelly.com  *inferred from confirmed domain*</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/eric-tran-234669147</td></tr>
+          <tr><td class="cc-label">Instagram</td><td>@e27tran (personal)</td></tr>
+          <tr><td class="cc-label">Facebook</td><td>facebook.com/ewicewic</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Chef and partner at Winebelly Group. Oversees culinary direction and supplier relationships across all four Phoebe's Diner locations. Primary contact for food, equipment, and kitchen vendor decisions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 2 — TERRIBLE LOVE
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Terrible Love</div>
+    <div class="lead-concept">Specialty coffee shop + wine bar · Hyde Park, Austin TX · Baker Center</div>
+    <div class="lead-badges">
+      <span class="badge badge-tabc">TABC Filed</span>
+      <span class="badge badge-active">Sole Owner — All Decisions</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>2021 — trailer launch; brick-and-mortar November 2022 (4 years in business)</td></tr>
+        <tr><td>Locations</td><td>1 operating (coffee). Wine bar in buildout at same address.</td></tr>
+        <tr><td>Employees (est.)</td><td>2–4 (coffee shop); 4–8 once wine bar opens</td></tr>
+        <tr><td>Revenue (est.)</td><td>$300K–$500K/yr (coffee only). Wine bar adds estimated $150K–$300K once open.</td></tr>
+        <tr><td>Est. open</td><td>Wine bar: Q3 2026</td></tr>
+        <tr><td>Website</td><td>terriblelovecoffee.com</td></tr>
+        <tr><td>Instagram</td><td>@terriblelovecoffee</td></tr>
+      </table>
+      <p class="rev-note">Single-location specialty coffee, limited hours 7:30 AM–2 PM weekdays. Industry benchmark: indie coffee shop $450K avg/yr. Wine bar revenue not yet operational.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>3908 Avenue B — Baker Center boiler room · Coffee shop, open since Nov 2022</li>
+        <li>3908 Avenue B — Former band hall · Wine bar, in buildout (permit Apr 2026)</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Brian is the sole operator — every purchase decision goes through one person. The wine bar buildout means brand-new equipment, insurance policy, POS, and linen needs all hitting at once in Q3 2026.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance, POS/payments, bar equipment, linen/smallwares, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">DM @bknowlsie on Instagram — personal account, 157 followers. He will see it.</span>
+      </div>
+      <p class="intel-note">No personal phone found in any public source. Best outreach: LinkedIn DM or DM @bknowlsie on Instagram (personal account, 157 followers — he will see it). info@ is the business inbox.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>3908 Avenue B, Bldg A, Austin TX 78751</td></tr>
+        <tr><td>Filed</td><td>2026-04-30</td></tr>
+        <tr><td>Description</td><td>Change of use from office to restaurant — new restroom, prep area, and service counter. Wine bar buildout in former band hall adjacent to existing coffee shop.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Brian Knowles</div>
+        <div class="cc-title">Sole Owner</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>—</td></tr>
+          <tr><td class="cc-label">Email</td><td>info@terriblelovecoffee.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/brian-knowles-7969779</td></tr>
+          <tr><td class="cc-label">Instagram</td><td>@bknowlsie (personal) · @terriblelovecoffee (business)</td></tr>
+          <tr><td class="cc-label">Facebook</td><td>facebook.com/brian.knowles.79827</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Former Austin attorney (~10 years). Pivoted to coffee 2021. Named the business after a song by The National. Sole decision maker for all vendor, supply, and equipment relationships across both concepts.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 3 — APPLEBEE'S / SSCP MANAGEMENT
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Applebee's — SSCP Management</div>
+    <div class="lead-concept">Casual dining franchise · Dharod family · 72 Applebee's locations across TX, CA, VA · Full rebuild on W US 290</div>
+    <div class="lead-badges">
+      <span class="badge badge-rebuild">Full Rebuild · TABC License Surrendered</span>
+      <span class="badge badge-active">72 Locations · Dallas HQ</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>SSCP Management founded 2012 (14 years). This Austin location originally opened ~2010.</td></tr>
+        <tr><td>Locations</td><td>72 Applebee's locations (TX: ~43, CA: ~13, VA: ~11). Also operates 46 Sonic Drive-Ins.</td></tr>
+        <tr><td>Employees (est.)</td><td>2,500–3,600 total across all locations (est. 35–50 per restaurant)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$185M–$230M/yr (72 Applebee's locations)</td></tr>
+        <tr><td>Est. open</td><td>Q4 2026 – Q1 2027</td></tr>
+        <tr><td>Website</td><td>sscpmanagement.com · applebees-sscp.com</td></tr>
+      </table>
+      <p class="rev-note">Applebee's system AUV 2024: ~$2.64M/location (per FDD). 72 locations × $2.64M = ~$190M gross restaurant revenue. SSCP is privately held — no public filings.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>5010 W US 290 Hwy, Austin TX 78735 — Full rebuild underway (this permit)</li>
+        <li>+ 71 additional Applebee's locations across Texas, California, and Virginia</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Full rebuild means every vendor contract for this location is being reset — new equipment, new suppliers, new insurance policy. A 72-location franchisee makes centralized vendor decisions that apply across the portfolio. One relationship at the corporate level is worth far more than a single-location sale.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance (portfolio policy), food/bev distribution, POS/payments, equipment, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Call Benny Gilbert at (281) 991-7800 (local ops contact) or email Chris Dharod at cdharod@sscpmanagement.com — emails sourced from B2B aggregators, verify before use.</span>
+      </div>
+      <p class="intel-note">SSCP is Dallas-headquartered. Vendor decisions for the portfolio are made centrally, not at the location level. Local operations contact: Benny Gilbert at (281) 991-7800 (Synergy Restaurant Management, Pasadena TX — Houston-area operations entity). Emails sourced from B2B data aggregators — verify before use.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>5010 W US 290 Hwy, Austin TX 78735</td></tr>
+        <tr><td>Filed</td><td>2026-05-27</td></tr>
+        <tr><td>Description</td><td>Full rebuild of existing commercial restaurant with associated site work and landscaping. Applebee's franchise location — TABC license surrendered during demolition and rebuild.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Chris Dharod</div>
+        <div class="cc-title">President — SSCP Management</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(972) 644-9494 (SSCP corporate)</td></tr>
+          <tr><td class="cc-label">Email</td><td>cdharod@sscpmanagement.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/chrisdharod</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Sunil Dharod</div>
+        <div class="cc-title">Founder and CEO — SSCP Management</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(972) 644-9494 (SSCP corporate)</td></tr>
+          <tr><td class="cc-label">Email</td><td>sdharod@cspsinc.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/sunil-dharod-88000333</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Benny Gilbert</div>
+        <div class="cc-title">Operations Contact — Synergy Restaurant Management (Houston-area Applebee's)</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(281) 991-7800</td></tr>
+          <tr><td class="cc-label">Note</td><td><em>Closest confirmed operational contact for the Austin/Houston-area franchise entity</em></td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Puja Dharod</div>
+        <div class="cc-title">VP of Investments — SSCP Management</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(972) 644-9494 (SSCP corporate)</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">President of SSCP Management, one of the largest Applebee's franchise operators in the US. Son of founder Sunil Dharod. Based in Dallas. Oversees operations across 72 Applebee's in three states plus 46 Sonic Drive-Ins.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 4 — MOXIES
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Moxies</div>
+    <div class="lead-concept">Full-service casual dining and bar · Canadian chain (60+ locations) · First US market entry · Downtown Austin TX</div>
+    <div class="lead-badges">
+      <span class="badge badge-tabc">TABC Filed · MB License Active</span>
+      <span class="badge badge-active">First US Location</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>Moxies founded 1986 in Calgary, Canada (40 years in business). Austin is a US expansion location.</td></tr>
+        <tr><td>Locations</td><td>60+ locations across Canada. Austin is among first US market entries.</td></tr>
+        <tr><td>Employees (est.)</td><td>50–80 (single US location; corporate support from Canada)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$3M–$6M/yr (flagship downtown location with patio)</td></tr>
+        <tr><td>Sq footage</td><td>2,500 SF patio addition noted in permit</td></tr>
+        <tr><td>Est. open</td><td>Q3–Q4 2026</td></tr>
+        <tr><td>Website</td><td>moxies.com</td></tr>
+        <tr><td>Instagram</td><td>@moxiesrestaurants</td></tr>
+      </table>
+      <p class="rev-note">Moxies Canadian locations average CAD $4M–$8M/yr per unit. US market adjustment and downtown Austin premium. Single Austin location with 2,500 SF patio addition: estimated $3M–$6M/yr.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>600 Congress Ave Suite G260, Austin TX 78701 — Opening 2026 (this permit)</li>
+        <li>60+ locations across Canada including Vancouver, Calgary, Edmonton, Toronto, Ottawa</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Canadian chain entering a new US market with no existing US vendor relationships. First Austin location means entirely fresh supplier slate. Downtown location with patio = high visibility and volume.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Food/bev distribution, commercial insurance (new US market policy), POS/payments, linen/uniforms, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Check moxies.com corporate contact page for US expansion contacts — vendor decisions made at Canadian corporate level, not locally.</span>
+      </div>
+      <p class="intel-note">Purchasing decisions for a Canadian chain's first US location are likely made at the Canadian corporate level, not locally. Priority outreach is to the Canadian corporate procurement team. Check moxies.com corporate contact page for US expansion contacts.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>600 Congress Ave, Unit G260, Austin TX 78701</td></tr>
+        <tr><td>Filed</td><td>2026-04-06</td></tr>
+        <tr><td>Description</td><td>Change of use from multiple uses to restaurant and adding 2,500 SF of patio cafe — Suite G260, downtown Austin.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Van Nostren Enterprises LP</div>
+        <div class="cc-title">Operating entity for Moxies Austin. Parent company headquartered in Winnipeg, Canada.</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>— US contact not confirmed</td></tr>
+          <tr><td class="cc-label">Email</td><td>— US contact not confirmed</td></tr>
+          <tr><td class="cc-label">Instagram</td><td>@moxiesrestaurants</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Van Nostren Enterprises LP is the Texas-registered operating entity for the Moxies Austin location. Parent entity is headquartered in Winnipeg, Canada. Moxies is a well-established Canadian casual dining chain expanding into US markets.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 5 — RAISING CANE'S
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Raising Cane's Chicken Fingers</div>
+    <div class="lead-concept">Quick-service restaurant · Corporate-owned (not franchised) · 700+ locations nationally · New ground-up build, N IH-35</div>
+    <div class="lead-badges">
+      <span class="badge badge-open">Confirmed · Coming Soon on Location Finder</span>
+      <span class="badge badge-active">Corporate — National Account</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>Founded 1996 in Baton Rouge, LA (30 years in business). Texas operations well-established.</td></tr>
+        <tr><td>Locations</td><td>700+ locations nationally. Multiple existing Austin locations.</td></tr>
+        <tr><td>Employees (est.)</td><td>25–40 per location (corporate-owned)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$3M–$4M/yr (this location)</td></tr>
+        <tr><td>Sq footage</td><td>— Freestanding building with corral outdoor patio</td></tr>
+        <tr><td>Est. open</td><td>September 2026 (per TDLR permit filing, construction Dec 2025–Sep 2026)</td></tr>
+        <tr><td>Website</td><td>raisingcanes.com</td></tr>
+        <tr><td>Instagram</td><td>@raisingcanes</td></tr>
+      </table>
+      <p class="rev-note">Raising Cane's system AUV 2024: ~$2.64M (FDD-reported). High-traffic IH-35 location with drive-through likely exceeds system average. Range: $3M–$4M.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>12901 N IH 35 Bldg 21, Austin TX 78753 — Under construction (est. open Sep 2026)</li>
+        <li>Additional Austin: 9830 Great Hills Trail (Arboretum, Coming Soon)</li>
+        <li>+ existing Austin locations systemwide</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Confirmed corporate QSR, new freestanding build. 700+ locations means any vendor relationship is a national account conversation, not a single-store deal. New location = new equipment, new insurance certificate, new supplier onboarding.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance (certificate of insurance for new location), POS/payments, signage, equipment, food/bev distribution</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Email Dale Goss at dgoss@raisingcanes.com — FLast@raisingcanes.com pattern confirmed at 84.7% across corporate staff.</span>
+      </div>
+      <p class="intel-note">Raising Cane's is 100% corporate-owned — no franchisees. All vendor decisions go through Plano HQ. Location phone (coming soon): (737) 415-9332. Email pattern FLast@raisingcanes.com confirmed at 84.7% across corporate staff.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>12901 N IH 35, Bldg 21, Austin TX 78753</td></tr>
+        <tr><td>Filed</td><td>2026-03-12</td></tr>
+        <tr><td>Description</td><td>Ground up construction of a quick serve restaurant with attached corral outdoor patio seating — new freestanding building.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Dale Goss</div>
+        <div class="cc-title">Senior VP, Real Estate — Raising Cane's corporate</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Email</td><td>dgoss@raisingcanes.com  *inferred: FLast@raisingcanes.com pattern confirmed at 84.7%*</td></tr>
+          <tr><td class="cc-label">Email (alt)</td><td>drouse@raisingcanes.com  (David Rouse, Director Real Estate)</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/dale-goss-5877327</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">David Rouse</div>
+        <div class="cc-title">Director, Real Estate — Raising Cane's corporate</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Email</td><td>drouse@raisingcanes.com  *inferred*</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/davidrouse-mba</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Greg Eickholt</div>
+        <div class="cc-title">Director, Real Estate — Raising Cane's corporate</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Email</td><td>geickholt@raisingcanes.com  *inferred*</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/greg-eickholt-59b8662</td></tr>
+          <tr><td class="cc-label">Note</td><td><em>Email pattern FLast@raisingcanes.com confirmed at 84.7% across corporate staff</em></td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Senior VP of Real Estate at Raising Cane's corporate HQ (Plano, TX). Oversees new location development and real estate decisions for all corporate-owned locations. Raising Cane's does not franchise — all locations are corporate, meaning vendor and supplier decisions are made centrally.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 6 — LIMA CRIOLLA
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Lima Criolla</div>
+    <div class="lead-concept">Contemporary Peruvian restaurant + catering · I.K. Osorio Investments LLC · 2 locations — Austin TX and Round Rock TX</div>
+    <div class="lead-badges">
+      <span class="badge badge-pre">Pre-Announcement · Operator at This Address Confirmed</span>
+      <span class="badge badge-active">15-Year Operator</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>~2010 — Lima Criolla has operated at this address for approximately 15 years</td></tr>
+        <tr><td>Locations</td><td>2 locations</td></tr>
+        <tr><td>Employees (est.)</td><td>15–30 total across both locations</td></tr>
+        <tr><td>Revenue (est.)</td><td>$1.2M–$2.0M/yr</td></tr>
+        <tr><td>Est. open</td><td>Q4 2026 (Unit 1250 buildout)</td></tr>
+        <tr><td>Website</td><td>limacriolla.com</td></tr>
+        <tr><td>Instagram</td><td>@eatlimacriolla · @limacriollaofficial</td></tr>
+      </table>
+      <p class="rev-note">Lima Criolla single-location revenue ~$855K (Prospeo estimate). Brasas Peruanas newer and smaller, est. $500K–$900K. Combined: $1.3M–$1.75M.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>Lima Criolla — 6406 N IH-35 Suite 1550, Austin TX 78752 (anchor location, ~15 years)</li>
+        <li>Brasas Peruanas — 206 N Mays St, Round Rock TX (opened 2024)</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">Lima Criolla has operated at The Linc for ~15 years and recently expanded to Round Rock. A permit for Unit 1250 in the same building signals a third location or internal expansion. A 15-year operator with an active catering and B2B program is already vendor-relationship-literate — an easier sell than a first-time operator.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Food/bev distribution (specialty Latin ingredients), commercial insurance, POS/payments, linen, signage</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Monitor TABC at apps.tabc.texas.gov/publicinquiry for 6406 N IH 35 — the alcohol application will name the Unit 1250 tenant.</span>
+      </div>
+      <p class="intel-note">Unit 1250 identity is not yet publicly confirmed as Lima Criolla — present this as intelligence on the building and follow up once the TABC application names the tenant. Vivo (REMI-NEWTON GROUP AUSTIN LLC) is the other potential candidate at this address.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>6406 N IH 35, Unit 1250, Austin TX 78752</td></tr>
+        <tr><td>Filed</td><td>2026-05-07</td></tr>
+        <tr><td>Description</td><td>Change of use to restaurant with interior remodel — Unit 1250 at The Linc on N IH-35. Tenant identity not yet publicly announced. Lima Criolla is the confirmed operator in the same building (Suite 1550) and is the leading candidate for this expansion.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Susana Vivanco</div>
+        <div class="cc-title">Founder and CEO — Lima Criolla and Brasas Peruanas</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(512) 323-5404 (Lima Criolla restaurant line)</td></tr>
+          <tr><td class="cc-label">Email</td><td>info@limacriolla.com</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/susana-vivanco-05199239</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Michael Osorio</div>
+        <div class="cc-title">Finance and Strategy Lead — Lima Criolla</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Email</td><td>m***@limacriolla.com  *partial — ZoomInfo masked*</td></tr>
+          <tr><td class="cc-label">LinkedIn</td><td>linkedin.com/in/michael-osorio-768184218</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Founder and CEO of Lima Criolla (est. ~2010) and Brasas Peruanas (opened 2024, Round Rock). Built Lima Criolla over 15 years into a recognized Austin Peruvian restaurant with an active dine-in, catering, and B2B events business. Her LinkedIn bio explicitly calls out B2B and catering — she is accustomed to and open to business vendor outreach.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ACTIVE 7 — DEATH & TAXES ATX
+═══════════════════════════════════════════════════════════ -->
+<div class="lead-page active-page page-break">
+  <div class="lead-header">
+    <div class="lead-tier-tag tier-tag-active">Active Open</div>
+    <div class="lead-title">Death &amp; Taxes ATX</div>
+    <div class="lead-concept">Restaurant + tattoo parlor · El Paso operators entering Austin · East 7th St corridor · 3,763 SF · $800K buildout</div>
+    <div class="lead-badges">
+      <span class="badge badge-pre">Pre-Announcement · No TABC Filing Yet</span>
+      <span class="badge badge-active">El Paso → Austin Expansion</span>
+    </div>
+    <hr class="active-rule" style="margin-top:14px;">
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Business Overview</h3>
+      <table class="ov">
+        <tr><td>In business since</td><td>Operator's existing concept (The Reagan, El Paso) founded ~2019</td></tr>
+        <tr><td>Locations</td><td>1 existing (The Reagan, El Paso TX). Austin is expansion #2.</td></tr>
+        <tr><td>Employees (est.)</td><td>10–20 (single-location, combined restaurant + tattoo)</td></tr>
+        <tr><td>Revenue (est.)</td><td>$800K–$1.5M/yr</td></tr>
+        <tr><td>Sq footage</td><td>3,763 SF</td></tr>
+        <tr><td>Est. open</td><td>Q4 2026</td></tr>
+        <tr><td>Website</td><td>— Not yet announced</td></tr>
+        <tr><td>Instagram</td><td>— Not yet announced</td></tr>
+      </table>
+      <p class="rev-note">Single-location full-service restaurant, 3,763 SF. East Austin market benchmark $700K–$1.5M/yr for mixed-use concept. Tattoo studio adds secondary revenue stream.</p>
+
+      <h3>Location List</h3>
+      <ol class="loc-list">
+        <li>2142 E 7th St, Austin TX 78702 — In buildout (this permit)</li>
+        <li>The Reagan — 313 E Mills Ave, El Paso TX 79901 (existing gastropub/cocktail bar)</li>
+      </ol>
+
+      <h3>The Opportunity</h3>
+      <p class="opportunity-text">El Paso operators expanding to Austin for the first time — no existing Austin vendor relationships. $800K buildout signals serious investment. East 7th corridor is one of Austin's highest-growth dining corridors.</p>
+      <p class="vendor-line"><strong>Vendor categories:</strong> Commercial insurance, POS/payments, food/bev distribution, signage, equipment</p>
+      <div class="first-move">
+        <span class="first-move-label">First move</span>
+        <span class="first-move-text">Call architect Chioco Design at (512) 374-0288 — architect of record, reliable route to the client.</span>
+      </div>
+      <p class="intel-note">Concept name not yet announced. Best back-channel: architect Chioco Design LLC (512) 374-0288 — they are the architect of record and a reliable route to the client. Property entity address: 123 W Mills Ave Ste 600, El Paso TX 79901.</p>
+
+      <h3>Permit Record</h3>
+      <div class="permit-block">
+        <table><tr><td>Address</td><td>2142 E 7th St, Austin TX 78702</td></tr>
+        <tr><td>Filed</td><td>2026-06-03</td></tr>
+        <tr><td>Description</td><td>Change of use to restaurant and tattoo parlor, 3,763 SF, $800K buildout. Previous tenant: Treasure City Thrift (nonprofit). GC: KoBall Construction LLC. Architect: Chioco Design LLC.</td></tr></table>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3>Decision Makers</h3>
+      <div class="contact-card">
+        <div class="cc-name">Kassi Foster-Nava</div>
+        <div class="cc-title">Co-owner — Death &amp; Taxes ATX LP / The Reagan El Paso</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(915) 529-5683 (The Reagan)</td></tr>
+        </table>
+      </div>
+      <div class="contact-card">
+        <div class="cc-name">Alejandro (Alex) Nava</div>
+        <div class="cc-title">Co-owner — Death &amp; Taxes ATX LP / The Reagan El Paso</div>
+        <table class="cc-table">
+          <tr><td class="cc-label">Phone</td><td>(915) 494-2940 (property entity)</td></tr>
+        </table>
+      </div>
+
+      <h3>Background</h3>
+      <p class="bio">Co-owner of The Reagan (gastropub/cocktail bar, El Paso TX). Daughter of El Paso billionaire Paul Foster. Previously owned Golden Bones boutique in Austin. Expanding the Death &amp; Taxes hospitality brand to Austin via this East 7th project.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION DIVIDER — WATCH LIST
+═══════════════════════════════════════════════════════════ -->
+<div class="section-divider sd-watch page-break">
+  <hr class="sd-rule">
+  <div class="sd-tier">Tier Three</div>
+  <div class="sd-name">Watch<br>List</div>
+  <div class="sd-desc">Permits filed, operator not yet identified. Enrichment in progress. Each card includes a specific intelligence action to move these to Active status.</div>
+  <div class="sd-count">3 leads &nbsp;·&nbsp; Combined est. revenue: $1.7M–$3.6M/yr once open &nbsp;·&nbsp; DM identification pending</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     WATCH LIST CARDS
+═══════════════════════════════════════════════════════════ -->
+<div class="watch-grid page-break">
+
+  <!-- Watch 1 — Tokami Austin -->
+  <div class="watch-card">
+    <div class="wc-header">
+      <div>
+        <div class="wc-title">Tokami Austin</div>
+        <div class="wc-concept">Sushi restaurant, full-service · Westgate, South Austin TX · 4477 S Lamar Blvd Unit 730</div>
+      </div>
+      <span class="badge badge-watch">Watch List</span>
+    </div>
+    <div class="wc-body">
+      <div class="wc-section">
+        <div class="wc-label">Signal</div>
+        <div class="wc-text">TABC Filed · Sales Tax Permit Active (NAICS 722511)</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Revenue</div>
+        <div class="wc-text">$800K–$1.5M/yr (first-location independent sushi)</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Open</div>
+        <div class="wc-text">Q3 2026</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Vendor Categories</div>
+        <div class="wc-text">Food/bev distribution (specialty seafood), commercial insurance, POS/payments, linen, signage</div>
+      </div>
+    </div>
+    <div class="watch-permit">
+      <strong>Permit filed:</strong> 2026-05-28 &nbsp;·&nbsp; Change of use from retail to sushi restaurant — Westgate area strip mall. Former Sushi Avenue space. Entity TOKAMI AUSTIN LLC registered with Texas Comptroller. Possible connection to Sushi Tokami, Ginza, Tokyo (Michelin-starred) — unconfirmed.
+    </div>
+    <div class="watch-first-move">
+      <span class="first-move-label">First move</span>
+      <span class="first-move-text">DM @restaurant_tokami on Instagram — fastest current path to owner identification.</span>
+    </div>
+  </div>
+
+  <!-- Watch 2 — Far West Blvd -->
+  <div class="watch-card">
+    <div class="wc-header">
+      <div>
+        <div class="wc-title">Unknown — 3720 Far West Blvd, Unit 109</div>
+        <div class="wc-concept">Restaurant Limited (limited service or beer/wine) · Northwest Austin TX · Permit DA 2026-030629</div>
+      </div>
+      <span class="badge badge-watch">Watch List</span>
+    </div>
+    <div class="wc-body">
+      <div class="wc-section">
+        <div class="wc-label">Signal</div>
+        <div class="wc-text">Pre-announcement · No TABC filing · No sales tax permit</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Revenue</div>
+        <div class="wc-text">$400K–$900K/yr (limited-service neighborhood concept)</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Open</div>
+        <div class="wc-text">Q3–Q4 2026</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Vendor Categories</div>
+        <div class="wc-text">Commercial insurance, POS/payments, food/bev distribution, signage</div>
+      </div>
+    </div>
+    <div class="watch-permit">
+      <strong>Permit filed:</strong> 2026-05-19 &nbsp;·&nbsp; Change of use from office to Restaurant Limited — Far West Blvd near Loop 360. Existing building tenants: Gatti's, ATX Coffee and Lounge, Soup Peddler. "Restaurant Limited" = limited service or beer/wine only concept.
+    </div>
+    <div class="watch-first-move">
+      <span class="first-move-label">First move</span>
+      <span class="first-move-text">Call Austin Development Services (512) 978-4000, ask for applicant on permit DA-2026-030629.</span>
+    </div>
+  </div>
+
+  <!-- Watch 3 — H Mart Suite 112 -->
+  <div class="watch-card">
+    <div class="wc-header">
+      <div>
+        <div class="wc-title">Unknown — Lakeline H Mart, Suite 112</div>
+        <div class="wc-concept">Korean or Asian restaurant · 11301 Lakeline Blvd, Bldg 8 Suite 112 · Far Northwest Austin TX</div>
+      </div>
+      <span class="badge badge-watch">Watch List</span>
+    </div>
+    <div class="wc-body">
+      <div class="wc-section">
+        <div class="wc-label">Signal</div>
+        <div class="wc-text">Pre-announcement · No TABC filing for Suite 112 yet</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Revenue</div>
+        <div class="wc-text">$500K–$1.2M/yr (Korean/Asian concept, H Mart corridor)</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Est. Open</div>
+        <div class="wc-text">Q3–Q4 2026</div>
+      </div>
+      <div class="wc-section">
+        <div class="wc-label">Vendor Categories</div>
+        <div class="wc-text">Food/bev distribution (specialty Asian ingredients), commercial insurance, POS/payments, signage</div>
+      </div>
+    </div>
+    <div class="watch-permit">
+      <strong>Permit filed:</strong> 2026-05-07 &nbsp;·&nbsp; Change of use from retail/office to restaurant — Suite 112, Building 8. H Mart-anchored strip with 24+ existing Korean and Asian food concepts. Net-new entrant — all other Building 8 operators have confirmed suite numbers that are not 112.
+    </div>
+    <div class="watch-first-move">
+      <span class="first-move-label">First move</span>
+      <span class="first-move-text">Call Hanshin Pocha next door at (512) 855-4995 — neighboring tenants typically know who is moving in.</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

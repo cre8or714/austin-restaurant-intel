@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Austin Restaurant Intel — Vendor Target List</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10.5pt; color: #1a1a2e; background: #f4f6f9; }
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 32px; }
+
+h1 { font-size: 24pt; color: #0f2044; margin-bottom: 6px; }
+.subtitle { font-size: 10pt; color: #6b7280; margin-bottom: 32px; }
+
+h2 { font-size: 14pt; font-weight: 700; color: #0f2044; margin: 40px 0 16px;
+     padding-bottom: 8px; border-bottom: 2px solid #0f2044; }
+h3 { font-size: 11pt; font-weight: 700; color: #1e3a6e; margin: 28px 0 10px; }
+p  { font-size: 10pt; color: #374151; line-height: 1.6; margin-bottom: 8px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 9.5pt; }
+thead tr { background: #0f2044; }
+th { color: #fff; padding: 9px 10px; text-align: left; font-weight: 600; font-size: 9pt; }
+td { padding: 7px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; line-height: 1.4; }
+tr:nth-child(even) td { background: #fff; }
+tr:nth-child(odd) td { background: #f9fafb; }
+
+/* Score badges */
+.tier1 { background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 10px; font-size: 8.5pt; font-weight: 600; white-space: nowrap; }
+.tier2 { background: #fff3cd; color: #856404; padding: 2px 8px; border-radius: 10px; font-size: 8.5pt; font-weight: 600; white-space: nowrap; }
+.conf-high { color: #155724; font-weight: 600; }
+.conf-med  { color: #856404; font-weight: 600; }
+.conf-low  { color: #721c24; font-weight: 600; }
+.flag-nat  { background: #f8d7da; color: #721c24; padding: 2px 8px; border-radius: 10px; font-size: 8.5pt; white-space: nowrap; }
+
+/* Strategy blocks */
+.strategy-block { background: #fff; border: 1px solid #e2e8f0; border-left: 4px solid #0f2044;
+                   border-radius: 4px; padding: 20px 24px; margin-bottom: 28px; }
+.strategy-block.tier1-block { border-left-color: #1a5c38; }
+.strategy-block.tier2-block { border-left-color: #856404; }
+
+.score-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.score-title  { font-size: 13pt; font-weight: 700; color: #0f2044; }
+.score-num    { font-size: 18pt; font-weight: 900; color: #0f2044; }
+
+.section-label { font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+                  color: #6b7280; margin: 14px 0 4px; }
+.angle-box { background: #fdf3dc; border-left: 3px solid #b8882a; padding: 10px 14px;
+              margin: 10px 0; font-size: 10pt; color: #5a3e00; line-height: 1.6; font-style: italic; }
+.dis-box   { background: #f8d7da; border-left: 3px solid #c0392b; padding: 8px 14px;
+              margin: 10px 0; font-size: 9.5pt; color: #721c24; line-height: 1.5; }
+.hero-box  { background: #e8f4fd; border-left: 3px solid #2980b9; padding: 8px 14px;
+              margin: 10px 0; font-size: 9.5pt; color: #1a3a5c; line-height: 1.5; }
+
+/* Priority list */
+.priority-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px;
+                  padding: 16px 20px; margin-bottom: 12px; display: grid;
+                  grid-template-columns: 48px 1fr; gap: 16px; align-items: start; }
+.rank-num  { font-size: 22pt; font-weight: 900; color: #e2e8f0; line-height: 1; padding-top: 2px; }
+.top5 .rank-num { color: #b8882a; }
+.person-name  { font-size: 12pt; font-weight: 700; color: #0f2044; }
+.person-meta  { font-size: 9pt; color: #6b7280; margin: 2px 0 6px; }
+.contact-line { font-size: 9pt; color: #374151; margin-bottom: 4px; }
+.contact-line strong { color: #0f2044; }
+.opening-line { margin-top: 8px; padding: 8px 12px; background: #fdf3dc; border-left: 3px solid #b8882a;
+                 font-size: 9.5pt; color: #5a3e00; font-style: italic; line-height: 1.5; }
+
+@media print {
+  body { background: #fff; }
+  .container { padding: 20px; }
+  @page { margin: 0.5in; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Vendor Target Document</h1>
+<div class="subtitle">Austin Restaurant Intel · June 2026 · Validation Phase · $1K pilot / $4K/mo · Category-exclusive</div>
+
+<!-- ═══════════════════════════════════════════════ SECTION 1 -->
+<h2>Section 1 — Category Scorecard</h2>
+<p style="margin-bottom:16px;">Hunger · Value · Speed · Fit — each 1–5. Total out of 20.</p>
+<table>
+<thead><tr><th>#</th><th>Category</th><th>Hunger</th><th>Value</th><th>Speed</th><th>Fit</th><th>Total</th><th>Tier</th><th>Rationale</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Regional food &amp; bev distributors</strong></td><td>5</td><td>5</td><td>4</td><td>5</td><td><strong>19</strong></td><td><span class="tier1">Tier 1</span></td><td>One restaurant = $50K–$500K/yr; reps currently drive routes looking for new signs</td></tr>
+<tr><td>2</td><td><strong>Commercial insurance brokers</strong></td><td>5</td><td>3</td><td>5</td><td>5</td><td><strong>18</strong></td><td><span class="tier1">Tier 1</span></td><td>Owner decides in a day; they find out about restaurants when the sign goes up — already too late</td></tr>
+<tr><td>3</td><td><strong>Grease trap &amp; waste oil</strong></td><td>5</td><td>3</td><td>5</td><td>5</td><td><strong>18</strong></td><td><span class="tier1">Tier 1</span></td><td>Every new kitchen is mandatory; zero systematic way to find them pre-opening</td></tr>
+<tr><td>4</td><td><strong>Liquor &amp; bev distributors</strong></td><td>5</td><td>4</td><td>4</td><td>4</td><td><strong>17</strong></td><td><span class="tier1">Tier 1</span></td><td>Currently waiting for TABC approval; pre-announcement kills that lag entirely</td></tr>
+<tr><td>5</td><td><strong>POS system resellers</strong></td><td>4</td><td>4</td><td>4</td><td>5</td><td><strong>17</strong></td><td><span class="tier1">Tier 1</span></td><td>Early contact locks the account before Toast's direct reps know to call</td></tr>
+<tr><td>6</td><td><strong>Pest control (commercial)</strong></td><td>5</td><td>2</td><td>5</td><td>5</td><td><strong>17</strong></td><td><span class="tier1">Tier 1</span></td><td>Extreme hunger, trivial price sensitivity; first quote wins every time</td></tr>
+<tr><td>7</td><td><strong>Commercial linen &amp; uniform</strong></td><td>5</td><td>3</td><td>4</td><td>4</td><td><strong>16</strong></td><td><span class="tier1">Tier 1</span></td><td>Entirely referral-driven; contract signed before opening is nearly impossible to displace</td></tr>
+<tr><td>8</td><td><strong>Commercial cleaning</strong></td><td>5</td><td>2</td><td>5</td><td>4</td><td><strong>16</strong></td><td><span class="tier1">Tier 1</span></td><td>No incumbent to displace pre-opening; first walkthrough almost always closes</td></tr>
+<tr><td>9</td><td>Restaurant equipment dealers</td><td>4</td><td>4</td><td>3</td><td>4</td><td><strong>15</strong></td><td><span class="tier2">Tier 2</span></td><td>High ticket but must reach during buildout — equipment decisions made at design phase</td></tr>
+<tr><td>10</td><td>Restaurant marketing agencies</td><td>4</td><td>3</td><td>4</td><td>4</td><td><strong>15</strong></td><td><span class="tier2">Tier 2</span></td><td>Agencies are actively prospecting; this gives a systematic list before anyone else has it</td></tr>
+<tr><td>11</td><td>Bookkeeping &amp; CPA (restaurant)</td><td>4</td><td>3</td><td>3</td><td>4</td><td><strong>14</strong></td><td><span class="tier2">Tier 2</span></td><td>Pre-opening is only moment with no incumbent to displace; books set up before opening stay for years</td></tr>
+<tr><td>12</td><td>Security &amp; alarm monitoring</td><td>3</td><td>3</td><td>4</td><td>4</td><td><strong>14</strong></td><td><span class="tier2">Tier 2</span></td><td>Systems specified during buildout; installer who calls at permit phase gets into the build</td></tr>
+<tr><td>13</td><td>Commercial signage</td><td>3</td><td>3</td><td>4</td><td>3</td><td><strong>13</strong></td><td><span class="tier2">Tier 2</span></td><td>Timing is everything — signage must be designed during buildout, not after</td></tr>
+<tr><td>14</td><td>Payroll &amp; HR providers</td><td>3</td><td>3</td><td>3</td><td>3</td><td><strong>12</strong></td><td><span class="tier2">Tier 2</span></td><td>Multi-location operators are the sweet spot; pre-opening is only frictionless moment</td></tr>
+<tr><td>15</td><td>Music licensing &amp; sound systems</td><td>3</td><td>2</td><td>4</td><td>3</td><td><strong>12</strong></td><td><span class="tier2">Tier 2</span></td><td>Sound systems spec'd during construction; licensing is recurring but low-ticket</td></tr>
+</tbody>
+</table>
+
+<!-- ═══════════════════════════════════════════════ SECTION 3 -->
+<h2>Section 3 — Named Austin Targets (Tier 1 Categories)</h2>
+<p style="margin-bottom:20px;">Regional and independent operators only. <span class="flag-nat">NATIONAL</span> flagged and excluded.</p>
+
+<h3>Food &amp; Beverage Distributors</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Hardie's Fresh Foods</strong></td><td>Regional (Chef's Warehouse sub, TX-founded)</td><td>(512) 451-8757</td><td>Greg Rowe, CEO</td><td>office@hardies.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Labatt Food Service</strong></td><td>Regional (San Antonio HQ, 3rd-gen family, $1.8B)</td><td>(512) 707-8288</td><td>Kara Bills, Austin District Manager</td><td>austincustomerservice@labattfood.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Ben E. Keith Foods</strong></td><td>Regional (Fort Worth, largest private TX broadline)</td><td>(512) 444-2337</td><td>Call for Austin DM name</td><td>@benekeith.com domain</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Colinas Foods</strong></td><td>Independent (Round Rock, family-owned, 2015)</td><td>(512) 736-1839</td><td>Emilio H. Salazar, CEO</td><td>sales@colinasfoods.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>River City Produce</strong></td><td>Independent (San Antonio HQ, Austin routes)</td><td>(800) 792-0071</td><td>John Gonzalez, Co-owner</td><td>info@rivercityproduce.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Scarmardo Foodservice</strong></td><td>Regional (Bryan TX, Austin territory, 50+ yrs)</td><td>(979) 779-7209</td><td>Call for DM name</td><td>via website</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><del>Sysco / US Foods / McLane</del></td><td><span class="flag-nat">NATIONAL — exclude</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>Commercial Insurance Brokers — Restaurant Lines</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>GrayStone Insurance Group</strong></td><td>Regional (Austin-founded 2018, hospitality specialty)</td><td>(866) 988-3709</td><td>Chad Kramer, Founder</td><td>info@GrayStoneTX.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Britton &amp; Britton Insurance</strong></td><td>Local (Austin/San Antonio, family-owned 1985)</td><td>(512) 469-0693</td><td>Riley Britton, Co-owner</td><td>via website</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Watkins Insurance Group</strong></td><td>Regional (Austin, family-owned 1949, 4 TX locations)</td><td>(512) 452-8877</td><td>Chris Scott, President</td><td>reception@watkinsinsurancegroup.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Heaton Bennett Insurance</strong></td><td>Local (Austin, single office)</td><td>(512) 372-8311</td><td>Mike Bando, Commercial Lines Mgr</td><td>via website</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Food &amp; Bev Insurance Agency</strong></td><td>Regional TX (Sugar Land HQ, 100% restaurant/bar)</td><td>(737) 352-5557</td><td>Joe Thomas (verify title)</td><td>ask@mybarandrestaurant.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Fortis Insurance Partners</strong></td><td>Regional (Austin market, Lillian Braunstein 35yr specialist)</td><td>via website</td><td>Lillian Braunstein, Sr. Specialist</td><td>@fortisinsurancepartners.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+</tbody>
+</table>
+
+<h3>Grease Trap &amp; Waste Oil Services</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>ReGrease LLC</strong></td><td>Regional (TX Triangle — Austin/SA/Houston)</td><td>(888) 475-6057</td><td>Clay Kennedy, CEO (takes calls personally)</td><td>clay@regrease.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Dolly's Pump &amp; Dump</strong></td><td>Local (Cedar Creek, Austin metro)</td><td>(512) 999-2666</td><td>Travis Martin, Owner</td><td>travis@dollyspump.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>All Cen Tex Septic &amp; Vacuum</strong></td><td>Regional (Central TX, veteran-owned, est. 1987)</td><td>(512) 258-4000</td><td>Rob Negrete, Owner</td><td>@allcentexsepticaustin.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Austin Grease Trap Services</strong></td><td>Local (Austin, est. 2001)</td><td>(512) 883-7778</td><td>Owner unknown — call direct</td><td>—</td><td><span class="conf-low">LOW</span></td></tr>
+<tr><td><strong>SouthWaste Disposal</strong></td><td>Regional (Austin + SA, PE-backed — flag)</td><td>(210) 796-7441</td><td>Richard Hernandez, VP Biz Dev</td><td>info@southwaste.com</td><td><span class="conf-high">HIGH</span></td></tr>
+</tbody>
+</table>
+
+<h3>Liquor &amp; Beverage Distributors</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Henderson Selections</strong></td><td>Independent (Austin HQ, 2012, natural wine)</td><td>(512) 546-3065</td><td>Vincent Henderson, Owner</td><td>info@hendersonselections.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Favorite Brands LLC</strong></td><td>Regional (TX + NM, family-owned, craft/specialty)</td><td>via Buda facility</td><td>LaMantia family / Austin market mgr</td><td>—</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Ben E. Keith Beverages</strong></td><td>Regional (TX-based, largest independent beer wholesaler TX)</td><td>(512) 444-2337</td><td>Austin GM — call for name</td><td>@benekeith.com domain</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><del>Capital Reyes / RNDC / Glazer's</del></td><td><span class="flag-nat">NATIONAL ownership — verify Austin coverage before pursuing</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>POS System Resellers</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Price Professional Solutions</strong></td><td>Local (Round Rock/Austin, independent, 15+ yrs)</td><td>(512) 537-0791</td><td>David Price, Owner</td><td>info@1-pps.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Austin POS</strong></td><td>Local (Austin, Focus POS dealer, 24/7 support)</td><td>(512) 215-5901</td><td>Owner unknown — call direct</td><td>via website</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Fourlane</strong></td><td>Local (Austin HQ, Lightspeed authorized reseller)</td><td>(800) 931-2120</td><td>Marjorie Adams, Founder/CEO</td><td>via website</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><del>Toast</del></td><td>Direct sales only — no resellers</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>Pest Control — Commercial Restaurant Accounts</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Absolute Pest Management</strong></td><td>Local (Austin, family-owned, est. 1999)</td><td>(512) 444-0262</td><td>Tony Ragan, President</td><td>tony@absolutepestmgmt.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>The Bug Master</strong></td><td>Regional (Austin, family-owned, est. 1981)</td><td>(737) 637-4007</td><td>Dauphin Ewart, CEO</td><td>dauphin@thebugmaster.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>A-Tex Pest Management</strong></td><td>Regional (Austin metro, multiple locations)</td><td>(512) 577-4454</td><td>Jason Napolski, President/CEO</td><td>jnapolski@atexpest.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Accurate Termite &amp; Pest</strong></td><td>Local (Leander/Austin, family-owned, est. 2000)</td><td>(512) 267-0812</td><td>Brandon Smith, Owner</td><td>—</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>ABC Home &amp; Commercial</strong></td><td>Regional (TX multi-city, family-owned, 75 yrs)</td><td>(512) 837-9500</td><td>Holt Myers, Commercial Div Mgr</td><td>via website</td><td><span class="conf-med">MEDIUM</span></td></tr>
+</tbody>
+</table>
+
+<h3>Commercial Linen &amp; Uniform Services</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Capital City Linens</strong></td><td>Local (Liberty Hill TX, Austin metro)</td><td>(512) 864-4885</td><td>Andrew Underwood, Owner</td><td>andrew@capitalcitylinens.com (inferred)</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>TenFold Linen Supply</strong></td><td>Local (West Lake Hills, Austin)</td><td>via website</td><td>Anthony Cournia, Managing Director</td><td>t***@tenfoldlinen.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Metro Linen Service</strong></td><td>Regional (McKinney TX HQ, Austin served market)</td><td>(972) 569-8353</td><td>Austin area account mgr — call for name</td><td>info@metrolinen.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>EcoClean Austin</strong></td><td>Local (Austin, eco-positioned)</td><td>(512) 761-8694</td><td>Kerstin Shoberg, Owner/Manager</td><td>—</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><del>Cintas / Aramark / UniFirst corporate</del></td><td><span class="flag-nat">NATIONAL — exclude</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>Commercial Cleaning — Restaurant Specialty</h3>
+<table>
+<thead><tr><th>Company</th><th>Type</th><th>Phone</th><th>Key Contact</th><th>Email</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><strong>OrakPro</strong></td><td>Local (Austin, restaurant specialist — Eddie V's, Juliet)</td><td>(512) 630-2410</td><td>Viviana Akel, Founder</td><td>hello@orakpro.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Bowmar Industrial / Greasebusters</strong></td><td>Local (Round Rock, hood cleaning + fire protection)</td><td>(512) 861-5841</td><td>Kevin Bowen, Owner/COO</td><td>info@bowmarindustrial.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><strong>Pro Hood Cleaning</strong></td><td>Local (Austin, exhaust + hood specialist)</td><td>(512) 751-7450</td><td>Mike, Owner</td><td>prohoodcleaning@yahoo.com</td><td><span class="conf-med">MEDIUM</span></td></tr>
+<tr><td><strong>Juany Cleaning Service</strong></td><td>Local (Austin, woman/minority-owned, est. 2005)</td><td>(512) 470-7079</td><td>Crystal Wu, Managing Member</td><td>info@juanycleaningservice.com</td><td><span class="conf-high">HIGH</span></td></tr>
+<tr><td><del>Jani-King / ABM corporate</del></td><td><span class="flag-nat">NATIONAL — exclude</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+
+<!-- ═══════════════════════════════════════════════ SECTION 5 -->
+<h2>Section 5 — Outreach Priority List: Top 15</h2>
+<p style="margin-bottom:20px;">Ranked by confirmed contact data + category score + decision speed + regional independence. These are the first 15 calls to make.</p>
+
+<div class="priority-card top5">
+  <div class="rank-num">1</div>
+  <div>
+    <div class="person-name">Tony Ragan</div>
+    <div class="person-meta">President · Absolute Pest Management · Pest Control</div>
+    <div class="contact-line"><strong>Email:</strong> tony@absolutepestmgmt.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 444-0262 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/tony-ragan-0b8b3611a</div>
+    <div class="contact-line"><strong>Why #1:</strong> Independent owner decides same day. Pest is highest hunger score. $500/mo subscription is trivial vs. one new account.</div>
+    <div class="opening-line">"I have 13 commercial kitchens in active buildout in Austin right now — none of them have a pest control contract, and I have the owner contacts for eight of them."</div>
+  </div>
+</div>
+
+<div class="priority-card top5">
+  <div class="rank-num">2</div>
+  <div>
+    <div class="person-name">Travis Martin</div>
+    <div class="person-meta">Owner · Dolly's Pump &amp; Dump · Grease Trap</div>
+    <div class="contact-line"><strong>Email:</strong> travis@dollyspump.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 999-2666 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/travismartin92</div>
+    <div class="contact-line"><strong>Why #2:</strong> Owner-operated, sole decision maker. Grease trap is mandatory — no resistance to the value prop.</div>
+    <div class="opening-line">"There's a kitchen going into 30,000 square feet at Domain Northside. The grease trap is in the permit. The operator hasn't been named publicly and nobody else knows it's coming."</div>
+  </div>
+</div>
+
+<div class="priority-card top5">
+  <div class="rank-num">3</div>
+  <div>
+    <div class="person-name">Riley Britton</div>
+    <div class="person-meta">Co-owner · Britton &amp; Britton Insurance · Commercial Insurance</div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 469-0693 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Email:</strong> Not publicly listed — call direct</div>
+    <div class="contact-line"><strong>Why #3:</strong> Family restaurant specialty shop. Decides with one other person. No committee. Restaurant/bar is their primary market.</div>
+    <div class="opening-line">"The operator building the biggest new restaurant at The Domain right now doesn't have an insurance broker yet. I have the GC's direct line."</div>
+  </div>
+</div>
+
+<div class="priority-card top5">
+  <div class="rank-num">4</div>
+  <div>
+    <div class="person-name">Vincent Henderson</div>
+    <div class="person-meta">Owner · Henderson Selections · Liquor &amp; Bev Distribution</div>
+    <div class="contact-line"><strong>Email:</strong> info@hendersonselections.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 546-3065 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Why #4:</strong> Austin-native owner, artisanal wine specialist. Perfect fit for Roya and Hajimaleki's upscale programs. Decides alone.</div>
+    <div class="opening-line">"Amir Hajimaleki just opened Roya — Persian fine dining in North Austin — and his wine program is built around the kind of producers you carry. I have his direct Instagram."</div>
+  </div>
+</div>
+
+<div class="priority-card top5">
+  <div class="rank-num">5</div>
+  <div>
+    <div class="person-name">Clay Kennedy</div>
+    <div class="person-meta">CEO · ReGrease LLC · Grease Trap &amp; Waste Oil</div>
+    <div class="contact-line"><strong>Phone:</strong> (888) 475-6057 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span> (website says CEO personally answers)</div>
+    <div class="contact-line"><strong>Email:</strong> clay@regrease.com &nbsp;·&nbsp; <span class="conf-med">UNVERIFIED — confirm before use</span></div>
+    <div class="contact-line"><strong>Why #5:</strong> CEO takes direct calls. Covers full Austin market. Grease trap category has zero systematic lead source.</div>
+    <div class="opening-line">"Six of the 13 restaurants in my current Austin brief require grease trap installation. Five are pre-announcement. You'd have first call on every one before any other service company knows they exist."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">6</div>
+  <div>
+    <div class="person-name">Dauphin Ewart</div>
+    <div class="person-meta">CEO · The Bug Master · Pest Control</div>
+    <div class="contact-line"><strong>Email:</strong> dauphin@thebugmaster.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (737) 637-4007 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/dauphinewart</div>
+    <div class="opening-line">"Bob Woody owns 20 Austin bars, his personal cell is on his website, and he's building a new one on Rainey Street right now."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">7</div>
+  <div>
+    <div class="person-name">Kara Bills</div>
+    <div class="person-meta">Austin District Manager · Labatt Food Service · Food Distribution</div>
+    <div class="contact-line"><strong>Email:</strong> austincustomerservice@labattfood.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 707-8288 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="opening-line">"Phoebe's Diner opened their fourth Austin location last month. I have the procurement partner's contact. They're already looking at a fifth location."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">8</div>
+  <div>
+    <div class="person-name">Chad Kramer</div>
+    <div class="person-meta">Founder · GrayStone Insurance Group · Commercial Insurance</div>
+    <div class="contact-line"><strong>Email:</strong> info@GrayStoneTX.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (866) 988-3709 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/chadkramer/</div>
+    <div class="opening-line">"There's a 30,000 square foot restaurant being built at Domain Northside with no public announcement, no TABC filing, and no insurance broker yet. The GC is Trinity Constructors."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">9</div>
+  <div>
+    <div class="person-name">Viviana Akel</div>
+    <div class="person-meta">Founder · OrakPro · Commercial Cleaning</div>
+    <div class="contact-line"><strong>Email:</strong> hello@orakpro.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 630-2410 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="opening-line">"Every restaurant on my current Austin brief is in active buildout. None of them have signed a cleaning contract. The one who calls first with a walkthrough wins without competition."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">10</div>
+  <div>
+    <div class="person-name">David Price</div>
+    <div class="person-meta">Owner · Price Professional Solutions · POS Systems</div>
+    <div class="contact-line"><strong>Email:</strong> info@1-pps.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 537-0791 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/austinpos1/</div>
+    <div class="opening-line">"Phoebe's Diner runs four Austin locations on a POS system they chose in 2017. Nobody has asked them to upgrade yet. I have direct contacts for both decision makers."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">11</div>
+  <div>
+    <div class="person-name">Greg Rowe</div>
+    <div class="person-meta">CEO · Hardie's Fresh Foods · Food Distribution</div>
+    <div class="contact-line"><strong>Email:</strong> office@hardies.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 451-8757 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="opening-line">"The new restaurant opening at 30,000 square feet at Domain Northside needs a primary food distribution relationship in place months before they open. The operator hasn't been publicly named. I have the GC."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">12</div>
+  <div>
+    <div class="person-name">Andrew Underwood</div>
+    <div class="person-meta">Owner · Capital City Linens · Commercial Linen</div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 864-4885 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Email:</strong> andrew@capitalcitylinens.com &nbsp;·&nbsp; <span class="conf-med">INFERRED — verify before use</span></div>
+    <div class="opening-line">"Amir Hajimaleki runs seven restaurants in Austin. One linen vendor has all seven accounts. That contract was won before he opened venue five. I can tell you who's in the same position right now."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">13</div>
+  <div>
+    <div class="person-name">Kevin Bowen</div>
+    <div class="person-meta">Owner/COO · Bowmar Industrial (Greasebusters of Austin) · Hood Cleaning</div>
+    <div class="contact-line"><strong>Email:</strong> info@bowmarindustrial.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 861-5841 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="opening-line">"Every kitchen on my current Austin brief is being built or just installed — not one of them is on a cleaning schedule yet. I have eight addresses."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">14</div>
+  <div>
+    <div class="person-name">Jason Napolski</div>
+    <div class="person-meta">President/CEO · A-Tex Pest Management · Pest Control</div>
+    <div class="contact-line"><strong>Email:</strong> jnapolski@atexpest.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 577-4454 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/jason-napolski-01050618</div>
+    <div class="opening-line">"I have 13 commercial kitchens currently in permit phase in Austin. Your competitors find out when they see the open sign. I find out six months earlier."</div>
+  </div>
+</div>
+
+<div class="priority-card">
+  <div class="rank-num">15</div>
+  <div>
+    <div class="person-name">Ernest Corder</div>
+    <div class="person-meta">President · Redroc Austin · Restaurant Marketing Agency</div>
+    <div class="contact-line"><strong>Email:</strong> ernest@redrocaustin.com &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>Phone:</strong> (512) 770-1056 &nbsp;·&nbsp; <span class="conf-high">CONFIRMED</span></div>
+    <div class="contact-line"><strong>LinkedIn:</strong> linkedin.com/in/ernest-corder-2782593</div>
+    <div class="opening-line">"There are 13 restaurants opening in Austin right now with no marketing agency in place. The ones worth pitching are the ones you reach before they're fielding calls from everyone who read the press release."</div>
+  </div>
+</div>
+
+<p style="margin-top:32px; font-size:9pt; color:#9ca3af;">Austin Restaurant Intel · sales/target-vendors.md · June 2026 · Validation phase</p>
+</div>
+</body>
+</html>
