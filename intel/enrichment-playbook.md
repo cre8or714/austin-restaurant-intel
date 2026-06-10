@@ -129,6 +129,23 @@ a substitute for per-field anchoring.
 
 ---
 
+### Step 5a — Texas SOS SOSDirect lookup (MANDATORY for TABC-confirmed LLC leads)
+
+Any lead with a TABC license tied to a named Texas LLC MUST have a Texas SOS SOSDirect
+managing-member lookup completed BEFORE the lead can be placed in the Active tier.
+
+- Go to SOSDirect (apps.sos.state.tx.us/sosda/) — $1 fee per entity search
+- Search the exact LLC name from the TABC record
+- Record the managing member name(s) and registered agent
+- Add the result to the profile under Decision Makers
+
+If the lookup returns no result or the managing member cannot be identified from any
+public source, the lead stays in Watch tier until resolved. Do not mark Active and do
+not paper over the gap with "Apollo recommended" or "SOS recommended" language —
+that offloads the research to the client and violates the no-dig gate.
+
+---
+
 ### Step 6 — Verify before marking pitch-ready
 
 Run the fact-checker on every profile before it is used in outreach:

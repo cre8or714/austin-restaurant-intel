@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Austin Restaurant Intel — June 06, 2026</title>
+<title>Austin Restaurant Intel — June 08, 2026</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color: #1a1a2e; background: #fff; }
 
-/* Cover — height:100vh fills page 1 naturally; no forced break needed here */
 .cover { height: 100vh; background: #0f2044; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 72px 80px; }
 .cover-eyebrow { font-size: 10pt; letter-spacing: 3px; text-transform: uppercase; color: #5b9bd5; margin-bottom: 20px; }
 .cover-title { font-size: 40pt; font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
@@ -15,7 +14,6 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 .cover-meta { font-size: 9pt; color: #6080a0; border-top: 1px solid #2a4060; padding-top: 18px; }
 .cover-meta span { margin-right: 32px; }
 
-/* Summary — NO page-break-after; the first lead's break-before handles the page turn */
 .summary-page { padding: 36px 44px 28px; }
 .summary-page h2 { font-size: 16pt; color: #0f2044; margin-bottom: 6px; }
 .summary-page > p { color: #555; margin-bottom: 16px; font-size: 9pt; }
@@ -23,11 +21,11 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 .summary-table th { background: #0f2044; color: #fff; padding: 7px 9px; text-align: left; font-weight: 600; }
 .summary-table td { padding: 5px 9px; border-bottom: 1px solid #e8edf2; vertical-align: top; }
 .summary-table tr:nth-child(even) td { background: #f7f9fc; }
+.summary-sep td { background: #0f2044 !important; color: #5b9bd5; font-size: 7.5pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 9px; }
 .sc-i { font-weight: 700; color: #155724; }
 .sc-o { font-weight: 700; color: #004085; }
 .sc-t { font-weight: 700; }
 
-/* Score badges */
 .score-row { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
 .rank-badge { background: #0f2044; color: #fff; font-size: 7.5pt; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 4px; white-space: nowrap; }
 .score-badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 10px; font-size: 8pt; font-weight: 700; white-space: nowrap; }
@@ -41,34 +39,29 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 .score-combined-mid { background: #2c5282; }
 .score-combined-lo { background: #718096; }
 
-/* Status badges */
 .badge-open { background: #d4edda; color: #155724; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
 .badge-tabc { background: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
 .badge-pre { background: #f8d7da; color: #721c24; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
 .badge-permit { background: #e2e8f0; color: #2d3748; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
 .badge-new { background: #fef9c3; color: #78350f; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
 .badge-corrected { background: #fce8e8; color: #991b1b; padding: 2px 6px; border-radius: 10px; font-size: 8pt; white-space: nowrap; }
+.badge-active { background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 10px; font-size: 8pt; font-weight: 700; white-space: nowrap; }
+.badge-watch { background: #e2e8f0; color: #4a5568; padding: 2px 8px; border-radius: 10px; font-size: 8pt; font-weight: 700; white-space: nowrap; }
 
-/* Lead pages — NO min-height; content determines height */
 .lead-page { padding: 28px 40px 24px; }
-/* page-break logic lives only in print CSS below */
-
 .lead-header { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 3px solid #0f2044; }
 .lead-id { font-size: 7.5pt; letter-spacing: 2px; text-transform: uppercase; color: #5b9bd5; margin-bottom: 2px; }
 .lead-title { font-size: 20pt; font-weight: 700; color: #0f2044; line-height: 1.1; margin-bottom: 4px; }
 .lead-concept { font-size: 10pt; color: #555; margin-bottom: 0; }
 
-/* Two-column grid */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 14px; }
 .col-left h3, .col-right h3 { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #5b9bd5; margin: 12px 0 5px; border-bottom: 1px solid #e8edf2; padding-bottom: 3px; }
 .col-left h3:first-child, .col-right h3:first-child { margin-top: 0; }
 
-/* Overview table */
 .overview-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
 .overview-table td { padding: 3px 0; border-bottom: 1px solid #f0f3f7; vertical-align: top; line-height: 1.4; }
 .overview-table td:first-child { color: #888; width: 40%; padding-right: 8px; }
 
-/* Contact cards */
 .contact-card { background: #f7f9fc; border: 1px solid #dde4ef; border-left: 3px solid #0f2044; border-radius: 4px; padding: 9px 12px; margin-bottom: 7px; break-inside: avoid; }
 .contact-name { font-size: 10pt; font-weight: 700; color: #0f2044; }
 .contact-title { font-size: 8pt; color: #5b9bd5; margin-bottom: 6px; }
@@ -77,7 +70,6 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 .cl { color: #888; width: 28%; padding-right: 6px; }
 .no-dm { font-style: italic; color: #888; font-size: 8.5pt; padding: 6px 0; }
 
-/* Info boxes */
 .scoring-box { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 9px 12px; margin-top: 8px; break-inside: avoid; }
 .scoring-box h4 { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0f2044; margin-bottom: 5px; }
 .scoring-box h4 + h4 { margin-top: 7px; }
@@ -99,16 +91,25 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 .notes-text { font-size: 8.5pt; color: #666; font-style: italic; line-height: 1.45; margin-top: 5px; }
 .correction-box { background: #fce8e8; border-left: 3px solid #ef4444; border-radius: 4px; padding: 8px 12px; margin-top: 7px; font-size: 8.5pt; color: #7f1d1d; break-inside: avoid; }
 
+.section-divider { padding: 22px 40px; }
+.section-divider-active { background: #0f2044; }
+.section-divider-watch { background: #e2e8f0; }
+.section-divider .eyebrow { font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+.section-divider-active .eyebrow { color: #5b9bd5; }
+.section-divider-watch .eyebrow { color: #718096; }
+.section-divider .title { font-size: 18pt; font-weight: 700; }
+.section-divider-active .title { color: #fff; }
+.section-divider-watch .title { color: #2d3748; }
+.section-divider .sub { font-size: 9pt; margin-top: 5px; max-width: 520px; line-height: 1.5; }
+.section-divider-active .sub { color: #a0b4cc; }
+.section-divider-watch .sub { color: #555; }
+
 @page { size: letter; margin: 0; }
 @media print {
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  /* Cover fills page 1 via height:100vh — force clean break after it */
   .cover { break-after: page; }
-  /* Each lead starts on a fresh page — only break-before, no break-after on prior element */
   .page-break { break-before: page; }
-  /* Prevent mid-element splits on cards and boxes */
   .contact-card, .scoring-box, .data-gap, .opp-box, .correction-box, .permit-desc { break-inside: avoid; }
-  /* Never orphan a section heading from its first row of content */
   .col-left h3, .col-right h3 { break-after: avoid; }
 }
 </style>
@@ -119,11 +120,12 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 <div class="cover">
   <div class="cover-eyebrow">Confidential Intelligence Brief</div>
   <div class="cover-title">Austin Restaurant<br>Intel</div>
-  <div class="cover-sub">Early-signal lead profiles for new restaurant openings in Austin, TX — sourced from city permits, TABC filings, and Texas Comptroller data. Scored by Intent and Opportunity. Window: April 22 – June 6, 2026.</div>
+  <div class="cover-sub">Early-signal lead profiles for new restaurant openings in Austin, TX — sourced from city permits, TABC filings, and Texas Comptroller data. Scored by Intent and Opportunity. Window: April 24 – June 8, 2026.</div>
   <div class="cover-meta">
-    <span>Report date: June 06, 2026</span>
-    <span>Window: Apr 22 – Jun 6, 2026</span>
-    <span>Qualifying leads: 18</span>
+    <span>Report date: June 08, 2026</span>
+    <span>Window: Apr 24 – Jun 8, 2026</span>
+    <span>Qualifying leads: 29</span>
+    <span>Active (actionable): 6</span>
     <span>Market: Austin, TX (Travis County)</span>
     <span>Confidential — Not for redistribution</span>
   </div>
@@ -132,48 +134,68 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 <!-- SUMMARY TABLE -->
 <div class="summary-page">
   <h2>All Leads — Ranked by Score</h2>
-  <p>Sorted by combined Intent + Opportunity (highest first). Ties broken by higher Intent. Intent = readiness to act (1–5). Opportunity = deal value (1–5). Sources: Austin building permits, TABC Travis County, Austin new-openings. Window: Apr 22 – Jun 6, 2026.</p>
+  <p>Active tier: named decision-maker or named back-channel confirmed — actionable now. Watch tier: operator/contact research in progress. Sorted within each tier by combined Intent + Opportunity (ties broken by higher Intent). Window: Apr 24 – Jun 8, 2026.</p>
   <table class="summary-table">
     <thead>
-      <tr><th>#</th><th>Business</th><th>Address</th><th>Signal</th><th style="text-align:center">I</th><th style="text-align:center">O</th><th style="text-align:center">∑</th><th>Decision Maker</th></tr>
+      <tr><th>#</th><th>Business</th><th>Address</th><th>Signal</th><th style="text-align:center">I</th><th style="text-align:center">O</th><th style="text-align:center">∑</th><th>Tier</th><th>Decision Maker</th></tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td><strong>Phoebe's Diner</strong> · Winebelly Group</td><td>9901 Brodie Ln #180</td><td><span class="badge-open">Open · 4 Locs</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">4</td><td style="text-align:center" class="sc-t">8</td><td>Camden Stuerzenberger</td></tr>
-      <tr><td>2</td><td><strong>Red Car</strong> · Domain Northside · 30,160 SF</td><td>11821 Rock Rose Ave #135</td><td><span class="badge-pre">Pre-Announcement</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">5</td><td style="text-align:center" class="sc-t">8</td><td>Justin Blackburn / Brian Hawthorne</td></tr>
-      <tr><td>3</td><td><strong>Death &amp; Taxes</strong> · Death &amp; Taxes ATX LP</td><td>2142 E 7th St</td><td><span class="badge-permit">Permit Jun 3 · $800K</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">7</td><td>Kassi Foster-Nava</td></tr>
-      <tr><td>4</td><td><strong>Terrible Love</strong> · Brian Knowles</td><td>3908 Avenue B</td><td><span class="badge-tabc">Q3 2026</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">6</td><td>Brian Knowles (sole owner)</td></tr>
-      <tr><td>5</td><td><strong>The Well</strong> · Well Bouldin LLC</td><td>409 W Monroe St</td><td><span class="badge-tabc">TABC Apr 29</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>— (Apollo recommended)</td></tr>
-      <tr><td>6</td><td><strong>Moxies</strong> · Van Nostren Enterprises LP</td><td>600 Congress Ave #G260</td><td><span class="badge-tabc">TABC May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>— (Canadian corporate)</td></tr>
-      <tr><td>7</td><td><strong>Stout House</strong> · Stout Linc LLC <span class="badge-corrected">Corrected</span></td><td>6406 N IH-35</td><td><span class="badge-tabc">TABC May 12</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>— (Apollo recommended)</td></tr>
-      <tr><td>8</td><td><strong>Local Foods</strong> · LFA #2 LLC</td><td>3800 N Lamar Blvd</td><td><span class="badge-tabc">TABC May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>— (Apollo recommended)</td></tr>
-      <tr><td>9</td><td><strong>Lamar Union #1125</strong> · Operator TBD</td><td>1100 S Lamar Blvd #1125</td><td><span class="badge-permit">Expedited · Apr 8</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>—</td></tr>
-      <tr><td>10</td><td><strong>Applebee's</strong> · SSCP Management · 72 locs</td><td>5010 W US-290</td><td><span class="badge-permit">Full Rebuild · May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td>Chris Dharod (President)</td></tr>
-      <tr><td>11</td><td><strong>Tokami Austin</strong> · TOKAMI AUSTIN LLC</td><td>4477 S Lamar #730</td><td><span class="badge-permit">Permit May 28</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td>— (@restaurant_tokami)</td></tr>
-      <tr><td>12</td><td><strong>Rock Rose Pizza</strong> · Operator TBD</td><td>11501 Rock Rose Ave #146</td><td><span class="badge-permit">Permit May 19</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td>—</td></tr>
-      <tr><td>13</td><td><strong>La Marly Cuban</strong> · La Marly LLC</td><td>15200 FM 1825</td><td><span class="badge-tabc">TABC May 18</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td>—</td></tr>
-      <tr><td>14</td><td><strong>78 Rainey St</strong> · Operator TBD</td><td>78 Rainey St</td><td><span class="badge-permit">Expedited · Jun 1</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">5</td><td>—</td></tr>
-      <tr><td>15</td><td><strong>Far West #109</strong> · Operator TBD</td><td>3720 Far West Blvd #109</td><td><span class="badge-permit">Permit May 19</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td>—</td></tr>
-      <tr><td>16</td><td><strong>H Mart Lakeline #112</strong> · Operator TBD</td><td>11301 Lakeline Blvd #112</td><td><span class="badge-pre">Pre-Announcement</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td>Hanshin Pocha neighbor</td></tr>
-      <tr><td>17</td><td><strong>S IH-35 Mongolian BBQ</strong> · Operator TBD</td><td>9900 S IH 35 Bldg M #100</td><td><span class="badge-permit">Finish-Out · May 5</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td>—</td></tr>
-      <tr><td>18</td><td><strong>Brockton Dr Shell</strong> · Operator TBD</td><td>2545 Brockton Dr</td><td><span class="badge-permit">Shell · Jun 1</span></td><td style="text-align:center" class="sc-i">1</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">3</td><td>—</td></tr>
+      <tr class="summary-sep"><td colspan="9">Active Tier · 6 Leads · Actionable Now</td></tr>
+      <tr><td>1</td><td><strong>Phoebe's Diner</strong> · Winebelly Group</td><td>9901 Brodie Ln #180</td><td><span class="badge-open">Open · 4 Locs</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">4</td><td style="text-align:center" class="sc-t">8</td><td><span class="badge-active">A</span></td><td>Camden Stuerzenberger</td></tr>
+      <tr><td>2</td><td><strong>Red Car</strong> · Domain Northside · 30,160 SF</td><td>11821 Rock Rose Ave #135</td><td><span class="badge-pre">Pre-Announcement</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">5</td><td style="text-align:center" class="sc-t">8</td><td><span class="badge-active">A</span></td><td>Blackburn / Hawthorne</td></tr>
+      <tr><td>3</td><td><strong>Death &amp; Taxes</strong> · Death &amp; Taxes ATX LP</td><td>2142 E 7th St</td><td><span class="badge-permit">Permit Jun 3 · $800K</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">7</td><td><span class="badge-active">A</span></td><td>Kassi Foster-Nava</td></tr>
+      <tr><td>4</td><td><strong>Terrible Love</strong> · Brian Knowles</td><td>3908 Avenue B</td><td><span class="badge-tabc">Q3 2026 · Hyde Park</span></td><td style="text-align:center" class="sc-i">4</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-active">A</span></td><td>Brian Knowles</td></tr>
+      <tr><td>5</td><td><strong>Applebee's</strong> · SSCP Management · 72 locs</td><td>5010 W US-290</td><td><span class="badge-permit">Full Rebuild · May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-active">A</span></td><td>Chris Dharod</td></tr>
+      <tr><td>6</td><td><strong>H Mart Lakeline Suite 112</strong></td><td>11301 Lakeline Blvd #112</td><td><span class="badge-permit">Permit May 7</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td><span class="badge-active">A</span></td><td>Hanshin Pocha (neighbor)</td></tr>
+      <tr class="summary-sep"><td colspan="9">Watch Tier · 23 Leads · Contact Research In Progress</td></tr>
+      <tr><td>7</td><td><strong>Stout House</strong> · Stout Linc LLC</td><td>6406 N IH-35 Suite 1700</td><td><span class="badge-tabc">TABC+Permit+Tax</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>8</td><td><strong>The Lobby</strong> · Austin Vampires LLC</td><td>710A W 6th St</td><td><span class="badge-tabc">TABC May 29</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>9</td><td><strong>Evening Draft LLC</strong></td><td>1614 Lavaca St</td><td><span class="badge-tabc">TABC May 14</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>10</td><td><strong>KS Cafe LLC</strong></td><td>1700 S Congress Ave</td><td><span class="badge-tabc">TABC Apr 28</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>11</td><td><strong>The Well</strong> · Well Bouldin LLC</td><td>409 W Monroe St</td><td><span class="badge-tabc">TABC Apr 29</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>12</td><td><strong>Moxies</strong> · Van Nostren Enterprises LP</td><td>600 Congress Ave #G260</td><td><span class="badge-tabc">TABC May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">6</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>13</td><td><strong>Counter Culture Restaurant</strong></td><td>5812 Berkman Dr</td><td><span class="badge-tabc">TABC Jun 5</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>14</td><td><strong>The Sideline</strong> · Side Line Sports Bar</td><td>3500 E Parmer Ln</td><td><span class="badge-tabc">TABC Jun 3</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>15</td><td><strong>The Lucky Duck</strong> · Three Brothers Bars</td><td>2105 Lynnbrook Dr</td><td><span class="badge-tabc">TABC Apr 24</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>16</td><td><strong>Taqueria De Diez</strong> · Taqueria 104 LLC</td><td>3736 Bee Caves Rd #2</td><td><span class="badge-tabc">TABC May 29</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>17</td><td><strong>Local Foods</strong> · LFA #2 LLC <span class="badge-corrected">Corrected</span></td><td>3800 N Lamar Blvd</td><td><span class="badge-tabc">TABC May 27</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>18</td><td><strong>La Marly Cuban</strong> · La Marly LLC</td><td>15200 FM 1825</td><td><span class="badge-tabc">TABC May 18</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>19</td><td><strong>Rock Rose Pizza</strong> · Operator TBD</td><td>11501 Rock Rose Ave #146</td><td><span class="badge-permit">Permit May 19</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>20</td><td><strong>Mendocino Farms</strong> · Lamar Union #1125 <span class="badge-corrected">Corrected</span></td><td>1100 S Lamar Blvd #1125</td><td><span class="badge-permit">Permit May 1</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>21</td><td><strong>Tokami Austin</strong> · TOKAMI AUSTIN LLC</td><td>4477 S Lamar Blvd #730</td><td><span class="badge-permit">Permit May 28</span></td><td style="text-align:center" class="sc-i">3</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>@restaurant_tokami</td></tr>
+      <tr><td>22</td><td><strong>78 Rainey St</strong> · Operator TBD · 2,920 SF</td><td>78 Rainey St</td><td><span class="badge-permit">Expedited Jun 1</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>23</td><td><strong>504 Walsh St</strong> · Operator TBD · Tarrytown</td><td>504 Walsh St</td><td><span class="badge-permit">Permit May 28</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">3</td><td style="text-align:center" class="sc-t">5</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>24</td><td><strong>The Mackenzie Club</strong> · 1723 Ventures LLC</td><td>260 Addie Roy Rd</td><td><span class="badge-tabc">TABC May 26</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>25</td><td><strong>ATX Beginnings LLC</strong> · E Village</td><td>3500 E Parmer #12140</td><td><span class="badge-permit">Permit May 28</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>26</td><td><strong>Good Luck Grill &amp; Tavern</strong> · MURRFADD LLC</td><td>525 W Howard Ln #100</td><td><span class="badge-permit">Permit May 1</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>27</td><td><strong>Sakura Sushi &amp; Mongolian</strong> · CL Yummy Inc <span class="badge-corrected">Upgraded</span></td><td>9900 S IH 35 Bldg M #100</td><td><span class="badge-permit">Permit May 5</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">4</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>28</td><td><strong>ATX Coffee &amp; Lounge</strong> · ATX Coffee and Lounge LLC <span class="badge-corrected">Upgraded</span></td><td>3720 Far West Blvd #109</td><td><span class="badge-permit">Permit May 19</span></td><td style="text-align:center" class="sc-i">2</td><td style="text-align:center" class="sc-o">1</td><td style="text-align:center" class="sc-t">3</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
+      <tr><td>29</td><td><strong>Brockton Dr Shell</strong> · Operator TBD</td><td>2545 Brockton Dr</td><td><span class="badge-permit">Shell Jun 1</span></td><td style="text-align:center" class="sc-i">1</td><td style="text-align:center" class="sc-o">2</td><td style="text-align:center" class="sc-t">3</td><td><span class="badge-watch">W</span></td><td>—</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:16px;font-size:8.5pt;color:#888;">Excluded (outside 45-day window): Hajimaleki / Silk Road Portfolio (most recent signal Feb 2026) · Rainey Tavern / Bob Woody (permit Mar 17) · Raising Cane's (permit Mar 12)</p>
+</div>
+
+<!-- ACTIVE SECTION DIVIDER -->
+<div class="section-divider section-divider-active page-break">
+  <div class="eyebrow">Austin Restaurant Intel · June 2026</div>
+  <div class="title">Active Tier — 6 Leads</div>
+  <div class="sub">Named decision-maker or back-channel confirmed for each lead. No additional research required to initiate first contact.</div>
 </div>
 
 <!-- ══════════════════════════════════════ #1: PHOEBE'S DINER -->
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#1 of 18</span>
+      <span class="rank-badge">#1 of 29</span>
       <span class="score-badge score-intent-hi">Intent 4/5</span>
       <span class="score-badge score-opp-hi">Opp 4/5</span>
       <span class="score-combined">Combined: 8</span>
+      <span class="badge-active">Active</span>
       <span class="badge-open">Open · 4 Locations · Since 2017</span>
     </div>
-    <div class="lead-id">lead-05 · NEW-OPENINGS · ENRICHED · Winebelly Group</div>
+    <div class="lead-id">lead-05 · ENRICHED · Winebelly Group</div>
     <div class="lead-title">Phoebe's Diner</div>
-    <div class="lead-concept">Winebelly Group · 9901 Brodie Ln Unit 180, Austin TX 78748 · Shady Hollow, opened April 7, 2026</div>
+    <div class="lead-concept">Winebelly Group · 9901 Brodie Ln Unit 180, Austin TX 78748 · Shady Hollow · Opened April 7, 2026</div>
   </div>
   <div class="two-col">
     <div class="col-left">
@@ -184,32 +206,28 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <tr><td>In business since</td><td>2017 — original W Oltorf St location (9 years)</td></tr>
         <tr><td>Total locations</td><td>4 (all Austin TX)</td></tr>
         <tr><td>Est. annual revenue</td><td>$8M–$14M/yr (~$2.5M/location avg)</td></tr>
-        <tr><td>Employees</td><td>80–140 total (est. 20–35 per location)</td></tr>
         <tr><td>Latest opening</td><td>April 7, 2026 — Shady Hollow (Brodie Ln)</td></tr>
-        <tr><td>Website</td><td>phoebesdiner.com</td></tr>
-        <tr><td>Instagram</td><td>@phoebesdiner (5,801 followers)</td></tr>
-        <tr><td>Permit filed</td><td>2026-05-14</td></tr>
+        <tr><td>Website / IG</td><td>phoebesdiner.com · @phoebesdiner (5,801 followers)</td></tr>
       </table>
       <h3>All Locations</h3>
       <table class="overview-table">
         <tr><td>1 — Flagship (2017)</td><td>533 W Oltorf St, Austin TX 78704</td></tr>
         <tr><td>2 — Downtown (2021)</td><td>408 W 11th St #100, Austin TX 78701</td></tr>
-        <tr><td>3 — Gracy Farms (Jan 2024)</td><td>12001 Burnet Rd, Austin TX 78758</td></tr>
-        <tr><td>4 — Shady Hollow (Apr 7, 2026)</td><td>9901 Brodie Ln #180, Austin TX 78748</td></tr>
+        <tr><td>3 — Gracy Farms (2024)</td><td>12001 Burnet Rd, Austin TX 78758</td></tr>
+        <tr><td>4 — Shady Hollow (Apr 2026)</td><td>9901 Brodie Ln #180, Austin TX 78748</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 4</h4>
         <ul>
-          <li>Both DMs identified, phone and email confirmed/inferred from domain</li>
-          <li>Actively expanding — 3 new locations in 3 years, 4th just opened Apr 7</li>
-          <li>Established operator = active vendor review cycle</li>
-          <li>4-location volume makes every vendor category meaningful</li>
+          <li>Both DMs identified with phone and domain-inferred email</li>
+          <li>3 new locations in 3 years — vendor review cycle is active</li>
+          <li>4-location volume makes every category meaningful</li>
         </ul>
         <h4>Opp 4</h4>
         <ul>
-          <li>$8M–$14M/yr portfolio revenue — top tier for Austin independents</li>
-          <li>4 locations = multiplier effect on any vendor contract</li>
-          <li>Fastest-growing indie diner group in Austin; expansion likely continuing</li>
+          <li>$8M–$14M/yr portfolio — top tier for Austin independents</li>
+          <li>4 locations = multiplier on any vendor contract</li>
+          <li>Fastest-growing indie diner group in Austin</li>
         </ul>
       </div>
     </div>
@@ -220,10 +238,8 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <div class="contact-title">Chef / Partner — culinary direction and procurement</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(512) 487-1569 (Winebelly Group HQ)</td></tr>
-          <tr><td class="cl">Email</td><td>camden@austinwinebelly.com <em style="color:#888">(inferred from domain)</em></td></tr>
-          <tr><td class="cl">Email alt</td><td>cstuerzenberger@austinwinebelly.com</td></tr>
+          <tr><td class="cl">Email</td><td>camden@austinwinebelly.com <em style="color:#888">(inferred)</em></td></tr>
           <tr><td class="cl">LinkedIn</td><td>linkedin.com/in/camden-stuerzenberger-aa19777a</td></tr>
-          <tr><td class="cl">Facebook</td><td>facebook.com/camden.stuerzenberger</td></tr>
         </table>
       </div>
       <div class="contact-card">
@@ -239,17 +255,14 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       <h3>The Opportunity</h3>
       <div class="opp-box">
         <h4>Why pitch now</h4>
-        <p>3 new locations in 3 years and still expanding — vendor relationships are actively being reviewed and added. Camden handles culinary/procurement; Eric handles business contracts. Two clear entry points. Phoebe's Diner Brodie direct line: (512) 243-6688. Contact form also at phoebesdiner.com/contact.</p>
-        <ul style="margin-top:8px">
-          <li><strong>Categories:</strong> food/bev distribution (4-loc volume), commercial insurance, POS/payments, linen/uniforms, signage</li>
-        </ul>
+        <p>3 new locations in 3 years still expanding. Camden handles culinary/procurement; Eric handles business. Direct line for Brodie: (512) 243-6688. Contact form: phoebesdiner.com/contact.</p>
+        <ul style="margin-top:8px"><li><strong>Categories:</strong> food/bev distribution, commercial insurance, POS/payments, linen/uniforms, signage</li></ul>
       </div>
       <h3>Data Gaps</h3>
       <div class="data-gap">
         <h4>Missing</h4>
         <ul>
           <li>Emails are domain-inferred, not confirmed deliverable</li>
-          <li>No explicit budget or timeline language in raw data</li>
         </ul>
       </div>
     </div>
@@ -260,10 +273,11 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#2 of 18</span>
+      <span class="rank-badge">#2 of 29</span>
       <span class="score-badge score-intent-mid">Intent 3/5</span>
       <span class="score-badge score-opp-hi">Opp 5/5</span>
       <span class="score-combined">Combined: 8</span>
+      <span class="badge-active">Active</span>
       <span class="badge-pre">Pre-Announcement · 30,160 SF</span>
     </div>
     <div class="lead-id">lead-06 · PERMITS · Domain Northside · Trinity Constructors</div>
@@ -276,28 +290,23 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       <table class="overview-table">
         <tr><td>Project name</td><td>Red Car (Austin) — per GC portfolio listing</td></tr>
         <tr><td>Operator</td><td>Unknown — pre-announcement</td></tr>
-        <tr><td>Address</td><td>11821 Rock Rose Ave Unit 135, Domain Northside, Austin TX 78758</td></tr>
-        <tr><td>Square footage</td><td>30,160 SF — 2× the size of any existing restaurant at Domain Northside</td></tr>
-        <tr><td>General Contractor</td><td>Trinity Constructors (same firm that built Haywire, Culinary Dropout, Sixty Vines, Ema at Domain Northside)</td></tr>
-        <tr><td>Est. revenue at scale</td><td>$8M–$20M+/yr ($300–$600/SF/yr industry benchmark)</td></tr>
-        <tr><td>Comparable</td><td>Culinary Dropout (Trinity-built, Domain Northside) ~$10M+/yr</td></tr>
+        <tr><td>Square footage</td><td>30,160 SF — 2× the size of any existing Domain Northside restaurant</td></tr>
+        <tr><td>General Contractor</td><td>Trinity Constructors (built Haywire, Culinary Dropout, Sixty Vines, Ema)</td></tr>
+        <tr><td>Est. revenue at scale</td><td>$8M–$20M+/yr ($300–$600/SF/yr benchmark)</td></tr>
         <tr><td>Est. open</td><td>Late 2026 – Early 2027</td></tr>
         <tr><td>Permit filed</td><td>2026-05-11</td></tr>
-        <tr><td>Employees at full op</td><td>150–300+</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 3</h4>
         <ul>
           <li>Active permit; GC named and reachable — warm path to operator exists</li>
           <li>Northwood Retail leasing contact identified for second approach</li>
-          <li>No direct operator contact yet; pre-announcement stage</li>
         </ul>
         <h4>Opp 5</h4>
         <ul>
-          <li>30,160 SF = highest-value pre-announcement lead in Austin right now</li>
+          <li>30,160 SF = highest-value pre-announcement lead in Austin</li>
           <li>Domain Northside = Austin's top-grossing hospitality corridor</li>
-          <li>Vendor contracts for food, insurance, POS, linen, equipment, signage — all simultaneously, before any incumbent relationships exist</li>
-          <li>Zero competition for the first call — no vendor knows this is coming</li>
+          <li>Zero vendor competition — no one knows this is coming</li>
         </ul>
       </div>
     </div>
@@ -309,8 +318,7 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(512) 576-0636</td></tr>
           <tr><td class="cl">Email</td><td>trinityconstructors.com/contact</td></tr>
-          <tr><td class="cl">LinkedIn</td><td>linkedin.com/company/trinity-constructors-inc-</td></tr>
-          <tr><td class="cl">Approach</td><td>Ask for the project manager on "Red Car Austin" — GCs share client names freely when asked conversationally</td></tr>
+          <tr><td class="cl">Approach</td><td>Ask for project manager on "Red Car Austin" — GCs share client names conversationally</td></tr>
         </table>
       </div>
       <div class="contact-card">
@@ -318,17 +326,16 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <div class="contact-title">Restaurant Leasing — Northwood Retail (Domain Northside landlord)</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(512) 758-7937</td></tr>
-          <tr><td class="cl">Approach</td><td>Manages restaurant leasing for Domain Northside — can confirm operator identity</td></tr>
+          <tr><td class="cl">Approach</td><td>Manages restaurant leasing at Domain Northside — can confirm operator identity</td></tr>
         </table>
       </div>
-      <p class="notes-text"><strong>Path 3:</strong> Monitor TABC at apps.tabc.texas.gov/publicinquiry for 11821 Rock Rose Ave — the alcohol license application will name the operator and managing member.</p>
+      <p class="notes-text"><strong>Path 3:</strong> Monitor TABC at apps.tabc.texas.gov/publicinquiry for 11821 Rock Rose Ave — the license application will name the operator and managing member.</p>
       <h3>Data Gaps</h3>
       <div class="data-gap">
         <h4>Missing</h4>
         <ul>
           <li>Operator/brand identity not yet public</li>
-          <li>National vs independent unknown (affects centralized procurement risk)</li>
-          <li>Opening timeline not confirmed</li>
+          <li>National vs. independent unknown (affects centralized procurement risk)</li>
         </ul>
       </div>
     </div>
@@ -339,11 +346,12 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#3 of 18</span>
+      <span class="rank-badge">#3 of 29</span>
       <span class="score-badge score-intent-hi">Intent 4/5</span>
       <span class="score-badge score-opp-mid">Opp 3/5</span>
       <span class="score-combined">Combined: 7</span>
-      <span class="badge-permit">Permit Jun 3 · $800K Buildout · Q4 2026</span>
+      <span class="badge-active">Active</span>
+      <span class="badge-permit">Permit Jun 3 · $800K Buildout</span>
     </div>
     <div class="lead-id">lead-01 · PERMITS · East 7th · Death &amp; Taxes ATX LP</div>
     <div class="lead-title">Death &amp; Taxes</div>
@@ -354,32 +362,25 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       <h3>Business Overview</h3>
       <table class="overview-table">
         <tr><td>Entity</td><td>Death &amp; Taxes ATX LP</td></tr>
-        <tr><td>Address</td><td>2142 E 7th St, Austin TX 78702</td></tr>
-        <tr><td>Neighborhood</td><td>East 7th corridor — Austin's highest-growth dining strip</td></tr>
-        <tr><td>Concept</td><td>Restaurant + tattoo parlor (mixed-use concept)</td></tr>
+        <tr><td>Address</td><td>2142 E 7th St, Austin TX 78702 (East 7th corridor)</td></tr>
+        <tr><td>Concept</td><td>Restaurant + tattoo parlor (mixed-use)</td></tr>
         <tr><td>Square footage</td><td>3,763 SF (change of use from Treasure City Thrift)</td></tr>
         <tr><td>Buildout value</td><td>$800,000</td></tr>
-        <tr><td>Est. annual revenue</td><td>$800K–$1.5M/yr (East Austin benchmark + tattoo revenue)</td></tr>
         <tr><td>Existing location</td><td>The Reagan — gastropub/cocktail bar, 313 E Mills Ave, El Paso TX 79901</td></tr>
         <tr><td>Est. open</td><td>Q4 2026</td></tr>
-        <tr><td>GC</td><td>KoBall Construction LLC</td></tr>
-        <tr><td>Architect</td><td>Chioco Design LLC — (512) 374-0288</td></tr>
-        <tr><td>Permit filed</td><td>2026-06-03</td></tr>
+        <tr><td>GC / Architect</td><td>KoBall Construction LLC · Chioco Design LLC (512) 374-0288</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 4</h4>
         <ul>
           <li>Both DMs identified with confirmed phone numbers</li>
-          <li>Very recent permit (Jun 3) — actively accelerating buildout</li>
-          <li>$800K buildout = serious capital committed</li>
+          <li>$800K committed — actively accelerating buildout</li>
           <li>El Paso operators new to Austin = zero existing Austin vendor relationships</li>
-          <li>Independent LP = no chain procurement barrier</li>
         </ul>
         <h4>Opp 3</h4>
         <ul>
           <li>3,763 SF on East 7th = full-service scale, premium location</li>
-          <li>El Paso hospitality background (The Reagan) = proven operator</li>
-          <li>Single location limits portfolio multiplier; wine/cocktail bar model supports strong ticket</li>
+          <li>El Paso hospitality track record (The Reagan) = proven operator</li>
         </ul>
       </div>
     </div>
@@ -390,7 +391,7 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <div class="contact-title">Co-owner — Death &amp; Taxes ATX LP / The Reagan El Paso</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(915) 529-5683 (The Reagan)</td></tr>
-          <tr><td class="cl">Background</td><td>Co-owner of The Reagan (gastropub/cocktail bar, El Paso TX). Daughter of El Paso billionaire Paul Foster. Previously owned Golden Bones boutique in Austin. Leading the Austin expansion.</td></tr>
+          <tr><td class="cl">Background</td><td>Co-owner of The Reagan (gastropub/cocktail bar, El Paso TX). Previously owned Golden Bones boutique in Austin. Leading the Austin expansion.</td></tr>
         </table>
       </div>
       <div class="contact-card">
@@ -398,14 +399,15 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <div class="contact-title">Co-owner — Death &amp; Taxes ATX LP / The Reagan El Paso</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(915) 494-2940 (property entity)</td></tr>
+          <tr><td class="cl">HQ address</td><td>123 W Mills Ave Ste 600, El Paso TX 79901</td></tr>
         </table>
       </div>
-      <h3>Back-Channel Path</h3>
-      <p class="notes-text"><strong>Chioco Design LLC — (512) 374-0288</strong> is the architect of record and a reliable route to the client. GC is KoBall Construction LLC. Property entity address: 123 W Mills Ave Ste 600, El Paso TX 79901.</p>
+      <h3>Back-Channel</h3>
+      <p class="notes-text"><strong>Chioco Design LLC — (512) 374-0288</strong> is the architect of record and a reliable secondary route to the client. GC: KoBall Construction LLC.</p>
       <h3>The Opportunity</h3>
       <div class="opp-box">
         <h4>Why pitch now</h4>
-        <p>El Paso operators expanding to Austin for the first time — no existing Austin vendor relationships for any category. $800K buildout signals serious investment and intent. Best window is now, before they establish relationships with Austin-area suppliers.</p>
+        <p>El Paso operators expanding to Austin for the first time — no existing Austin vendor relationships in any category. $800K buildout signals serious investment. Best window is now, before they establish relationships with Austin-area suppliers.</p>
         <ul style="margin-top:8px"><li><strong>Categories:</strong> commercial insurance, POS/payments, food/bev distribution, signage, equipment</li></ul>
       </div>
     </div>
@@ -416,13 +418,14 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#4 of 18</span>
+      <span class="rank-badge">#4 of 29</span>
       <span class="score-badge score-intent-hi">Intent 4/5</span>
       <span class="score-badge score-opp-lo">Opp 2/5</span>
       <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-active">Active</span>
       <span class="badge-tabc">Wine Bar Q3 2026 · Hyde Park</span>
     </div>
-    <div class="lead-id">lead-09 · TABC · Hyde Park · Sole Owner · Former Attorney</div>
+    <div class="lead-id">lead-09 · TABC · Hyde Park · Sole Owner</div>
     <div class="lead-title">Terrible Love</div>
     <div class="lead-concept">Brian Knowles (sole owner) · 3908 Avenue B, Austin TX 78751 · Coffee bar operating + wine bar in buildout</div>
   </div>
@@ -431,28 +434,22 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       <h3>Business Overview</h3>
       <table class="overview-table">
         <tr><td>Owner</td><td>Brian Knowles (sole owner)</td></tr>
-        <tr><td>Address</td><td>3908 Avenue B, Austin TX 78751</td></tr>
-        <tr><td>Neighborhood</td><td>Hyde Park (Baker Center)</td></tr>
-        <tr><td>Coffee</td><td>Open since Nov 2022 — boiler room at Baker Center</td></tr>
-        <tr><td>Wine bar</td><td>In buildout — former band hall, adjacent to coffee shop</td></tr>
-        <tr><td>Permit filed</td><td>2026-04-30 (change of use from office)</td></tr>
-        <tr><td>Wine bar opens</td><td>Q3 2026 (stated timeline)</td></tr>
-        <tr><td>Revenue (coffee)</td><td>$300K–$500K/yr (7:30 AM–2 PM weekdays)</td></tr>
-        <tr><td>Revenue (wine bar)</td><td>+$150K–$300K/yr once open</td></tr>
-        <tr><td>Website</td><td>terriblelovecoffee.com</td></tr>
-        <tr><td>Instagram</td><td>@terriblelovecoffee</td></tr>
+        <tr><td>Address</td><td>3908 Avenue B, Austin TX 78751 · Hyde Park (Baker Center)</td></tr>
+        <tr><td>Coffee bar</td><td>Open since Nov 2022</td></tr>
+        <tr><td>Wine bar</td><td>In buildout — adjacent former band hall</td></tr>
+        <tr><td>Wine bar opens</td><td>Q3 2026 (stated)</td></tr>
+        <tr><td>Website / IG</td><td>terriblelovecoffee.com · @terriblelovecoffee</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 4</h4>
         <ul>
           <li>Q3 2026 timeline explicitly stated — window is now</li>
-          <li>Brian is sole decision maker — no organizational layers, short sales cycle</li>
-          <li>Existing operating business = vendor credibility established</li>
-          <li>Wine bar buildout = net-new equipment, insurance, POS, linen all needed at once</li>
+          <li>Brian is sole DM — no org layers, short sales cycle</li>
+          <li>Wine bar buildout = net-new equipment, insurance, POS, linen needed now</li>
         </ul>
         <h4>Opp 2</h4>
         <ul>
-          <li>Single location, small format; revenue ceiling is modest</li>
+          <li>Single location, small format — revenue ceiling is modest</li>
           <li>High owner accessibility partially offsets smaller deal size</li>
         </ul>
       </div>
@@ -465,18 +462,17 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <table class="ct">
           <tr><td class="cl">Email</td><td>info@terriblelovecoffee.com</td></tr>
           <tr><td class="cl">LinkedIn</td><td>linkedin.com/in/brian-knowles-7969779</td></tr>
-          <tr><td class="cl">Instagram (personal)</td><td>@bknowlsie — 157 followers, he will see DMs</td></tr>
+          <tr><td class="cl">Instagram (personal)</td><td>@bknowlsie — 157 followers, will see DMs</td></tr>
           <tr><td class="cl">Instagram (biz)</td><td>@terriblelovecoffee</td></tr>
-          <tr><td class="cl">Facebook</td><td>facebook.com/brian.knowles.79827</td></tr>
           <tr><td class="cl">Phone</td><td>Not found in any public source</td></tr>
         </table>
       </div>
       <h3>Background</h3>
-      <p class="notes-text">Former Austin attorney (~10 years). Pivoted to coffee in 2021 — trailer first, then brick-and-mortar Nov 2022. Named the business after a song by The National. Covered by Austin Chronicle and Sprudge at launch. Now expanding the same address into a wine bar using the adjacent former band hall.</p>
+      <p class="notes-text">Former Austin attorney (~10 years). Pivoted to coffee in 2021 — trailer first, then brick-and-mortar Nov 2022. Named after a song by The National. Covered by Austin Chronicle and Sprudge at launch.</p>
       <h3>Pitch Angle</h3>
       <div class="opp-box">
         <h4>Approach</h4>
-        <p>DM @bknowlsie on Instagram (personal account — most likely to get a real response) or LinkedIn. Lead with a Q3 2026 hook: "Getting ahead of your wine bar opening." Brian makes every decision himself — if the fit is clear, the sales cycle is short.</p>
+        <p>DM @bknowlsie on Instagram or LinkedIn. Lead with Q3 2026 hook: "Getting ahead of your wine bar opening." Brian makes every decision himself — if the fit is clear, the sales cycle is short.</p>
         <ul style="margin-top:8px"><li><strong>Categories:</strong> commercial insurance, POS/payments, bar equipment, linen/smallwares, signage</li></ul>
       </div>
       <h3>Data Gaps</h3>
@@ -485,379 +481,48 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <ul>
           <li>No direct phone found in any public source</li>
           <li>Wine bar SF and seat count not in raw data</li>
-          <li>Budget not mentioned</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ #5: THE WELL -->
+<!-- ══════════════════════════════════════ #5: APPLEBEE'S / SSCP -->
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#5 of 18</span>
+      <span class="rank-badge">#5 of 29</span>
       <span class="score-badge score-intent-mid">Intent 3/5</span>
       <span class="score-badge score-opp-mid">Opp 3/5</span>
       <span class="score-combined score-combined-mid">Combined: 6</span>
-      <span class="badge-tabc">TABC Apr 29 · Bouldin Creek</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">TABC · Well Bouldin LLC · 409 W Monroe St</div>
-    <div class="lead-title">The Well</div>
-    <div class="lead-concept">Well Bouldin LLC · 409 W Monroe St, Austin TX 78704 · Mixed Beverage License issued Apr 29, 2026</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Entity</td><td>Well Bouldin LLC</td></tr>
-        <tr><td>Address</td><td>409 W Monroe St, Austin TX 78704</td></tr>
-        <tr><td>Neighborhood</td><td>Bouldin Creek — one of Austin's strongest independent dining corridors</td></tr>
-        <tr><td>License type</td><td>Mixed Beverage (MB) — Retail</td></tr>
-        <tr><td>TABC issued</td><td>April 29, 2026</td></tr>
-        <tr><td>TABC expires</td><td>April 28, 2028</td></tr>
-        <tr><td>Concept</td><td>Full-service restaurant/bar implied by MB license</td></tr>
-        <tr><td>Source</td><td>TABC Travis County (row 18)</td></tr>
-      </table>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>MB license issued = committed, near-opening status</li>
-          <li>Bouldin Creek is a premium Austin food/drink corridor (78704)</li>
-          <li>LLC name matches business name — local independent operator</li>
-          <li>No DM confirmed from TABC data alone</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>Bouldin Creek commands strong average check and loyal repeat clientele</li>
-          <li>Full-service implied by MB license (not beer/wine only)</li>
-          <li>Independent operator = full vendor decision authority</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No DM identified. LLC registered as "Well Bouldin LLC." Operator behind entity not confirmed from TABC data.</p>
-      <div class="opp-box">
-        <h4>Apollo enrichment recommended</h4>
-        <p>Search "Well Bouldin LLC" or "The Well" + Austin + bar/restaurant owner/founder to surface DM contact. Alternatively: Texas SOS SOSDirect lookup for "Well Bouldin LLC" will return the registered agent and managing member.</p>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator identity, DM name, phone, email all unknown</li>
-          <li>Concept type and cuisine not confirmed</li>
-          <li>Square footage unknown; no permit cross-reference found</li>
-          <li>Opening date unknown</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #6: MOXIES -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#6 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-mid">Combined: 6</span>
-      <span class="badge-tabc">TABC May 27 · Downtown · Canadian Chain</span>
-    </div>
-    <div class="lead-id">lead-10 · TABC · Downtown · Van Nostren Enterprises LP</div>
-    <div class="lead-title">Moxies</div>
-    <div class="lead-concept">Van Nostren Enterprises LP · 600 Congress Ave Suite G260, Austin TX 78701 · Canadian chain, first US expansion · 2,500 SF patio addition</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Operating entity</td><td>Van Nostren Enterprises LP (Texas-registered)</td></tr>
-        <tr><td>Brand</td><td>Moxies — founded 1986, Calgary, Canada</td></tr>
-        <tr><td>Chain size</td><td>60+ locations across Canada (Vancouver, Calgary, Edmonton, Toronto, Ottawa); Austin among first US entries</td></tr>
-        <tr><td>Address</td><td>600 Congress Ave Suite G260, Austin TX 78701</td></tr>
-        <tr><td>Permit</td><td>Change of use to restaurant + 2,500 SF patio café — filed 2026-04-06</td></tr>
-        <tr><td>TABC issued</td><td>May 27, 2026 · Expires May 26, 2028</td></tr>
-        <tr><td>Est. annual revenue</td><td>$3M–$6M/yr (CAD avg $4M–$8M/location adjusted for US market)</td></tr>
-        <tr><td>Employees</td><td>50–80 (US location; Canadian corporate support)</td></tr>
-        <tr><td>Est. open</td><td>Q3–Q4 2026</td></tr>
-        <tr><td>Website</td><td>moxies.com · @moxiesrestaurants</td></tr>
-      </table>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>MB license issued May 27 — opening confirmed</li>
-          <li>Congress Ave downtown flagship = high visibility, vendor decisions being made now</li>
-          <li>Canadian chain entering US with no US vendor relationships</li>
-          <li>Centralized procurement at Canadian corporate is the primary risk</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>Congress Ave = Austin's highest-volume hospitality street</li>
-          <li>60+ locations: if approved at corporate level, potentially a multi-location relationship</li>
-          <li>First US entry = fresh vendor slate, no incumbents</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No local Austin DM confirmed. Parent entity headquartered Winnipeg, Canada. Van Nostren Enterprises LP is the Texas operating entity. Austin likely has a local GM or regional director — not yet identified.</p>
-      <div class="opp-box">
-        <h4>Approach</h4>
-        <p>Purchasing decisions for a Canadian chain's first US location are likely made at Canadian corporate level. Priority: find the US expansion contact at moxies.com corporate page. Secondary: search Apollo for "Van Nostren Enterprises" or "Moxies Austin" + GM/regional director. Confirm procurement structure (centralized vs local) before investing full pitch time.</p>
-        <ul style="margin-top:8px"><li><strong>Categories:</strong> food/bev distribution, commercial insurance (new US market policy), POS/payments, linen/uniforms, signage</li></ul>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Local Austin GM / regional director not identified</li>
-          <li>Procurement structure (centralized vs location-level) not confirmed</li>
-          <li>No phone or email in source data</li>
-          <li>Total SF (patio + interior) not in raw data</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #7: STOUT HOUSE -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#7 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-mid">Combined: 6</span>
-      <span class="badge-tabc">TABC May 12</span>
-      <span class="badge-corrected">Corrected — was Lima Criolla</span>
-    </div>
-    <div class="lead-id">lead-07 · TABC · N IH-35 · Stout Linc LLC · CORRECTION APPLIED</div>
-    <div class="lead-title">Stout House</div>
-    <div class="lead-concept">Stout Linc LLC · 6406 N Interstate Hwy 35, Austin TX 78752 · Mixed Beverage License issued May 12, 2026</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Entity</td><td>Stout Linc LLC</td></tr>
-        <tr><td>Business name</td><td>Stout House</td></tr>
-        <tr><td>Address</td><td>6406 N Interstate Hwy 35, Austin TX 78752</td></tr>
-        <tr><td>License type</td><td>Mixed Beverage (MB) — Retail</td></tr>
-        <tr><td>TABC issued</td><td>May 12, 2026 · Expires May 11, 2028</td></tr>
-        <tr><td>Concept</td><td>Bar/restaurant implied by business name and MB license</td></tr>
-        <tr><td>Source</td><td>TABC Travis County CSV (row 12) — confirmed</td></tr>
-      </table>
-      <div class="correction-box">
-        <strong>CORRECTION:</strong> Prior enriched profile (lead-07) identified this buildout at 6406 N IH-35 as Lima Criolla / I.K. Osorio Investments LLC. TABC data (row 12, May 12, 2026) confirms the actual licensee is <strong>Stout House / Stout Linc LLC</strong>. Note: Lima Criolla remains the confirmed tenant in Suite 1550 of the same building (separate suite, separate operator). The prior profile's contact data (Susana Vivanco, Lima Criolla) does not apply to this buildout.
-      </div>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>MB license issued May 12 — committed to opening</li>
-          <li>N IH-35 at 78752 is high-traffic, established commercial corridor</li>
-          <li>Independent LLC = owner makes all vendor decisions</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>Bar/restaurant on N IH-35 = solid volume and consistent traffic</li>
-          <li>Full MB license = complete vendor scope (food, bar, equipment, insurance)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No DM identified. Stout Linc LLC is named but the principal behind the entity is not confirmed from TABC data or other public sources.</p>
-      <div class="opp-box">
-        <h4>Apollo enrichment recommended</h4>
-        <p>Search "Stout Linc LLC" or "Stout House Austin" + owner/founder/manager. Also: Texas SOS SOSDirect lookup for "Stout Linc LLC" will return the registered agent and managing member name.</p>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator/owner identity not confirmed</li>
-          <li>No DM name, phone, or email</li>
-          <li>Suite number at 6406 N IH-35 not in TABC record</li>
-          <li>Concept type beyond "bar" not confirmed</li>
-          <li>Square footage, seat count, opening date unknown</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #8: LOCAL FOODS -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#8 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-mid">Combined: 6</span>
-      <span class="badge-tabc">TABC May 27 · N Lamar</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">TABC · LFA #2 LLC · 3800 N Lamar Blvd</div>
-    <div class="lead-title">Local Foods</div>
-    <div class="lead-concept">LFA #2 LLC · 3800 N Lamar Blvd, Austin TX 78756 · Mixed Beverage License issued May 27, 2026</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Entity</td><td>LFA #2 LLC</td></tr>
-        <tr><td>Business name</td><td>Local Foods</td></tr>
-        <tr><td>Address</td><td>3800 N Lamar Blvd, Austin TX 78756</td></tr>
-        <tr><td>Neighborhood</td><td>Hyde Park / North Loop — premium independent dining corridor</td></tr>
-        <tr><td>License type</td><td>Mixed Beverage (MB) — Retail</td></tr>
-        <tr><td>TABC issued</td><td>May 27, 2026 · Expires May 26, 2028</td></tr>
-        <tr><td>Note on "#2"</td><td>"LFA #2 LLC" strongly implies an existing LFA #1 operation — multi-location operator likely</td></tr>
-        <tr><td>Concept implied</td><td>Farm-to-table / local sourcing (per name)</td></tr>
-        <tr><td>Source</td><td>TABC Travis County CSV (row 6)</td></tr>
-      </table>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>MB license issued May 27 — opening imminent</li>
-          <li>N Lamar / Hyde Park is one of Austin's strongest independent dining corridors</li>
-          <li>"#2" entity suggests an experienced operator expanding, not a first-timer</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>N Lamar / 78756 commands premium average check (Hyde Park, North Loop)</li>
-          <li>If this is location #2, vendor relationships are being actively scaled</li>
-          <li>Farm-to-table implied concept = higher-margin, quality vendor alignment</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No DM identified. "LFA #2 LLC" entity implies an existing operation (LFA #1). Principal not confirmed from TABC data.</p>
-      <div class="opp-box">
-        <h4>Apollo enrichment recommended</h4>
-        <p>Search "Local Foods Austin" + owner/founder — if LFA #1 is operating, the owner may already have a public presence. Also: Texas SOS lookup for "LFA #2 LLC" or "LFA LLC" will surface the managing member name.</p>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator identity, DM name, phone, email unknown</li>
-          <li>LFA #1 location (if exists) not identified</li>
-          <li>Square footage and concept details unknown</li>
-          <li>No permit cross-reference found in permits CSV</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #9: LAMAR UNION #1125 -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#9 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-mid">Combined: 6</span>
-      <span class="badge-permit">Expedited · Full Permit Set · Apr 8</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">PERMITS · Lamar Union Plaza · 3,680 SF + Patio · Permit 2026-013698</div>
-    <div class="lead-title">Lamar Union Unit 1125</div>
-    <div class="lead-concept">Operator TBD · 1100 S Lamar Blvd Unit 1125, Austin TX 78704 · 3,680 SF restaurant + outdoor seating · Expedited review</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Address</td><td>1100 S Lamar Blvd Unit 1125, Austin TX 78704</td></tr>
-        <tr><td>Development</td><td>Lamar Union Plaza — established mixed-use, curated tenant base</td></tr>
-        <tr><td>Square footage</td><td>3,680 SF + outdoor seating</td></tr>
-        <tr><td>Permit type</td><td>Interior tenant improvement — Commercial Expedited Review</td></tr>
-        <tr><td>Permit #</td><td>2026-013698 (BP + PP + EP + MP all issued)</td></tr>
-        <tr><td>First permits</td><td>April 8, 2026 (Building + Plumbing)</td></tr>
-        <tr><td>Latest permit</td><td>May 1, 2026 (Mechanical)</td></tr>
-        <tr><td>Source</td><td>Austin permits CSV (4 entries under 2026-013698)</td></tr>
-      </table>
-      <div class="permit-desc">"ePlan: Commercial Expedited Review — Interior tenant improvement for a 3680 SF restaurant with outdoor seating in an existing multi-tenant building within the Lamar Union Plaza"</div>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>All 4 permit types issued (BP, PP, EP, MP) = full buildout committed and underway</li>
-          <li>Expedited review = operator motivated to open quickly</li>
-          <li>Lamar Union draws established, experienced operators</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>3,680 SF + patio = full-service scale at a premium S Lamar address</li>
-          <li>Lamar Union at S Lamar / 78704 is a high-revenue corridor</li>
-          <li>Curated development = likely quality, independent operator</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No operator identified. Tenant not yet publicly announced. Monitor for TABC application at this address (typically filed 60–90 days before opening) or contact Lamar Union Plaza leasing management.</p>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Tenant/operator identity unknown</li>
-          <li>No DM, phone, or email</li>
-          <li>Concept type unknown</li>
-          <li>No TABC filing found yet at this address</li>
-          <li>Opening timeline: buildout started Apr 8 — estimate Q3/Q4 2026</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #10: APPLEBEE'S / SSCP -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#10 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-active">Active</span>
       <span class="badge-permit">Full Rebuild · May 27</span>
     </div>
     <div class="lead-id">lead-03 · PERMITS · SW Austin · SSCP Management · 72 Locations</div>
     <div class="lead-title">Applebee's — SSCP Management</div>
-    <div class="lead-concept">SSCP Management (Dharod family) · 5010 W US-290, Austin TX 78735 · Full rebuild · 72 Applebee's locations + 46 Sonic Drive-Ins</div>
+    <div class="lead-concept">SSCP Management (Dharod family) · 5010 W US-290, Austin TX 78735 · Full rebuild · 72 Applebee's + 46 Sonic Drive-Ins</div>
   </div>
   <div class="two-col">
     <div class="col-left">
       <h3>Business Overview</h3>
       <table class="overview-table">
         <tr><td>Operator</td><td>SSCP Management (founded 2012)</td></tr>
-        <tr><td>Brand</td><td>Applebee's Neighborhood Grill &amp; Bar</td></tr>
-        <tr><td>Address</td><td>5010 W US 290 Hwy, Austin TX 78735</td></tr>
         <tr><td>Portfolio</td><td>72 Applebee's (TX ~43, CA ~13, VA ~11) + 46 Sonic Drive-Ins</td></tr>
         <tr><td>Est. portfolio revenue</td><td>$185M–$230M/yr (72 locs × $2.64M AUV per 2024 FDD)</td></tr>
-        <tr><td>Employees</td><td>2,500–3,600 total (est. 35–50 per restaurant)</td></tr>
         <tr><td>Permit type</td><td>Full rebuild with site work and landscaping</td></tr>
         <tr><td>Permit filed</td><td>2026-05-27</td></tr>
         <tr><td>Est. open</td><td>Q4 2026 – Q1 2027</td></tr>
-        <tr><td>HQ</td><td>Dallas, TX — vendor decisions made centrally</td></tr>
-        <tr><td>Websites</td><td>sscpmanagement.com · applebees-sscp.com</td></tr>
+        <tr><td>HQ</td><td>Dallas, TX — sscpmanagement.com</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 3</h4>
         <ul>
           <li>Active full rebuild = every vendor contract for this location being reset</li>
           <li>4 named contacts identified at corporate level</li>
-          <li>72-location franchisee = one corporate relationship worth the investment</li>
         </ul>
         <h4>Opp 3</h4>
         <ul>
-          <li>$185M–$230M/yr portfolio revenue — top 5% of any Austin-area operator</li>
-          <li>Full rebuild = equipment, supplies, insurance all open for new bids</li>
+          <li>$185M–$230M/yr portfolio — top 5% of any Austin-area operator</li>
           <li>Key risk: Applebee's national agreements may override local vendor choices</li>
         </ul>
       </div>
@@ -884,17 +549,9 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       </div>
       <div class="contact-card">
         <div class="contact-name">Benny Gilbert</div>
-        <div class="contact-title">Operations Contact — Synergy Restaurant Management (Austin/Houston-area entity)</div>
+        <div class="contact-title">Operations — Synergy Restaurant Management (Austin/Houston entity)</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(281) 991-7800</td></tr>
-          <tr><td class="cl">Note</td><td>Closest confirmed operational contact for the Austin-area franchise entity</td></tr>
-        </table>
-      </div>
-      <div class="contact-card">
-        <div class="contact-name">Puja Dharod</div>
-        <div class="contact-title">VP of Investments — SSCP Management</div>
-        <table class="ct">
-          <tr><td class="cl">Phone</td><td>(972) 644-9494 (SSCP corporate)</td></tr>
         </table>
       </div>
       <h3>Data Gaps</h3>
@@ -903,336 +560,22 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <ul>
           <li>Emails sourced from B2B aggregators — verify before use</li>
           <li>Applebee's national supply agreements may limit local vendor access</li>
-          <li>Dallas HQ makes centralized decisions — local GM role not identified</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ #11: TOKAMI -->
+<!-- ══════════════════════════════════════ #6: H MART LAKELINE SUITE 112 -->
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#11 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-lo">Opp 2/5</span>
-      <span class="score-combined score-combined-lo">Combined: 5</span>
-      <span class="badge-permit">Permit May 28 · Q3 2026</span>
-    </div>
-    <div class="lead-id">lead-02 · PERMITS · S Lamar · TOKAMI AUSTIN LLC</div>
-    <div class="lead-title">Tokami Austin</div>
-    <div class="lead-concept">TOKAMI AUSTIN LLC · 4477 S Lamar Blvd Unit 730, Austin TX 78745 · Sushi restaurant · Former Sushi Avenue space</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Entity</td><td>TOKAMI AUSTIN LLC (Texas Comptroller confirmed)</td></tr>
-        <tr><td>Address</td><td>4477 S Lamar Blvd Unit 730, Austin TX 78745 (Westgate area)</td></tr>
-        <tr><td>Concept</td><td>Full-service sushi restaurant (NAICS 722511)</td></tr>
-        <tr><td>Permit</td><td>Change of use from retail to sushi restaurant — filed 2026-05-28</td></tr>
-        <tr><td>Permit description</td><td>Former Sushi Avenue space (Westgate strip mall)</td></tr>
-        <tr><td>Locations</td><td>1 — no other US locations confirmed</td></tr>
-        <tr><td>Est. annual revenue</td><td>$800K–$1.5M/yr (first-location indie sushi benchmark)</td></tr>
-        <tr><td>Est. open</td><td>Q3 2026</td></tr>
-        <tr><td>Instagram</td><td>@restaurant_tokami</td></tr>
-        <tr><td>Website</td><td>Not yet launched</td></tr>
-      </table>
-      <p class="notes-text" style="margin-top:10px;background:#fffbf0;padding:8px;border-radius:4px;border-left:2px solid #d69e2e">A <strong>Sushi Tokami</strong> brand exists in Ginza, Tokyo (Michelin-starred) and has European locations — possible international expansion to Austin, unconfirmed. If confirmed, this dramatically changes the Opportunity score.</p>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>Active permit May 28 = building out now</li>
-          <li>Instagram presence @restaurant_tokami = operator reachable via DM</li>
-          <li>Entity confirmed with Texas Comptroller (sales tax permit active)</li>
-        </ul>
-        <h4>Opp 2</h4>
-        <ul>
-          <li>Single location, independent — modest deal size at current data</li>
-          <li>If Michelin Tokyo connection confirmed, Opp would jump to 4–5</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">Owner not publicly identified. TOKAMI AUSTIN LLC is confirmed with Texas Comptroller but principal is not named in public records.</p>
-      <div class="opp-box">
-        <h4>Contact paths</h4>
-        <ul>
-          <li><strong>Instagram DM: @restaurant_tokami</strong> — fastest current path</li>
-          <li><strong>Texas SOS SOSDirect:</strong> search "TOKAMI AUSTIN LLC" ($1 fee) — returns registered agent and managing member name</li>
-        </ul>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Owner identity and contact details not in public records</li>
-          <li>Michelin/international brand connection unconfirmed</li>
-          <li>Square footage not in permit record</li>
-          <li>No phone, no email confirmed</li>
-          <li>TABC filing not yet found at this address</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #12: ROCK ROSE PIZZA -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#12 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-lo">Opp 2/5</span>
-      <span class="score-combined score-combined-lo">Combined: 5</span>
-      <span class="badge-permit">Permit May 19 · Domain Northside</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">PERMITS · Domain Northside · 11501 Rock Rose Ave Unit 146 · Permit 2026-063338</div>
-    <div class="lead-title">Rock Rose Pizza Concept</div>
-    <div class="lead-concept">Operator TBD · 11501 Rock Rose Ave Unit 146, Austin TX 78758 · Interior remodel for new pizza restaurant · Replacing prior pizza tenant</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Address</td><td>11501 Rock Rose Ave Unit 146, Austin TX 78758</td></tr>
-        <tr><td>Note</td><td>Different address from Red Car project (#2 in this report, 11821 Rock Rose) — two separate Domain Northside openings</td></tr>
-        <tr><td>Development</td><td>Domain Northside area</td></tr>
-        <tr><td>Concept</td><td>New pizza restaurant replacing existing pizza tenant</td></tr>
-        <tr><td>Permit #</td><td>2026-063338</td></tr>
-        <tr><td>Permits issued</td><td>May 19–20, 2026: Building, Electrical, Plumbing, Mechanical (all 4)</td></tr>
-        <tr><td>Source</td><td>Austin permits CSV (4 entries)</td></tr>
-      </table>
-      <div class="permit-desc">"Interior remodel of existing pizza restaurant to accommodate new pizza restaurant"</div>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>All 4 permit types issued simultaneously = committed, active buildout</li>
-          <li>Domain Northside = premium destination with high operator quality</li>
-          <li>"Replacing existing" suggests experienced operator (not first-timer)</li>
-        </ul>
-        <h4>Opp 2</h4>
-        <ul>
-          <li>Pizza concept = solid but not top-tier ticket average</li>
-          <li>Domain location partially offsets; operator identity needed to properly score</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No operator identified. Could be a rebrand of the prior pizza tenant or a new incoming operator — the permit description doesn't distinguish.</p>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator/brand unknown; rebrand vs new operator unclear</li>
-          <li>No DM, phone, or email</li>
-          <li>Square footage not in permit description</li>
-          <li>No TABC filing found at this address</li>
-          <li>Opening timeline unknown</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #13: LA MARLY -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#13 of 18</span>
-      <span class="score-badge score-intent-mid">Intent 3/5</span>
-      <span class="score-badge score-opp-lo">Opp 2/5</span>
-      <span class="score-combined score-combined-lo">Combined: 5</span>
-      <span class="badge-tabc">TABC May 18 · La Marly LLC</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">TABC · FM 1825 · La Marly LLC</div>
-    <div class="lead-title">La Marly Cuban Restaurant</div>
-    <div class="lead-concept">La Marly LLC · 15200 FM 1825, Austin TX 78660 · Cuban restaurant · Mixed Beverage License May 18, 2026</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Entity</td><td>La Marly LLC</td></tr>
-        <tr><td>Business name</td><td>La Marly Cuban Restaurant</td></tr>
-        <tr><td>Address</td><td>15200 FM 1825, Austin TX 78660</td></tr>
-        <tr><td>Area</td><td>Pflugerville / Manor (NE Austin metro)</td></tr>
-        <tr><td>License type</td><td>Mixed Beverage (MB) — Retail</td></tr>
-        <tr><td>TABC issued</td><td>May 18, 2026 · Expires May 17, 2028</td></tr>
-        <tr><td>Concept</td><td>Cuban restaurant (named in TABC record)</td></tr>
-        <tr><td>Source</td><td>TABC Travis County CSV (row 10)</td></tr>
-      </table>
-      <div class="scoring-box">
-        <h4>Intent 3</h4>
-        <ul>
-          <li>MB license issued May 18 = opening committed</li>
-          <li>Both business name and entity confirmed in TABC data</li>
-          <li>Independent LLC = owner makes all vendor decisions</li>
-        </ul>
-        <h4>Opp 2</h4>
-        <ul>
-          <li>FM 1825 / 78660 = Pflugerville area (lower check average vs central Austin)</li>
-          <li>Single-location independent = smaller deal size</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No DM identified from TABC. Business and entity named but principal behind La Marly LLC not in public data.</p>
-      <div class="opp-box">
-        <h4>Apollo / SOS recommended</h4>
-        <p>Search "La Marly LLC" or "La Marly Cuban Restaurant" + Austin/Pflugerville + owner/founder. Texas SOS SOSDirect search will return managing member from LLC filing.</p>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Owner/operator identity, phone, email all unknown</li>
-          <li>Square footage, seat count, opening timeline unknown</li>
-          <li>No permit cross-reference found</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #14: 78 RAINEY ST -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#14 of 18</span>
-      <span class="score-badge score-intent-lo">Intent 2/5</span>
-      <span class="score-badge score-opp-mid">Opp 3/5</span>
-      <span class="score-combined score-combined-lo">Combined: 5</span>
-      <span class="badge-permit">Expedited · Jun 1 · Rainey Street</span>
-      <span class="badge-new">Net-New Lead</span>
-    </div>
-    <div class="lead-id">PERMITS · Rainey Street · 2,920 SF · Permit 2026-026513</div>
-    <div class="lead-title">78 Rainey St — Future Restaurant</div>
-    <div class="lead-concept">Operator TBD · 78 Rainey St, Austin TX 78701 · Two bungalows remodeled into 2,920 SF restaurant · Jun 1, 2026</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Address</td><td>78 Rainey St, Austin TX 78701</td></tr>
-        <tr><td>Neighborhood</td><td>Rainey Street — Austin's highest-revenue hospitality corridor</td></tr>
-        <tr><td>Square footage</td><td>2,920 SF (two bungalows connected into single shell)</td></tr>
-        <tr><td>Permit type</td><td>Addition and Remodel — Commercial Expedited Review</td></tr>
-        <tr><td>Permit #</td><td>2026-026513</td></tr>
-        <tr><td>Permit issued</td><td>June 1, 2026</td></tr>
-        <tr><td>Source</td><td>Austin permits CSV</td></tr>
-      </table>
-      <div class="permit-desc">"ePlan: Commercial Expedited Review — Remodel Two Bungalows — Scope of work to Include Exterior rehab Interior Demolition Addition to Include Connecting Bungalows into a Single Shell for Future Restaurant (2920 SF)"</div>
-      <div class="scoring-box">
-        <h4>Intent 2</h4>
-        <ul>
-          <li>Very recent expedited permit (Jun 1) = project accelerating</li>
-          <li>No operator identity — cannot initiate sales conversation yet</li>
-          <li>Bungalow remodel = longer buildout timeline likely (6–12 months)</li>
-        </ul>
-        <h4>Opp 3</h4>
-        <ul>
-          <li>Rainey Street = Austin's top hospitality corridor (premium check, high volume)</li>
-          <li>Bungalow conversion = boutique/upscale concept likely = higher vendor spend per cover</li>
-          <li>2,920 SF is meaningful full-service scale</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No operator identified. Shell/remodel phase — operator may not be publicly announced. Monitor TABC applications at 78 Rainey St.</p>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator identity unknown</li>
-          <li>No DM, phone, or email</li>
-          <li>Concept unknown (bungalow format suggests upscale/boutique)</li>
-          <li>Opening timeline: bungalow remodel likely 6–12 months from Jun 1</li>
-          <li>No TABC filing found yet</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #15: FAR WEST -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#15 of 18</span>
+      <span class="rank-badge">#6 of 29</span>
       <span class="score-badge score-intent-lo">Intent 2/5</span>
       <span class="score-badge score-opp-lo">Opp 2/5</span>
       <span class="score-combined score-combined-lo">Combined: 4</span>
-      <span class="badge-permit">Permit May 19 · Restaurant Limited</span>
-    </div>
-    <div class="lead-id">lead-04 · PERMITS · Far West Blvd · DA-2026-030629</div>
-    <div class="lead-title">Far West Blvd Unit 109</div>
-    <div class="lead-concept">Operator TBD · 3720 Far West Blvd Unit 109, Austin TX 78731 · Restaurant Limited · Near Gatti's, ATX Coffee, Soup Peddler</div>
-  </div>
-  <div class="two-col">
-    <div class="col-left">
-      <h3>Business Overview</h3>
-      <table class="overview-table">
-        <tr><td>Address</td><td>3720 Far West Blvd Unit 109, Austin TX 78731</td></tr>
-        <tr><td>Neighborhood</td><td>Far West / Northwest Hills (Loop 360 area)</td></tr>
-        <tr><td>Permit type</td><td>Restaurant Limited — change of use from office</td></tr>
-        <tr><td>Permit #</td><td>DA-2026-030629</td></tr>
-        <tr><td>Permit filed</td><td>May 19, 2026</td></tr>
-        <tr><td>Neighboring tenants</td><td>Gatti's, ATX Coffee and Lounge, Soup Peddler (same building)</td></tr>
-        <tr><td>Est. revenue</td><td>$400K–$900K/yr (limited-service neighborhood concept)</td></tr>
-        <tr><td>Est. open</td><td>Q3–Q4 2026</td></tr>
-        <tr><td>Source</td><td>Austin permits; enriched profile lead-04</td></tr>
-      </table>
-      <div class="scoring-box">
-        <h4>Intent 2</h4>
-        <ul>
-          <li>Permit is the only signal — no TABC, no social, no announcement</li>
-          <li>Restaurant Limited = limited service/hours (lowers revenue ceiling)</li>
-          <li>No operator identity = cannot initiate contact</li>
-        </ul>
-        <h4>Opp 2</h4>
-        <ul>
-          <li>Restaurant Limited = lower ticket (fast-casual, café format likely)</li>
-          <li>Strip center, Northwest Hills — steady but not premium location</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">Operator not identified. Applicant name is only in the Austin AB+C portal under permit DA-2026-030629.</p>
-      <div class="opp-box">
-        <h4>How to identify operator</h4>
-        <p>Call Austin Development Services at <strong>(512) 978-4000</strong> and ask for the applicant name on permit DA-2026-030629. Monitor TABC filings at this address.</p>
-      </div>
-      <h3>Data Gaps</h3>
-      <div class="data-gap">
-        <h4>Missing</h4>
-        <ul>
-          <li>Operator, DM, phone, email all unknown</li>
-          <li>Concept type unconfirmed (Restaurant Limited = café, QSR, counter-service)</li>
-          <li>Square footage unknown; no TABC filed</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════ #16: H MART LAKELINE -->
-<div class="lead-page page-break">
-  <div class="lead-header">
-    <div class="score-row">
-      <span class="rank-badge">#16 of 18</span>
-      <span class="score-badge score-intent-lo">Intent 2/5</span>
-      <span class="score-badge score-opp-lo">Opp 2/5</span>
-      <span class="score-combined score-combined-lo">Combined: 4</span>
-      <span class="badge-pre">Pre-Announcement · H Mart Food Hall</span>
+      <span class="badge-active">Active</span>
+      <span class="badge-permit">Permit May 7 · H Mart Food Hall</span>
     </div>
     <div class="lead-id">lead-08 · PERMITS · Lakeline · H Mart Building 8 · Suite 112</div>
     <div class="lead-title">H Mart Lakeline — Suite 112</div>
@@ -1243,20 +586,16 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       <h3>Business Overview</h3>
       <table class="overview-table">
         <tr><td>Address</td><td>11301 Lakeline Blvd Bldg 8, Suite 112, Austin TX 78717</td></tr>
-        <tr><td>Development</td><td>H Mart Lakeline — anchored by H Mart Korean grocery</td></tr>
-        <tr><td>Context</td><td>Building 8 has 24+ existing Korean and Asian food concepts; Suite 112 is a net-new entrant</td></tr>
-        <tr><td>Concept implied</td><td>Korean/Asian restaurant (based on building's established market)</td></tr>
+        <tr><td>Context</td><td>Building 8 — 24+ Korean and Asian food concepts; Suite 112 is a net-new slot</td></tr>
+        <tr><td>Concept implied</td><td>Korean/Asian restaurant (established market context)</td></tr>
         <tr><td>Permit filed</td><td>2026-05-07 (change of use from retail/office to restaurant)</td></tr>
-        <tr><td>Est. revenue</td><td>$500K–$1.2M/yr (depending on format: food stall to full-service)</td></tr>
         <tr><td>Est. open</td><td>Q3–Q4 2026</td></tr>
-        <tr><td>Source</td><td>Austin permits; enriched profile lead-08</td></tr>
       </table>
       <div class="scoring-box">
         <h4>Intent 2</h4>
         <ul>
-          <li>H Mart development active; Suite 112 tenant not yet announced</li>
+          <li>Permit only signal — Suite 112 tenant not yet announced</li>
           <li>Food hall sub-tenants often finalize late in construction</li>
-          <li>Korean/Asian food hall = specialty vendors (worth pursuing)</li>
         </ul>
         <h4>Opp 2</h4>
         <ul>
@@ -1266,23 +605,22 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
       </div>
     </div>
     <div class="col-right">
-      <h3>Contact Paths</h3>
+      <h3>Back-Channel Contact</h3>
       <div class="contact-card">
         <div class="contact-name">Hanshin Pocha</div>
         <div class="contact-title">Adjacent tenant — Suite 114, Building 8</div>
         <table class="ct">
           <tr><td class="cl">Phone</td><td>(512) 855-4995</td></tr>
-          <tr><td class="cl">Approach</td><td>Neighboring tenants typically know who is moving into adjacent suites — ask who is taking Suite 112</td></tr>
+          <tr><td class="cl">Approach</td><td>Adjacent tenants know who is moving into neighboring suites — ask who is taking Suite 112. First call goes here.</td></tr>
         </table>
       </div>
-      <p class="notes-text">Also: call Austin Development Services at <strong>(512) 978-4000</strong> for permit applicant name. Monitor Texas Comptroller and TABC filings at this address.</p>
+      <p class="notes-text">Also: monitor TX Comptroller and TABC filings at 11301 Lakeline Blvd Suite 112 for operator filing ahead of opening.</p>
       <h3>Data Gaps</h3>
       <div class="data-gap">
         <h4>Missing</h4>
         <ul>
           <li>Suite 112 tenant identity unknown</li>
-          <li>No DM, phone, or email</li>
-          <li>Concept type unconfirmed beyond Korean/Asian food hall context</li>
+          <li>No DM phone or email</li>
           <li>No TABC filing found at Suite 112</li>
         </ul>
       </div>
@@ -1290,58 +628,790 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ #17: S IH-35 MONGOLIAN BBQ -->
+<!-- WATCH SECTION DIVIDER -->
+<div class="section-divider section-divider-watch page-break">
+  <div class="eyebrow">Austin Restaurant Intel · June 2026</div>
+  <div class="title">Watch Tier — 23 Leads</div>
+  <div class="sub">Operator and/or decision-maker contact not yet confirmed. Each lead will be promoted to Active when a named DM or back-channel is verified. Sorted by score within this section.</div>
+</div>
+
+<!-- ══════════════════════════════════════ #7: STOUT HOUSE -->
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#17 of 18</span>
-      <span class="score-badge score-intent-lo">Intent 2/5</span>
-      <span class="score-badge score-opp-lo">Opp 2/5</span>
-      <span class="score-combined score-combined-lo">Combined: 4</span>
-      <span class="badge-permit">Finish-Out · May 5</span>
-      <span class="badge-new">Net-New Lead</span>
+      <span class="rank-badge">#7 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC + Permit + Tax · N IH-35</span>
     </div>
-    <div class="lead-id">PERMITS · S IH-35 · Permit 2025-061193 · Mongolian BBQ + Sushi</div>
-    <div class="lead-title">S IH-35 Mongolian BBQ + Sushi</div>
-    <div class="lead-concept">Operator TBD · 9900 S IH 35 SVRD SB Bldg M Unit 100, Austin TX 78748 · Interior finish-out permit May 5, 2026</div>
+    <div class="lead-id">TABC · Stout Linc LLC · 6406 N IH-35 Suite 1700 · Triple-Confirmed</div>
+    <div class="lead-title">Stout House</div>
+    <div class="lead-concept">Stout Linc LLC · 6406 N Interstate Hwy 35 Suite 1700, Austin TX 78752 · Bar/restaurant · Dual-source: TABC + permit + sales tax all confirmed at Suite 1700</div>
   </div>
   <div class="two-col">
     <div class="col-left">
       <h3>Business Overview</h3>
       <table class="overview-table">
-        <tr><td>Address</td><td>9900 S IH 35 SVRD SB Bldg M Unit 100, Austin TX 78748</td></tr>
-        <tr><td>Neighborhood</td><td>South IH-35 (suburban strip, 78748)</td></tr>
-        <tr><td>Concept</td><td>Mongolian BBQ and Sushi (stated in permit description)</td></tr>
-        <tr><td>Permit type</td><td>Interior finish-out — Mechanical</td></tr>
-        <tr><td>Permit #</td><td>2025-061193 MP</td></tr>
-        <tr><td>Permit issued</td><td>May 5, 2026 (permit originated 2025 — delayed buildout)</td></tr>
-        <tr><td>Source</td><td>Austin permits CSV</td></tr>
+        <tr><td>Entity</td><td>Stout Linc LLC</td></tr>
+        <tr><td>Address</td><td>6406 N IH-35 Suite 1700, Austin TX 78752 · The Linc mixed-use</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 12, 2026 · Suite 1700</td></tr>
+        <tr><td>Permit</td><td>Interior remodel + change of use from retail to bar + 717 SF exterior patio · issued Apr 30, 2026</td></tr>
+        <tr><td>Sales Tax</td><td>STOUT HOUSE / STOUT LINC LLC · NAICS 722410 · filed Mar 25, 2026 at Suite 1700</td></tr>
+        <tr><td>Context</td><td>The Linc has 10 active TABC records and 14 food operators — established destination</td></tr>
       </table>
-      <div class="permit-desc">"Interior finish out for a new restaurant serving Mongolian BBQ and Sushi."</div>
       <div class="scoring-box">
-        <h4>Intent 2</h4>
+        <h4>Intent 3</h4>
         <ul>
-          <li>Finish-out stage = closer to opening than shell, but 2025 permit suggests delays</li>
-          <li>Concept specifically named in permit (Mongolian BBQ + Sushi)</li>
-          <li>No operator identity = cannot initiate contact</li>
+          <li>TABC + permit + sales tax all confirm same operator at same suite — strongest triple-confirmation in this brief</li>
+          <li>Patio addition = additional build investment beyond interior</li>
         </ul>
-        <h4>Opp 2</h4>
+        <h4>Opp 3</h4>
         <ul>
-          <li>S IH-35 suburban strip = moderate average check</li>
-          <li>Dual concept (Mongolian BBQ + Sushi) = independent, mid-tier</li>
+          <li>Bar/restaurant in an active 10-operator destination (The Linc)</li>
+          <li>Independent LLC = full vendor decision authority</li>
         </ul>
       </div>
     </div>
     <div class="col-right">
-      <h3>Decision Makers</h3>
-      <p class="no-dm">No operator identified. Permit 2025-061193 originated in 2025 — delayed buildout. No business name in mechanical permit description.</p>
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Stout Linc LLC is named but managing member not confirmed from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "Stout House" — the MB application names the managing member of Stout Linc LLC. 2. Texas SOS SOSDirect (apps.sos.state.tx.us) — search "Stout Linc LLC" ($1) for registered managing member and agent.</p>
+      </div>
       <h3>Data Gaps</h3>
       <div class="data-gap">
         <h4>Missing</h4>
         <ul>
-          <li>Operator, DM, phone, email all unknown</li>
-          <li>Square footage not in permit description</li>
-          <li>Delayed buildout (2025 permit) — opening date unclear</li>
+          <li>Managing member of Stout Linc LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail beyond "bar" not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #8: THE LOBBY -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#8 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 29 · West 6th</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · Austin Vampires LLC · 710A W 6th St · San Antonio Ownership</div>
+    <div class="lead-title">The Lobby</div>
+    <div class="lead-concept">Austin Vampires LLC · 710A W 6th St, Austin TX 78701 · Bar/lounge · West 6th corridor</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Austin Vampires LLC</td></tr>
+        <tr><td>Address</td><td>710A W 6th St, Austin TX 78701 · West 6th</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 29, 2026 · expires May 28, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>THE LOBBY / AUSTIN VAMPIRES LLC · NAICS 722410 (bar/drinking place) · filed Feb 20, 2026</td></tr>
+        <tr><td>Franchise Tax</td><td>AUSTIN VAMPIRES LLC · 5 Remington Run, San Antonio TX 78258 · active since Jan 20, 2026</td></tr>
+        <tr><td>Previous tenant</td><td>The Ranch (operated 2007 at this address)</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license issued May 29 — opening committed</li>
+          <li>Sales tax filed Feb 20 = 3+ months ahead of TABC — well-planned operator</li>
+          <li>San Antonio-based ownership entering Austin = zero existing Austin vendor relationships</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>West 6th = Austin's established bar/lounge corridor, strong check average</li>
+          <li>Independent LLC = owner makes all vendor decisions</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Austin Vampires LLC is named but managing member not identified from TABC or Comptroller data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "The Lobby" at 710 W 6th — the MB application names the managing member of Austin Vampires LLC. 2. Texas SOS SOSDirect — search "Austin Vampires LLC" ($1) for managing member and registered agent (SA address).</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member of Austin Vampires LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail (bar vs. restaurant) and square footage not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #9: EVENING DRAFT LLC -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#9 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 14 · Downtown</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · Evening Draft LLC · 1614 Lavaca St · Downtown Bar/Tavern</div>
+    <div class="lead-title">Evening Draft LLC</div>
+    <div class="lead-concept">Evening Draft LLC · 1614 Lavaca St, Austin TX 78701 · Bar/tavern · Downtown Austin</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Evening Draft LLC</td></tr>
+        <tr><td>Address</td><td>1614 Lavaca St, Austin TX 78701 · Downtown (Capitol/UT corridor)</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 14, 2026 · expires May 13, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>EVENING DRAFT LLC · NAICS 722410 (bar/tavern) · filed Mar 14, 2026</td></tr>
+        <tr><td>Franchise Tax</td><td>EVENING DRAFT LLC · 611 W 5th St Ste 300, Austin TX 78701 · active since Jan 16, 2026</td></tr>
+        <tr><td>Note</td><td>Registered agent address (611 W 5th Ste 300) = law firm / registered agent office</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license + sales tax + franchise tax all confirmed — committed operator</li>
+          <li>Sales tax filed Mar 14, TABC issued May 14 = 2-month gap, buildout in progress</li>
+          <li>Downtown Lavaca = high-foot-traffic bar location (Capitol, UT, law firms)</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>Downtown Austin bar = strong volume and consistent traffic</li>
+          <li>Independent LLC = full vendor decision authority</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. "Evening Draft LLC" entity is named but managing member not identified from TABC or Comptroller records.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "Evening Draft" at 1614 Lavaca — MB application names the managing member. 2. Texas SOS SOSDirect — search "Evening Draft LLC" ($1) for managing member (registered agent is a law firm, not the owner).</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail (bar, tavern, gastropub) not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #10: KS CAFE LLC -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#10 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC Apr 28 · SoCo</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · KS Cafe LLC · 1700 S Congress Ave · SoCo Bar-Café</div>
+    <div class="lead-title">KS Cafe LLC</div>
+    <div class="lead-concept">KS Cafe LLC · 1700 S Congress Ave, Austin TX 78704 · Bar-café hybrid · South Congress corridor</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>KS Cafe LLC</td></tr>
+        <tr><td>Address</td><td>1700 S Congress Ave, Austin TX 78704 · SoCo</td></tr>
+        <tr><td>TABC</td><td>MB active · issued Apr 28, 2026 · expires Apr 27, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>KS CAFE LLC · NAICS 722410 (bar/drinking place) · filed Aug 12, 2025</td></tr>
+        <tr><td>Signal gap</td><td>Sales tax filed Aug 2025 — 8 months before TABC · long runway = well-planned operator</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>Sales tax filed 8 months before TABC = deliberate, patient operator (not reactive)</li>
+          <li>SoCo at 1700 S Congress = one of Austin's highest-foot-traffic commercial addresses</li>
+          <li>MB license + long planning horizon = serious capital commitment</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>South Congress = premium check averages and loyal repeat clientele</li>
+          <li>Independent LLC = full vendor decision authority</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. KS Cafe LLC is named but managing member not confirmed from TABC or Comptroller data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "KS Cafe" at 1700 S Congress — MB application names the managing member. 2. Texas SOS SOSDirect — search "KS Cafe LLC" ($1) for managing member and registered agent.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail (café format vs. bar) and square footage not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #11: THE WELL -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#11 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC Apr 29 · Bouldin Creek</span>
+    </div>
+    <div class="lead-id">TABC · Well Bouldin LLC · 409 W Monroe St · Full-Service Restaurant</div>
+    <div class="lead-title">The Well</div>
+    <div class="lead-concept">Well Bouldin LLC · 409 W Monroe St, Austin TX 78704 · Full-service restaurant/bar · Bouldin Creek</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Well Bouldin LLC</td></tr>
+        <tr><td>Address</td><td>409 W Monroe St, Austin TX 78704 · Bouldin Creek</td></tr>
+        <tr><td>TABC</td><td>MB active · issued Apr 29, 2026 · expires Apr 28, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>THE WELL / WELL BOULDIN LLC · NAICS 722511 (full-service restaurant) · filed Feb 27, 2026</td></tr>
+        <tr><td>Franchise Tax</td><td>WELL BOULDIN LLC · 512 Rio Grande St, Austin 78701 · active since Feb 12, 2026</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>All three government systems confirm same LLC, formed Feb 2026</li>
+          <li>Bouldin Creek = one of Austin's strongest independent dining corridors</li>
+          <li>New local LLC = independent operator with full vendor authority</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>Bouldin Creek commands strong average check and loyal repeat clientele</li>
+          <li>Full-service implied by MB license and NAICS 722511</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Well Bouldin LLC is named but managing member not identified from TABC or Comptroller records.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "The Well" at 409 W Monroe — MB application names the managing member of Well Bouldin LLC. 2. Texas SOS SOSDirect — search "Well Bouldin LLC" ($1) for managing member.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member of Well Bouldin LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Square footage, concept details, opening date unknown</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #12: MOXIES -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#12 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 6</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 27 · Downtown · Canadian Chain</span>
+    </div>
+    <div class="lead-id">lead-10 · TABC · Downtown · Van Nostren Enterprises LP · 60+ Locations</div>
+    <div class="lead-title">Moxies</div>
+    <div class="lead-concept">Van Nostren Enterprises LP · 600 Congress Ave Suite G260, Austin TX 78701 · Canadian chain, US expansion · 2,500 SF patio addition</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Operating entity</td><td>Van Nostren Enterprises LP (Texas-registered)</td></tr>
+        <tr><td>Brand</td><td>Moxies — founded 1986, Calgary, Canada · 60+ Canadian locations</td></tr>
+        <tr><td>Address</td><td>600 Congress Ave Suite G260, Austin TX 78701</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 27, 2026</td></tr>
+        <tr><td>Permit</td><td>Change of use to restaurant + 2,500 SF patio café · filed Apr 6, 2026</td></tr>
+        <tr><td>Est. revenue</td><td>$3M–$6M/yr (Canadian avg adjusted for US market)</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license issued — opening confirmed; Congress Ave flagship</li>
+          <li>Canadian chain entering US = no US vendor relationships in place</li>
+          <li>Key risk: centralized procurement at Canadian corporate</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>Congress Ave = Austin's highest-volume hospitality street</li>
+          <li>If approved at corporate level, potentially a multi-location US relationship</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No local Austin DM confirmed. Van Nostren Enterprises LP is the Texas operating entity. Local GM or regional director not yet identified.</p>
+      <div class="opp-box">
+        <h4>Path to operator</h4>
+        <p>1. Check <strong>moxies.com</strong> corporate/about page for US expansion director or regional contact. 2. Texas SOS SOSDirect — search "Van Nostren Enterprises LP" for registered agent and general partner name. Confirm procurement structure (centralized vs. local) before investing full pitch time.</p>
+        <ul style="margin-top:8px"><li><strong>Categories:</strong> food/bev distribution, commercial insurance (new US market policy), POS/payments, linen, signage</li></ul>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Local Austin GM / regional director not identified</li>
+          <li>Procurement structure (centralized vs. location-level) not confirmed</li>
+          <li>No phone or email in source data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ #13: COUNTER CULTURE RESTAURANT -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#13 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC Jun 5 · Windsor Park</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · Counter Culture Restaurant LLC · 5812 Berkman Dr · 17-Year Austin Entity</div>
+    <div class="lead-title">Counter Culture Restaurant</div>
+    <div class="lead-concept">Counter Culture Restaurant LLC · 5812 Berkman Dr, Austin TX 78723 · Full-service restaurant · Windsor Park</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Counter Culture Restaurant LLC</td></tr>
+        <tr><td>Address</td><td>5812 Berkman Dr, Austin TX 78723 · Windsor Park / Mueller adjacent</td></tr>
+        <tr><td>TABC</td><td>MB active · issued Jun 5, 2026 · expires Jun 4, 2028</td></tr>
+        <tr><td>Franchise Tax</td><td>COUNTER CULTURE RESTAURANT LLC · 6504 Greensboro Dr, Austin 78723 · <strong>active since 2009</strong> — 17-year-old entity</td></tr>
+        <tr><td>Registered office</td><td>6504 Greensboro Dr (2 mi from Berkman) — operator's likely base</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license issued Jun 5 — most recent TABC in this brief</li>
+          <li>17-year-old Austin LLC opening under this name at a new address — deep local roots</li>
+          <li>Windsor Park / Mueller adjacent = growing neighborhood dining corridor</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Established operator likely has incumbent vendor relationships already</li>
+          <li>New location is the opportunity window — vendor mix being reset for this site</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Counter Culture Restaurant LLC is named but managing member not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "Counter Culture Restaurant" — the MB application names the managing member. 2. Texas SOS SOSDirect — search "Counter Culture Restaurant LLC" ($1). LLC active since 2009 means ample public record trail.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail and opening date not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #14: THE SIDELINE -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#14 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC Jun 3 · East Village</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · The Side Line Sports Bar and Grill LLC · 3500 E Parmer Ln · Tech Ridge</div>
+    <div class="lead-title">The Sideline</div>
+    <div class="lead-concept">The Side Line Sports Bar and Grill LLC · 3500 E Parmer Ln, Austin TX 78754 · Sports bar · East Village / Tech Ridge</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>The Side Line Sports Bar and Grill LLC</td></tr>
+        <tr><td>Address</td><td>3500 E Parmer Ln, Austin TX 78754 · East Village</td></tr>
+        <tr><td>TABC</td><td>MB active · issued Jun 3, 2026 · expires Jun 2, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>THE SIDELINE SPORTS BAR &amp; GRILL LLC · NAICS 722511 (full-service) · filed Apr 10, 2026 at Unit 3210</td></tr>
+        <tr><td>Context</td><td>East Village center: First Watch, Killer Burger, Aburi Tora, Shake Shack, Potbelly, Kilwins — sports bar fills entertainment niche</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license + sales tax confirm same concept at same address</li>
+          <li>East Village / Tech Ridge = growing mixed-use development, employed workforce</li>
+          <li>Sports bar format = strong beverage and food vendor scope</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Suburban East Austin = moderate average check vs. central corridors</li>
+          <li>Single independent — smaller deal size</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. The Side Line Sports Bar and Grill LLC is named but managing member not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "The Sideline" at 3500 E Parmer — MB application names the managing member. 2. Texas SOS SOSDirect — search "Side Line Sports Bar and Grill LLC" ($1) for managing member.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Unit number at 3500 E Parmer not in TABC record (sales tax has Unit 3210)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #15: THE LUCKY DUCK -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#15 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC Apr 24 · South Austin</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · Three Brothers Bars LLC · 2105 Lynnbrook Dr · Turnover Location</div>
+    <div class="lead-title">The Lucky Duck</div>
+    <div class="lead-concept">Three Brothers Bars LLC · 2105 Lynnbrook Dr, Austin TX 78748 · Bar · South Austin neighborhood</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Three Brothers Bars LLC</td></tr>
+        <tr><td>Address</td><td>2105 Lynnbrook Dr, Austin TX 78748 · South Austin</td></tr>
+        <tr><td>TABC</td><td>MB active · issued Apr 24, 2026 · expires Apr 23, 2028</td></tr>
+        <tr><td>Previous tenant</td><td>Pickle Pub / Drifter's Social — TABC expired Dec 6, 2025</td></tr>
+        <tr><td>Sales Tax</td><td>THREE BROTHERS BARS LLC · NAICS 722410 (bar) · filed Mar 27, 2026</td></tr>
+        <tr><td>Franchise Tax</td><td>THREE BROTHERS BARS LLC · 302 Esperanza Dr, Buda TX 78610 · active since Feb 12, 2025</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license + sales tax confirmed; Buda-based LLC active since Feb 2025</li>
+          <li>Turnover location — same address, new operator = active build/setup in progress</li>
+          <li>April 24 TABC = earliest qualifying lead in this window</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>South Austin neighborhood bar = solid but not premium revenue potential</li>
+          <li>Single location — smaller deal size</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Three Brothers Bars LLC is named but managing member not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "The Lucky Duck" at 2105 Lynnbrook — MB application names the managing member. 2. Texas SOS SOSDirect — search "Three Brothers Bars LLC" ($1); Buda TX registration means the managing members likely live in Buda/South Austin.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail and opening date not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #16: TAQUERIA DE DIEZ -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#16 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 29 · Westlake Hills</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · Taqueria 104 LLC · 3736 Bee Caves Rd Suite 2 · Multi-Unit Group</div>
+    <div class="lead-title">Taqueria De Diez</div>
+    <div class="lead-concept">Taqueria 104 LLC · 3736 Bee Caves Rd Suite 2, West Lake Hills TX 78746 · Taqueria · Westlake Hills</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>Taqueria 104 LLC (TABC) · Taqueria 103 LLC (sales tax — same address)</td></tr>
+        <tr><td>Address</td><td>3736 Bee Caves Rd Suite 2, West Lake Hills TX 78746</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 29, 2026 · expires May 28, 2028</td></tr>
+        <tr><td>Sales Tax 1</td><td>TAQUERIA 103 LLC · filed Mar 19, 2026 at Suite 2</td></tr>
+        <tr><td>Sales Tax 2</td><td>TAQUERIA 104 LLC · filed Feb 3, 2026 at Suite 2</td></tr>
+        <tr><td>Signal</td><td>Numbered LLC sequence (103, 104) = multi-unit taqueria group</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>Two LLCs at same address with sequential numbering = experienced multi-unit operator</li>
+          <li>Westlake Hills = high-income, high-check-average demographic</li>
+          <li>MB license = full bar scope</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Taqueria format = mid-tier ticket, though Westlake location lifts it</li>
+          <li>Multi-unit parent operator may have incumbent vendor relationships</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. Parent taqueria group operating both Taqueria 103 LLC and Taqueria 104 LLC — principal not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "Taqueria De Diez" at 3736 Bee Caves — MB application names the managing member. 2. Texas SOS SOSDirect — search both "Taqueria 103 LLC" and "Taqueria 104 LLC" ($1 each) to find common managing member across both entities.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Parent group identity and managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Number of existing locations in group not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #17: LOCAL FOODS -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#17 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 27 · N Lamar</span>
+      <span class="badge-corrected">Corrected — Houston Chain</span>
+    </div>
+    <div class="lead-id">TABC · LFA #2 LLC · 3800 N Lamar Blvd · Houston Fast-Casual Chain</div>
+    <div class="lead-title">Local Foods</div>
+    <div class="lead-concept">LFA #2 LLC · 3800 N Lamar Blvd, Austin TX 78756 · Houston fast-casual chain · 2nd Austin location</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>LFA #2 LLC</td></tr>
+        <tr><td>Address</td><td>3800 N Lamar Blvd, Austin TX 78756 · Hyde Park / North Loop</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 27, 2026 · expires May 26, 2028</td></tr>
+        <tr><td>Sales Tax</td><td>LOCAL FOODS / LFA #2 LLC · NAICS 722513 · filed Nov 15, 2025 at Suite 170</td></tr>
+        <tr><td>Previous tenant</td><td>Wu Chow North (surrendered 2025) — Suite 170</td></tr>
+        <tr><td>Chain identity</td><td>Local Foods = Houston-based fast-casual chain · LFA #2 = second Austin location</td></tr>
+      </table>
+      <div class="correction-box">
+        <strong>CORRECTION:</strong> Prior brief characterized this as a possible independent operator. TX Comptroller data confirms Local Foods is a Houston-based fast-casual chain. LFA #2 LLC = second Austin location. Opportunity score reduced from 3 to 2: chain operators carry centralized procurement risk — vendor decisions may be made at Houston corporate, not the Austin GM.
+      </div>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license issued, sales tax filed Nov 2025 — opening imminent</li>
+          <li>N Lamar / Hyde Park = premium Austin dining corridor</li>
+        </ul>
+        <h4>Opp 2 (revised from 3)</h4>
+        <ul>
+          <li>Houston chain = likely centralized procurement — confirm before investing full pitch</li>
+          <li>Fast-casual format = lower per-vendor spend than full-service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No Austin-side DM confirmed. Chain headquarters in Houston. Local GM or regional director for Austin not yet identified.</p>
+      <div class="opp-box">
+        <h4>Path to decision-maker</h4>
+        <p>Confirm procurement structure (centralized vs. local) before pitch investment. 1. Check Local Foods website/about for Austin market contact or regional director. 2. Texas SOS SOSDirect — search "LFA #2 LLC" ($1) for registered agent.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Austin GM or regional director not identified</li>
+          <li>Procurement structure (centralized vs. local) not confirmed</li>
+          <li>No DM phone or email</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #18: LA MARLY CUBAN -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#18 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 18 · FM 1825</span>
+    </div>
+    <div class="lead-id">TABC · La Marly LLC · 15200 FM 1825 · Cuban Restaurant</div>
+    <div class="lead-title">La Marly Cuban Restaurant</div>
+    <div class="lead-concept">La Marly LLC · 15200 FM 1825, Austin TX 78660 · Cuban restaurant · Pflugerville / Manor corridor</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>La Marly LLC</td></tr>
+        <tr><td>Address</td><td>15200 FM 1825, Austin TX 78660 · Pflugerville / NE Austin metro</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 18, 2026 · expires May 17, 2028</td></tr>
+        <tr><td>Concept</td><td>Cuban restaurant (named in TABC record)</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>MB license issued May 18 — opening committed</li>
+          <li>Business name and entity both confirmed in TABC record</li>
+          <li>Independent LLC = owner makes all vendor decisions</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>FM 1825 / 78660 = Pflugerville corridor (lower check average vs. central Austin)</li>
+          <li>Single-location independent — smaller deal size</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. La Marly LLC is named but managing member not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "La Marly" at 15200 FM 1825 — MB application names the managing member of La Marly LLC. 2. Texas SOS SOSDirect — search "La Marly LLC" ($1) for managing member and registered agent.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member of La Marly LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Square footage, seat count, opening timeline not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #19: ROCK ROSE PIZZA -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#19 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 19 · Domain Northside</span>
+    </div>
+    <div class="lead-id">PERMITS · Domain Northside · 11501 Rock Rose Ave Unit 146 · Permit 2026-063338</div>
+    <div class="lead-title">Rock Rose Pizza Concept</div>
+    <div class="lead-concept">Operator TBD · 11501 Rock Rose Ave Unit 146, Austin TX 78758 · Interior remodel for new pizza restaurant</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Address</td><td>11501 Rock Rose Ave Unit 146, Austin TX 78758 · Domain Northside</td></tr>
+        <tr><td>Note</td><td>Different address from Red Car (#2 in this brief at 11821 Rock Rose) — two separate Domain Northside openings</td></tr>
+        <tr><td>Concept</td><td>New pizza restaurant replacing existing pizza tenant</td></tr>
+        <tr><td>Permit #</td><td>2026-063338</td></tr>
+        <tr><td>Permits issued</td><td>May 19–20, 2026: Building, Electrical, Plumbing, Mechanical (all 4)</td></tr>
+      </table>
+      <div class="permit-desc">"Interior remodel of existing pizza restaurant to accommodate new pizza restaurant"</div>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>All 4 permit types issued — committed, active buildout</li>
+          <li>Domain Northside = premium destination with high operator quality</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Pizza concept — solid but not top-tier ticket average</li>
+          <li>Operator identity needed to fully score opportunity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No operator identified. Permit describes replacing existing pizza tenant — rebrand vs. new operator unclear.</p>
+      <div class="opp-box">
+        <h4>How to identify operator</h4>
+        <p>Monitor TABC at apps.tabc.texas.gov/publicinquiry for 11501 Rock Rose Ave Unit 146. Alternatively: call Austin Development Services <strong>(512) 978-4000</strong> for applicant name on permit 2026-063338.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Operator/brand unknown; rebrand vs. new operator unclear</li>
+          <li>No DM, phone, or email</li>
           <li>No TABC filing found at this address</li>
         </ul>
       </div>
@@ -1349,18 +1419,565 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ #18: BROCKTON DR SHELL -->
+<!-- ══════════════════════════════════════ #20: MENDOCINO FARMS @ LAMAR UNION -->
 <div class="lead-page page-break">
   <div class="lead-header">
     <div class="score-row">
-      <span class="rank-badge">#18 of 18</span>
+      <span class="rank-badge">#20 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 1 · Lamar Union</span>
+      <span class="badge-corrected">Corrected — CA Chain Confirmed</span>
+    </div>
+    <div class="lead-id">PERMITS · Lamar Union Plaza · 3,680 SF + Patio · Mendocino Farms Texas LLC</div>
+    <div class="lead-title">Mendocino Farms @ Lamar Union Unit 1125</div>
+    <div class="lead-concept">Mendocino Farms Texas LLC · 1100 S Lamar Blvd Unit 1125, Austin TX 78704 · CA fast-casual chain · 30+ locations</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Operator</td><td>Mendocino Farms Texas LLC (TX Comptroller confirmed at exact Unit 1125)</td></tr>
+        <tr><td>Chain</td><td>Mendocino Farms — California fast-casual sandwich chain · 30+ locations nationally</td></tr>
+        <tr><td>Address</td><td>1100 S Lamar Blvd Unit 1125, Austin TX 78704 · Lamar Union Plaza</td></tr>
+        <tr><td>Sales Tax</td><td>MENDOCINO FARMS TEXAS LLC · NAICS 722513 · filed Apr 14, 2026 at <strong>exact Unit 1125</strong></td></tr>
+        <tr><td>Permit</td><td>Interior tenant improvement · 3,680 SF restaurant + outdoor seating · issued May 1, 2026</td></tr>
+        <tr><td>Previous tenant</td><td>Mandala Kitchen &amp; Bar (TABC expired Mar 28, 2026)</td></tr>
+      </table>
+      <div class="correction-box">
+        <strong>CORRECTION:</strong> Prior brief listed this unit as "Operator TBD" (score I:3 O:3 = 6). TX Comptroller filing now confirms MENDOCINO FARMS TEXAS LLC at exact Unit 1125. Mendocino Farms is a California fast-casual chain (30+ locations) — centralized procurement risk applies. Opportunity reduced from 3 to 2.
+      </div>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>Comptroller filing at exact unit + permit issued = committed, building out</li>
+          <li>TABC application likely in queue (filed 60–90 days before opening)</li>
+        </ul>
+        <h4>Opp 2 (revised from 3)</h4>
+        <ul>
+          <li>CA chain = likely centralized procurement from California corporate</li>
+          <li>Fast-casual format = lower per-vendor spend than full-service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">Operator confirmed as Mendocino Farms. No Austin-side DM identified — national chain likely manages vendor decisions at California corporate.</p>
+      <div class="opp-box">
+        <h4>Path to decision-maker</h4>
+        <p>Confirm procurement structure before pitch investment. 1. Check mendocinofarms.com for Texas regional director or franchise development contact. 2. Monitor TABC at apps.tabc.texas.gov for 1100 S Lamar Unit 1125 — the MB application will name the local managing member or GM.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Austin GM / regional director not identified</li>
+          <li>Procurement structure not confirmed (likely centralized CA)</li>
+          <li>TABC application not yet filed at this address</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #21: TOKAMI AUSTIN -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#21 of 29</span>
+      <span class="score-badge score-intent-mid">Intent 3/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 28 · S Lamar</span>
+    </div>
+    <div class="lead-id">lead-02 · PERMITS · Westgate · TOKAMI AUSTIN LLC · Sushi</div>
+    <div class="lead-title">Tokami Austin</div>
+    <div class="lead-concept">TOKAMI AUSTIN LLC · 4477 S Lamar Blvd Unit 730, Austin TX 78745 · Sushi restaurant · Former Sushi Avenue space</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>TOKAMI AUSTIN LLC (TX Comptroller confirmed)</td></tr>
+        <tr><td>Address</td><td>4477 S Lamar Blvd Unit 730, Austin TX 78745 · Westgate</td></tr>
+        <tr><td>Concept</td><td>Full-service sushi restaurant (NAICS 722511)</td></tr>
+        <tr><td>Permit</td><td>Change of use from retail to sushi restaurant · filed May 28, 2026</td></tr>
+        <tr><td>Instagram</td><td>@restaurant_tokami (active account)</td></tr>
+        <tr><td>Est. revenue</td><td>$800K–$1.5M/yr (first-location indie sushi benchmark)</td></tr>
+      </table>
+      <p class="notes-text" style="margin-top:8px;background:#fffbf0;padding:7px 9px;border-radius:3px;border-left:2px solid #d69e2e">A <strong>Sushi Tokami</strong> brand exists in Ginza, Tokyo (Michelin-starred) with European locations — possible international expansion to Austin, unconfirmed. If confirmed, Opp would jump to 4–5.</p>
+      <div class="scoring-box">
+        <h4>Intent 3</h4>
+        <ul>
+          <li>Active permit May 28 — building out now</li>
+          <li>Instagram @restaurant_tokami active = operator engaged, monitoring</li>
+          <li>TX Comptroller sales tax permit confirmed</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Single location, independent — modest deal size at current data</li>
+          <li>Michelin Tokyo connection unconfirmed — if confirmed, Opp would jump</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">Owner not publicly identified. TOKAMI AUSTIN LLC confirmed with TX Comptroller but principal not named in public records. Watch — contact research in progress.</p>
+      <div class="opp-box">
+        <h4>Contact path</h4>
+        <p>Instagram DM to <strong>@restaurant_tokami</strong> is the fastest current path to the operator. We are running a TABC application lookup and SOS SOSDirect search — this lead will be promoted to Active when the managing member is confirmed.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Owner identity and direct contact not confirmed</li>
+          <li>Michelin/international brand connection unconfirmed</li>
+          <li>No TABC filing found yet at this address</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #22: 78 RAINEY ST -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#22 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Expedited Jun 1 · Rainey Street</span>
+    </div>
+    <div class="lead-id">PERMITS · Rainey Street · 2,920 SF · Permit 2026-026513</div>
+    <div class="lead-title">78 Rainey St — Future Restaurant</div>
+    <div class="lead-concept">Operator TBD · 78 Rainey St, Austin TX 78701 · Two bungalows → 2,920 SF restaurant shell · Jun 1, 2026</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Address</td><td>78 Rainey St, Austin TX 78701 · Rainey Street District</td></tr>
+        <tr><td>Square footage</td><td>2,920 SF (two bungalows connected into single shell)</td></tr>
+        <tr><td>Permit type</td><td>Addition and Remodel — Commercial Expedited Review</td></tr>
+        <tr><td>Permit issued</td><td>June 1, 2026</td></tr>
+        <tr><td>Permit #</td><td>2026-026513</td></tr>
+      </table>
+      <div class="permit-desc">"ePlan: Commercial Expedited Review — Remodel Two Bungalows — Scope of work to include exterior rehab, interior demolition, addition connecting bungalows into a single shell for future restaurant (2920 SF)"</div>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Very recent expedited permit — project accelerating</li>
+          <li>No operator identity yet — cannot initiate sales conversation</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>Rainey Street = Austin's top hospitality corridor (premium check, high volume)</li>
+          <li>Bungalow conversion = boutique/upscale concept likely</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No operator identified. Shell/remodel phase — operator may not be publicly announced yet.</p>
+      <div class="opp-box">
+        <h4>How to identify operator</h4>
+        <p>Monitor TABC at apps.tabc.texas.gov/publicinquiry for 78 Rainey St. Call Austin Development Services <strong>(512) 978-4000</strong> for applicant name on permit 2026-026513.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Operator identity, DM name, phone, email all unknown</li>
+          <li>Concept unknown (bungalow format suggests upscale/boutique)</li>
+          <li>Opening timeline: bungalow remodel likely 6–12 months from Jun 1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════ #23: 504 WALSH ST -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#23 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-mid">Opp 3/5</span>
+      <span class="score-combined score-combined-mid">Combined: 5</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 28 · Tarrytown</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">PERMITS · Tarrytown / Clarksville · 504 Walsh St · Restaurant Shell</div>
+    <div class="lead-title">504 Walsh St — Restaurant Shell</div>
+    <div class="lead-concept">Operator TBD · 504 Walsh St, Austin TX 78703 · Restaurant shell finish-out · Tarrytown neighborhood</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Address</td><td>504 Walsh St, Austin TX 78703 · Tarrytown / Clarksville</td></tr>
+        <tr><td>Neighborhood</td><td>Dense residential, limited commercial — premium independent dining territory</td></tr>
+        <tr><td>Permit type</td><td>Building remodel — finish out to create restaurant shell</td></tr>
+        <tr><td>Permit issued</td><td>May 28, 2026 · "NOT FOR OCCUPANCY" — shell only</td></tr>
+        <tr><td>Gov data</td><td>No TABC, no sales tax filing found at this address</td></tr>
+      </table>
+      <div class="permit-desc">"Finish out to create restaurant shell for future tenant — NOT FOR OCCUPANCY"</div>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Shell-only — operator not yet in place; landlord creating the space</li>
+          <li>No TABC or sales tax filing yet — operator has not announced</li>
+        </ul>
+        <h4>Opp 3</h4>
+        <ul>
+          <li>Tarrytown at 78703 = one of Austin's most affluent ZIP codes</li>
+          <li>Limited commercial space in dense residential = high-demand location, independent operator likely</li>
+          <li>Landlord finishing a shell = serious tenant incoming</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No operator announced. Landlord creating shell for future tenant — pre-leasing stage.</p>
+      <div class="opp-box">
+        <h4>How to identify operator</h4>
+        <p>Monitor TX Comptroller and TABC filings at 504 Walsh St. Call Austin Development Services <strong>(512) 978-4000</strong> for permit applicant (likely the landlord/developer — ask for the leasing contact).</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Tenant/operator not yet identified</li>
+          <li>No DM, phone, or email</li>
+          <li>Concept unknown; opening timeline not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #24: THE MACKENZIE CLUB -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#24 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-lo">Combined: 4</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-tabc">TABC May 26 · Westlake</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">TABC · 1723 Ventures LLC · 260 Addie Roy Rd · Westlake / Private Club</div>
+    <div class="lead-title">The Mackenzie Club</div>
+    <div class="lead-concept">1723 Ventures LLC · 260 Addie Roy Rd, Austin TX 78746 · Private club or members concept · West Austin</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>1723 Ventures LLC</td></tr>
+        <tr><td>Address</td><td>260 Addie Roy Rd, Austin TX 78746 · West Austin residential/country club corridor</td></tr>
+        <tr><td>TABC</td><td>MB active · issued May 26, 2026 · expires May 25, 2028</td></tr>
+        <tr><td>Franchise Tax</td><td>1723 VENTURES LLC · 13125 Meridian Park Blvd, Austin 78739 · active since Mar 10, 2025</td></tr>
+        <tr><td>Concept signal</td><td>"The Mackenzie Club" name suggests private club or members-only concept</td></tr>
+        <tr><td>No sales tax filed</td><td>Pre-opening — no sales activity yet</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>MB license issued = committed to opening</li>
+          <li>LLC registered Mar 2025 — over a year of planning before TABC</li>
+          <li>Addie Roy Rd = West Austin, high-income demographics</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>Private club concept = potentially high check average but smaller member base</li>
+          <li>Club purchasing may be centralized or board-driven</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. 1723 Ventures LLC is named but managing member not identified from TABC data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "The Mackenzie Club" at 260 Addie Roy — MB application names the managing member of 1723 Ventures LLC. 2. Texas SOS SOSDirect — search "1723 Ventures LLC" ($1) for managing member.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member of 1723 Ventures LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept type (private club vs. restaurant) not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #25: ATX BEGINNINGS LLC -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#25 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-lo">Combined: 4</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 28 · East Village</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">PERMITS · East Village · 3500 E Parmer Ln Unit 12140 · ATX Beginnings LLC</div>
+    <div class="lead-title">ATX Beginnings LLC</div>
+    <div class="lead-concept">ATX Beginnings LLC · 3500 E Parmer Ln Unit 12140, Austin TX 78754 · Restaurant (limited service) · East Village</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>ATX Beginnings LLC</td></tr>
+        <tr><td>Address</td><td>3500 E Parmer Ln Unit 12140, Austin TX 78754 · East Village</td></tr>
+        <tr><td>Permit</td><td>Interior finish out for restaurant, Building 12 · issued May 28, 2026</td></tr>
+        <tr><td>Sales Tax</td><td>ATX BEGINNINGS LLC · NAICS 722513 (limited service) · filed May 1, 2026 at <strong>exact Unit 12140</strong></td></tr>
+        <tr><td>Note</td><td>Separate operator from The Sideline (#14, Unit 3210) at same 3500 E Parmer address</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Permit + sales tax align to exact unit — committed operator</li>
+          <li>New local entity (ATX Beginnings LLC = Austin-specific name)</li>
+          <li>East Village center has 9+ active food operators already</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>NAICS 722513 = limited service (fast-casual, counter service)</li>
+          <li>Single independent at E Parmer — moderate revenue potential</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. ATX Beginnings LLC is named but managing member not identified from Comptroller data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>No TABC filed yet (NAICS 722513 = may not carry full bar). 1. Texas SOS SOSDirect — search "ATX Beginnings LLC" ($1) for managing member and registered agent. 2. Monitor TABC at 3500 E Parmer Ln Unit 12140 for future MB application.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Concept detail and opening date not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #26: GOOD LUCK GRILL & TAVERN -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#26 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-lo">Combined: 4</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 1 · North Austin</span>
+      <span class="badge-new">New Lead</span>
+    </div>
+    <div class="lead-id">PERMITS · North Austin · 525 W Howard Ln Unit 100 · MURRFADD LLC · 5,000 SF</div>
+    <div class="lead-title">Good Luck Grill &amp; Tavern</div>
+    <div class="lead-concept">MURRFADD LLC · 525 W Howard Ln Unit 100, Austin TX 78753 · Full-service grill/tavern · 5,000 SF shell finish-out</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Entity</td><td>MURRFADD LLC (operator)</td></tr>
+        <tr><td>Business name</td><td>Good Luck Grill &amp; Tavern</td></tr>
+        <tr><td>Address</td><td>525 W Howard Ln Unit 100, Austin TX 78753 · North Austin</td></tr>
+        <tr><td>Permit</td><td>"First Time Finish Out To Shell Building for Convenience Store with Kitchen (5,000 SF)" · issued May 1, 2026</td></tr>
+        <tr><td>Sales Tax</td><td>GOOD LUCK GRILL &amp; TAVERN / MURRFADD LLC · NAICS 722511 (full-service) · filed Apr 17, 2026 at Suite 120</td></tr>
+        <tr><td>Note</td><td>5,000 SF = significant capital investment; first-time finish-out of shell</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Permit + sales tax aligned — committed operator</li>
+          <li>5,000 SF shell = major build investment, long lead time to opening</li>
+          <li>New local entity (MURRFADD LLC)</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>N Austin / W Howard corridor = suburban, moderate check average</li>
+          <li>Grill/tavern format — solid but not premium revenue territory</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">No DM confirmed. MURRFADD LLC is named but managing member not identified from Comptroller data.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>No TABC filed yet. 1. Texas SOS SOSDirect — search "MURRFADD LLC" ($1) for managing member and registered agent. 2. Monitor TABC at apps.tabc.texas.gov for 525 W Howard Ln Unit 100.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member of MURRFADD LLC not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>No TABC filed yet; opening date not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #27: SAKURA SUSHI & MONGOLIAN -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#27 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-lo">Opp 2/5</span>
+      <span class="score-combined score-combined-lo">Combined: 4</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 5 · S IH-35</span>
+      <span class="badge-corrected">Upgraded — Operator Identified</span>
+    </div>
+    <div class="lead-id">PERMITS · S IH-35 · Southpark Meadows · CL YUMMY INC · BG License</div>
+    <div class="lead-title">Sakura Sushi &amp; Mongolian BBQ</div>
+    <div class="lead-concept">CL YUMMY INC · 9900 S IH 35 SVRD SB Bldg M Unit 100, Austin TX 78748 · Mongolian BBQ + Sushi · Interior finish-out</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Operator</td><td>CL YUMMY INC (identified via TABC BG license cross-reference)</td></tr>
+        <tr><td>Address</td><td>9900 S IH 35 SVRD SB Bldg M Unit 100, Austin TX 78748 · Southpark Meadows</td></tr>
+        <tr><td>Permit</td><td>Interior finish out for new restaurant · Mongolian BBQ and Sushi · issued May 5, 2026</td></tr>
+        <tr><td>TABC</td><td>SAKURA SUSHI &amp; MONGOLIAN / CL YUMMY INC · BG (beer/wine only) active · issued Aug 29, 2025</td></tr>
+        <tr><td>Context</td><td>Large established center: Sakura Sushi, Moreno BBQ, Chili's, Longhorn, Jaipur Palace, El Nuevo Mexico (11+ food operators)</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Finish-out stage + TABC from Aug 2025 — significant delay between license and permit</li>
+          <li>Operator CL YUMMY INC now confirmed; DM research can begin</li>
+        </ul>
+        <h4>Opp 2</h4>
+        <ul>
+          <li>S IH-35 suburban strip = moderate average check</li>
+          <li>BG license only (beer/wine) — no full bar revenue</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">Operator CL YUMMY INC confirmed via TABC cross-reference. Managing member not yet identified from public records.</p>
+      <div class="opp-box">
+        <h4>TABC application waterfall — to activate</h4>
+        <p>1. Search <strong>apps.tabc.texas.gov/publicinquiry</strong> for "Sakura Sushi" at 9900 S IH 35 — BG application names the managing member of CL YUMMY INC. 2. Texas SOS SOSDirect — search "CL YUMMY INC" ($1) for registered officer and agent. Note: CL YUMMY INC is a corporation, not LLC — SOS search returns officers by name.</p>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member / corporate officer not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Opening date unclear (Aug 2025 TABC, May 2026 permit = 9-month gap)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #28: ATX COFFEE & LOUNGE -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#28 of 29</span>
+      <span class="score-badge score-intent-lo">Intent 2/5</span>
+      <span class="score-badge score-opp-lo">Opp 1/5</span>
+      <span class="score-combined score-combined-lo">Combined: 3</span>
+      <span class="badge-watch">Watch</span>
+      <span class="badge-permit">Permit May 19 · Far West</span>
+      <span class="badge-corrected">Upgraded — Operator Identified</span>
+    </div>
+    <div class="lead-id">PERMITS · Far West Blvd · 3720 Far West Blvd Unit 109 · ATX Coffee and Lounge LLC</div>
+    <div class="lead-title">ATX Coffee &amp; Lounge</div>
+    <div class="lead-concept">ATX Coffee and Lounge LLC · 3720 Far West Blvd Unit 109, Austin TX 78731 · Coffee/lounge · No bar license · Far West / Anderson Mill</div>
+  </div>
+  <div class="two-col">
+    <div class="col-left">
+      <h3>Business Overview</h3>
+      <table class="overview-table">
+        <tr><td>Operator</td><td>ATX Coffee and Lounge LLC (TX Comptroller confirmed at exact Unit 109)</td></tr>
+        <tr><td>Address</td><td>3720 Far West Blvd Unit 109, Austin TX 78731 · Far West / NW Hills</td></tr>
+        <tr><td>Permit</td><td>Change of use from Office to Restaurant Limited · issued May 19, 2026</td></tr>
+        <tr><td>Sales Tax</td><td>ATX COFFEE AND LOUNGE LLC · NAICS 722515 (snack/non-alcoholic) · filed Apr 23, 2026 at <strong>exact Unit 109</strong></td></tr>
+        <tr><td>No TABC</td><td>Restaurant Limited + NAICS 722515 = no full bar; limited vendor scope</td></tr>
+      </table>
+      <div class="scoring-box">
+        <h4>Intent 2</h4>
+        <ul>
+          <li>Comptroller filing at exact unit confirms operator — DM research can begin</li>
+          <li>Change of use from office = significant build required</li>
+        </ul>
+        <h4>Opp 1</h4>
+        <ul>
+          <li>Coffee/lounge format = low revenue ceiling ($300K–$500K/yr)</li>
+          <li>No bar license = limited vendor category relevance (no food distrib, no bar equipment)</li>
+          <li>Strip center, NW Hills = neighborhood scale only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <h3>Status</h3>
+      <p class="no-dm">Operator ATX Coffee and Lounge LLC confirmed. Managing member not yet identified from public records.</p>
+      <div class="opp-box">
+        <h4>Path to DM</h4>
+        <p>Texas SOS SOSDirect — search "ATX Coffee and Lounge LLC" ($1) for managing member and registered agent. No TABC application expected (non-alcoholic concept). Best vendor fit: espresso equipment, POS/payments, commercial insurance, signage.</p>
+        <ul style="margin-top:8px"><li><strong>Best categories:</strong> POS/payments, commercial insurance, signage, smallwares</li></ul>
+      </div>
+      <h3>Data Gaps</h3>
+      <div class="data-gap">
+        <h4>Missing</h4>
+        <ul>
+          <li>Managing member not confirmed</li>
+          <li>No DM name, phone, or email</li>
+          <li>Opening date not confirmed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ #29: BROCKTON DR SHELL -->
+<div class="lead-page page-break">
+  <div class="lead-header">
+    <div class="score-row">
+      <span class="rank-badge">#29 of 29</span>
       <span class="score-badge score-intent-lo">Intent 1/5</span>
       <span class="score-badge score-opp-lo">Opp 2/5</span>
       <span class="score-combined score-combined-lo">Combined: 3</span>
+      <span class="badge-watch">Watch</span>
       <span class="badge-permit">Shell · Jun 1 · AE Green Building</span>
-      <span class="badge-new">Net-New Lead</span>
     </div>
-    <div class="lead-id">PERMITS · N Austin · New Construction · Permit 2025-122129</div>
+    <div class="lead-id">PERMITS · N Austin · New Construction · Permit 2025-122129 · AE Green Building</div>
     <div class="lead-title">Brockton Dr Restaurant Shell</div>
     <div class="lead-concept">Operator TBD · 2545 Brockton Dr, Austin TX 78758 · New construction restaurant shell · AE Green Building certified</div>
   </div>
@@ -1368,14 +1985,12 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
     <div class="col-left">
       <h3>Business Overview</h3>
       <table class="overview-table">
-        <tr><td>Address</td><td>2545 Brockton Dr, Austin TX 78758</td></tr>
-        <tr><td>Neighborhood</td><td>North Austin (78758)</td></tr>
+        <tr><td>Address</td><td>2545 Brockton Dr, Austin TX 78758 · North Austin</td></tr>
         <tr><td>Permit type</td><td>New Construction — Shell Space for future restaurant</td></tr>
         <tr><td>Permit #</td><td>2025-122129</td></tr>
         <tr><td>EP + MP issued</td><td>June 1, 2026</td></tr>
         <tr><td>PP issued</td><td>March 11, 2026 (prior activity)</td></tr>
         <tr><td>Green building</td><td>AE Green Building certified — quality construction</td></tr>
-        <tr><td>Source</td><td>Austin permits CSV (3 entries under 2025-122129)</td></tr>
       </table>
       <div class="permit-desc">"ePlan: Commercial Expedited Review — [AE GREEN BUILDING] New Construction of New Shell Space for future Restaurant."</div>
       <div class="scoring-box">
@@ -1383,27 +1998,27 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
         <ul>
           <li>Shell-only construction — no tenant, no operator, no timeline</li>
           <li>12–18 months minimum from shell to restaurant opening</li>
-          <li>Nothing to act on now; add to Q4 2026 review</li>
+          <li>Nothing to act on now — flag for Q4 2026 review</li>
         </ul>
         <h4>Opp 2</h4>
         <ul>
           <li>AE Green Building = quality developer; likely serious concept incoming</li>
-          <li>New construction in 78758 = emerging North Austin area</li>
           <li>Worth revisiting when tenant is announced</li>
         </ul>
       </div>
     </div>
     <div class="col-right">
-      <h3>Decision Makers</h3>
+      <h3>Status</h3>
       <p class="no-dm">No tenant announced. Shell construction only. No action possible until tenant is identified.</p>
-      <h3>Action</h3>
-      <p class="notes-text">Flag for Q4 2026 review. AE Green Building certification suggests serious developer — may be worth a developer/landlord contact to get ahead of tenant selection. Monitor TABC at 2545 Brockton Dr.</p>
+      <div class="opp-box">
+        <h4>Action</h4>
+        <p>Flag for Q4 2026 review. AE Green Building certification suggests a serious developer — contact developer/landlord now to get ahead of tenant selection. Monitor TABC at 2545 Brockton Dr.</p>
+      </div>
       <h3>Data Gaps</h3>
       <div class="data-gap">
         <h4>Missing</h4>
         <ul>
           <li>No tenant, no operator, no concept, no DM</li>
-          <li>Square footage unknown</li>
           <li>Developer/landlord identity not in permit data</li>
           <li>Opening timeline: 12–18 months minimum</li>
         </ul>
@@ -1414,3 +2029,5 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9.5pt; color
 
 </body>
 </html>
+
+
